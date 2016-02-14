@@ -1,0 +1,44 @@
+#search {
+
+    .content {
+
+        .emails-tab {
+
+            .results {
+
+                .result-item {
+                    position: relative;
+                    max-width: 780px;
+                    padding: 16px 0;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    cursor: pointer;
+
+                    &.unread {
+
+                        .info {
+
+                            .subject,
+                            .message {
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    .info {
+                        overflow: hidden;
+                        margin: 0 12px;
+
+                        .name {
+                            font-size: 15px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .time {
+                        margin: 0 8px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,560 @@
+.material-docs {
+
+    > .content {
+        max-width: 100%;
+
+        .reference-link {
+            display: block;
+            width: 100%;
+            text-align: center;
+            max-width: 864px;
+            margin: 0 16px 24px 16px;
+            padding: 16px;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        > md-tabs {
+            transition: none !important;
+        }
+
+        hljs {
+
+            &:before {
+                content: attr(lang);
+                display: block;
+                background: rgb(240, 240, 240);
+                color: rgba(0, 0, 0, 0.66);
+                line-height: 32px;
+                padding: 0 16px;
+                border-radius: 2px 2px 0 0;
+                border-bottom: 1px solid #E4E4E4;
+            }
+
+            &.no-header:before {
+                display: none;
+            }
+        }
+
+        .md-api-table {
+            width: 100%;
+            border: none;
+            border-spacing: 0;
+            text-align: left;
+            background: white;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+            thead {
+
+                tr {
+
+                    th {
+                        text-align: left;
+                        padding: 16px 8px;
+                        font-weight: 500;
+                        color: rgba(0, 0, 0, 0.54);
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                        white-space: nowrap;
+                        min-width: 120px;
+
+                        &:first-child {
+                            padding-left: 24px;
+                        }
+
+                        &:last-child {
+                            padding-right: 24px;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+
+                tr {
+
+                    td {
+                        padding: 16px 8px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                        &:first-child {
+                            padding-left: 24px;
+                        }
+
+                        &:last-child {
+                            padding-right: 24px;
+                        }
+                    }
+
+                    &:last-child {
+
+                        td {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        blockquote {
+            border-left: 3px solid rgba(0, 0, 0, 0.12);
+            font-style: italic;
+            margin-left: 0;
+            padding-left: 16px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                margin-left: 16px;
+                padding: 0;
+                margin-top: 3px;
+                list-style-position: inside;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            /************
+             * UTILS
+             ************/
+            &.skip-links {
+                li {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    a {
+                        background-color: #FFF;
+                        display: block;
+                        margin: 0.5em 0 0.5em 0.5em;
+                        opacity: 0;
+                        left: 0;
+                        position: absolute;
+                        text-decoration: none;
+                        top: 0;
+                        width: 92%;
+                        -webkit-transition: opacity 0.15s linear;
+                        -moz-transition: opacity 0.15s linear;
+                        transition: opacity 0.15s linear;
+                        &:focus {
+                            background-color: #FFF !important;
+                            opacity: 1;
+                            z-index: 2;
+                        }
+                    }
+                }
+            }
+        }
+
+        .layout-content code.highlight {
+            margin-bottom: 15px;
+        }
+
+        .layout-content,
+        .doc-content {
+            max-width: 864px;
+            margin: 16px;
+            box-sizing: border-box;
+        }
+
+        docs-demo {
+            display: block;
+            margin-top: 16px;
+        }
+        .doc-description p {
+            margin-top: 0;
+        }
+        .demo-container {
+            border-radius: 4px;
+            margin-bottom: 16px;
+            transition: 0.02s padding cubic-bezier(0.35, 0, 0.25, 1);
+            position: relative;
+            padding-bottom: 0;
+            background: white;
+            > md-tabs {
+                border-radius: 0;
+            }
+        }
+        .demo-source-tabs {
+            z-index: 1;
+            transition: all 0.45s cubic-bezier(0.35, 0, 0.25, 1);
+            //height: 448px;
+            background: #FFF;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            z-index: 0;
+            &.ng-hide {
+                height: 0;
+            }
+            md-tabs-wrapper {
+                //background-color: #2C80D2 !important;
+            }
+        }
+
+        md-tabs.demo-source-tabs {
+            md-tab,
+            .md-header {
+                background-color: #444444 !important;
+            }
+            md-tab-label {
+                color: #CCC !important;
+            }
+            .active md-tab-label {
+                color: #FFF !important;
+            }
+        }
+
+        .doc-content > * {
+            flex: 1 1 auto;
+        }
+
+        .demo-content {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            > * {
+                -webkit-box-flex: 1 1 0%;
+                -webkit-flex: 1 1 0%;
+                -moz-box-flex: 1 1 0%;
+                -moz-flex: 1 1 0%;
+                -ms-flex: 1 1 0%;
+                flex: 1 1 0%;
+            }
+            > div[layout-fill] {
+                min-height: 448px;
+            }
+            > div.layout-fill {
+                min-height: 448px;
+            }
+        }
+
+        .small-demo {
+            .demo-source-tabs:not(.ng-hide) {
+                height: 224px;
+            }
+            .demo-content {
+                min-height: 128px;
+                > div[layout-fill], div.layout-fill {
+                    min-height: 224px;
+                }
+            }
+        }
+
+        .layout-content {
+            .small-demo {
+                .demo-content {
+                    > div[layout],
+                    > div.layout {
+                        min-height: auto !important;
+                        max-height: auto !important;
+                        height: 128px !important;
+                    }
+                }
+                .demo-toolbar,
+                .md-toolbar-tools {
+                    min-height: 48px;
+                    max-height: 48px;
+                }
+            }
+        }
+
+        md-toolbar {
+
+            &.demo-toolbar {
+                border-radius: 3px 3px 0 0;
+                box-shadow: 0 1px rgba(255, 255, 255, 0.1);
+                md-tab-label {
+                    color: #99E4EE
+                }
+                .md-button {
+                    transition: all 0.3s linear;
+                    color: #616161;
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.1);
+                    }
+                    &.active, &.active md-icon {
+                        color: #418CD6;
+                    }
+                }
+
+            }
+        }
+
+        .demo-source-container {
+            display: block;
+            border: 1px solid #DDD;
+            background-color: #F6F6F6;
+            //height: 400px;
+            hljs {
+                margin-bottom: 0;
+                border-radius: 0;
+            }
+        }
+
+        .show-source div[demo-include] {
+            border-top: #DDD solid 2px;
+        }
+
+        .docs-list {
+            padding: 16px;
+            md-divider {
+                margin: 8px 0;
+            }
+            li {
+                list-style: none;
+                margin: 0 0 8px;
+            }
+        }
+
+        .docs-descriptions h4 {
+            margin: 0;
+        }
+
+        /************
+         * API DOCS
+         ************/
+        .api-options-bar {
+            .md-button {
+                margin: 4px;
+                padding: 4px;
+                &:hover,
+                &:focus {
+                    background: rgba(0, 0, 0, 0.2);
+                }
+            }
+            &.with-icon {
+
+                md-icon {
+                    position: absolute;
+                    top: -3px;
+                    left: 2px;
+                }
+                .md-button span {
+                    margin-left: 22px;
+                }
+            }
+        }
+
+        header.api-profile-header > h2 {
+            margin: 0;
+            color: #164371;
+            display: none;
+        }
+
+        .api-params-item {
+            min-height: 72px;
+        }
+
+        .api-params-label {
+            margin-right: 8px;
+            text-align: center;
+            margin-top: 14px;
+            -webkit-align-self: flex-start;
+            -moz-align-self: flex-start;
+            -ms-flex-item-align: start;
+            align-self: flex-start;
+        }
+
+        .api-params-title {
+            color: #888;
+        }
+
+        .api-params-content ul {
+            padding-left: 4px;
+        }
+
+        ul.methods {
+            > li {
+                margin: 0 0 48px;
+            }
+            .method-function-syntax {
+                font-weight: normal;
+                font-size: 2.0rem;
+                margin: 0;
+                -webkit-margin-before: 0;
+                -webkit-margin-after: 0;
+            }
+        }
+
+        h3 .method-function-syntax {
+            display: block;
+            padding: 0 16px;
+            background: #F0F0F0;
+            color: rgba(0, 0, 0, 0.66);
+            line-height: 48px;
+        }
+
+        @media (max-width: 600px) {
+            ul.methods > li {
+                padding-left: 0;
+                border-left: none;
+                list-style: default;
+            }
+            ul.methods .method-function-syntax {
+                font-size: 1.4rem;
+            }
+        }
+
+        .demo-source-container {
+            pre, code {
+                min-height: 100%;
+            }
+        }
+
+        md-content.demo-source-container {
+            background-color: transparent;
+            border: none;
+            > hljs,
+            > hljs > pre,
+            > hljs > pre > code.highlight {
+                min-height: 100%;
+            }
+        }
+
+        .dashed-bottom {
+            border-bottom: dashed 1px rgb(224, 224, 224);
+            padding-bottom: 10px;
+        }
+
+        .dashed-top {
+            border-top: dashed 1px rgb(224, 224, 224);
+            margin-top: 10px;
+        }
+
+        .api-section, .api-param-section {
+            margin: 3em 0 0;
+        }
+        .api-section {
+
+            hljs {
+                box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+                margin: 16px 0 32px 0;
+            }
+
+            h3 {
+                padding-top: 20px;
+            }
+        }
+
+        .responsive-video {
+            height: 0;
+            overflow: hidden;
+            padding-bottom: 75%;
+            position: relative;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        ul {
+            &.no-style {
+                padding: 0;
+                list-style: none;
+            }
+            &.methods {
+                padding: 0;
+                list-style: none;
+            }
+            &.methods > li:first-child > *:first-child {
+                padding-top: 0;
+            }
+        }
+
+        md-icon.block {
+            color: #106CC8;
+            display: block;
+            height: 50px;
+            width: 50px;
+        }
+        .doc-demo-content {
+            padding: 0;
+        }
+        docs-demo .doc-demo-content {
+            margin: 16px;
+        }
+
+        .service-desc {
+            overflow: hidden;
+            background: #F0F0F0;
+            padding: 16px;
+            margin: 0 0 16px;
+            > p {
+                &:first-child {
+                    margin-top: 0;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        /* ---------------------
+        *  Demo Workarounds
+        *
+        *  Necessary for component demos that append DOM subtrees outside of the demo app.
+        *  Because our docs build prepends CSS classes onto custom demo styles provided for developers,
+        *  these styles are needed for the docs website.
+        */
+        .autocomplete-custom-template {
+            li {
+                border-bottom: 1px solid #CCC;
+                height: auto;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                white-space: normal;
+                &:last-child {
+                    border-bottom-width: 0;
+                }
+            }
+            .item-title,
+            .item-metadata {
+                display: block;
+                line-height: 2;
+            }
+            .item-title md-icon {
+                height: 18px;
+                width: 18px;
+            }
+        }
+
+        /* Styles for Windows High Contrast mode */
+        @media screen and (-ms-high-contrast: active) {
+            a {
+                text-decoration: underline;
+            }
+            iframe, hljs pre {
+                border: 1px solid #FFF;
+            }
+        }
+
+        .no-transition {
+            transition: none !important;
+        }
+
+        table.attributes, table.md-api-table {
+            margin-bottom: 20px;
+        }
+
+        table {
+            &.attributes {
+                tr {
+                    td {
+                        &:first-child {
+                            font-weight: bold;
+                            background-color: #DBEEF5;
+                        }
+                        &:last-child {
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+            &.md-api-table tr td:first-child {
+                font-weight: bold;
+            }
+        }
+    }
+}

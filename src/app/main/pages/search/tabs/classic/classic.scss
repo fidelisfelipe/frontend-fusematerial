@@ -1,0 +1,39 @@
+#search {
+
+    .content {
+
+        .classic-tab {
+
+            .results {
+
+                .result-item {
+                    margin-top: 32px;
+                    max-width: 512px;
+
+                    .title {
+                        font-size: 17px;
+                        font-weight: 500;
+                        color: material-color('blue');
+                        cursor: pointer;
+                    }
+
+                    .url {
+                        margin-bottom: 4px;
+                        color: material-color('green');
+                    }
+
+                    .excerpt {
+                        display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 32px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    }
+                }
+            }
+        }
+    }
+}

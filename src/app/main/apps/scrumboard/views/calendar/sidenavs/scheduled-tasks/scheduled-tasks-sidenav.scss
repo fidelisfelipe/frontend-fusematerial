@@ -1,0 +1,53 @@
+#board-calendar {
+
+    .scheduled-tasks-sidenav {
+        width: 320px;
+        min-width: 320px;
+        max-width: 320px;
+        padding: 0 0 0 24px;
+
+        .sidenav-title {
+            margin: 24px 0 12px 0;
+        }
+
+        .cards {
+
+            .card {
+                padding: 12px 0;
+
+                .card-date {
+                    width: 64px;
+                    min-width: 64px;
+                    height: 64px;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1;
+                    background-color: white;
+
+                    .day-in-week {
+                        font-size: 10px;
+                    }
+
+                    .day {
+                        font-size: 22px;
+                        padding: 4px 0;
+                    }
+
+                    .month-year {
+                        font-size: 10px;
+                        font-weight: 500;
+                        color: rgba(0, 0, 0, 0.6);
+                    }
+                }
+
+                .card-title {
+                    padding-left: 12px;
+                    height: 64px;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

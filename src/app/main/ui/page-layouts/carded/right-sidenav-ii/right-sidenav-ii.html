@@ -1,0 +1,71 @@
+<div class="page-layout carded right-sidenav single-scroll" layout="row">
+
+    <!-- Top background -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / Top background -->
+
+    <!-- Center -->
+    <div class="center" flex>
+
+        <!-- Content header -->
+        <div class="header" layout="row">
+            <div>
+                <span class="h2 white-fg">Right sidenav with page scroll</span>
+            </div>
+        </div>
+        <!-- / Content header -->
+
+        <!-- Content card -->
+        <div class="content-card">
+
+            <!-- Content toolbar -->
+            <div class="toolbar" layout="row" layout-align="space-between center">
+                <p>Content toolbar</p>
+
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('sidenav')" hide-gt-md
+                           aria-label="Toggle right pane">
+                    <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+                </md-button>
+            </div>
+            <!-- / Content toolbar -->
+
+            <!-- Content -->
+            <md-content class="content" ms-scroll>
+
+                <!-- DEMO CONTENT -->
+                <div ng-include="'app/main/ui/page-layouts/demo/demo-content.html'"></div>
+                <!-- / DEMO CONTENT -->
+
+            </md-content>
+            <!-- / Content -->
+
+        </div>
+        <!-- / Content card-->
+
+    </div>
+    <!-- / Center -->
+
+    <!-- Sidenav -->
+    <md-sidenav class="sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')" md-component-id="sidenav"
+                ms-scroll ms-sidenav-helper>
+
+        <!-- Sidenav header -->
+        <div class="header">
+            <p>Sidenav header</p>
+        </div>
+        <!-- / Sidenav header -->
+
+        <!-- Sidenav content -->
+        <md-content class="content" ms-scroll>
+
+            <!-- DEMO SIDENAV -->
+            <div ng-include="'app/main/ui/page-layouts/demo/demo-sidenav.html'"></div>
+            <!-- / DEMO SIDENAV -->
+
+        </md-content>
+        <!-- / Sidenav content -->
+
+    </md-sidenav>
+    <!-- / Sidenav -->
+
+</div>

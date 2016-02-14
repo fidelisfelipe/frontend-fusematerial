@@ -1,0 +1,61 @@
+<div id="profile" class="page-layout simple tabbed">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="center center" layout-gt-sm="row" layout-align-gt-sm="space-between end">
+        <div class="user-info" layout="column" layout-align="center center" layout-gt-sm="row" layout-align-gt-sm="start center">
+            <img class="profile-image avatar huge" src="assets/images/avatars/katherine.jpg">
+
+            <div class="name">Katherine Wilson</div>
+        </div>
+
+        <div class="actions" layout="row" layout-align="end center">
+            <md-button class="md-raised md-accent" aria-label="Follow" translate="PROFILE.FOLLOW"
+                       translate-attr-aria-label="PROFILE.FOLLOW">Follow
+            </md-button>
+            <md-button class="md-raised md-primary" translate="PROFILE.SEND_MESSAGE"
+                       translate-attr-aria-label="PROFILE.SEND_MESSAGE">Send Message
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" flex>
+
+        <md-tabs md-dynamic-height>
+            <md-tab>
+                <md-tab-label>
+                    <span translate="PROFILE.TIMELINE">Timeline</span>
+                </md-tab-label>
+                <md-tab-body>
+                    <md-content class="timeline-tab"
+                                ng-include="'app/main/pages/profile/tabs/timeline/timeline.html'">
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <span translate="PROFILE.ABOUT">About</span>
+                </md-tab-label>
+                <md-tab-body>
+                    <md-content class="about-tab"
+                                ng-include="'app/main/pages/profile/tabs/about/about.html'">
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <span translate="PROFILE.PHOTOS_VIDEOS">Photos & Videos</span>
+                </md-tab-label>
+                <md-tab-body>
+                    <md-content class="photos-videos-tab"
+                                ng-include="'app/main/pages/profile/tabs/photos-videos/photos-videos.html'">
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

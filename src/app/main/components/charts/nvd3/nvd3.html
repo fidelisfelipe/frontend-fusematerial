@@ -1,0 +1,78 @@
+<div id="nvd3" class="page-layout simple fullwidth doc-page chart-doc-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">COMPONENTS</span>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">CHARTS</span>
+            </div>
+            <div class="title">nvD3</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button" href="http://krispo.github.io/angular-nvd3/#/"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <div class="md-title">Line Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.lineChart.options" data="vm.lineChart.data"
+                  class="with-3d-shadow with-transitions"></nvd3>
+        </div>
+
+        <div class="md-title">Stacked Area Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.stackedAreaChart.options" data="vm.stackedAreaChart.data"></nvd3>
+        </div>
+
+        <div class="md-title">Sparkline Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.sparklineChart.options" data="vm.sparklineChart.data"></nvd3>
+        </div>
+
+        <div class="md-title">Historical Bar Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.historicalBarChart.options" data="vm.historicalBarChart.data"></nvd3>
+        </div>
+
+        <div class="md-title">Multi Bar Horizontal Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.multiBarHorizontalChart.options" data="vm.multiBarHorizontalChart.data"></nvd3>
+        </div>
+
+        <div class="md-title">Pie Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.pieChart.options" data="vm.pieChart.data"></nvd3>
+        </div>
+
+        <div class="md-title">Donut Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.donutChart.options" data="vm.donutChart.data"></nvd3>
+        </div>
+
+        <div class="md-title">Bullet Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.bulletChart.options" data="vm.bulletChart.data"></nvd3>
+        </div>
+
+        <div class="md-title">Scatter Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <nvd3 options="vm.scatterChart.options" data="vm.scatterChart.data"></nvd3>
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

@@ -1,0 +1,61 @@
+<md-dialog class="custom-theme-dialog" aria-label="Custom Theme">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Custom Theme Generator</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div layout="row" ng-repeat="type in ['primary', 'accent', 'warn', 'background']">
+            <h3 class="type">{{type}}</h3>
+
+            <md-input-container>
+                <label>Palette</label>
+                <md-select ng-model="vm.theme[type].name"
+                           ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name]['500'].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name]['500'].contrast, 1)}">
+                    <md-option ng-value="palette" ng-repeat="(palette, hues) in vm.palettes"
+                               ng-style="{'background-color': vm.rgba(hues['500'].value), 'color': vm.rgba(hues['500'].contrast, 1)}">
+                        {{palette}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <div layout="row" ng-repeat="hueType in ['default', 'hue-1', 'hue-2', 'hue-3']">
+                <md-input-container>
+                    <label>{{hueType}}</label>
+                    <md-select ng-model="vm.theme[type].hues[hueType]"
+                               ng-style="{'background-color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues[hueType]].value), 'color': vm.rgba(vm.palettes[vm.theme[type].name][vm.theme[type].hues[hueType]].contrast, 1)}">
+                        <md-option ng-value="hue" ng-repeat="(hue, opt) in vm.palettes[vm.theme[type].name]"
+                                   ng-style="{'background-color': vm.rgba(opt.value), 'color': vm.rgba(opt.contrast, 1)}">
+                            {{hue}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div layout="row">
+            <p>
+                To make this theme permanent, copy the below code and add it into the "fuseThemes" object in
+                "core/theming/fuse-themes.constant.js" file. You can also replace the "CUSTOM_THEME_NAME" with your
+                theme name.
+            </p>
+        </div>
+
+        <div layout="row">
+            <textarea readonly class="theme-object">"CUSTOM_THEME_NAME" : {{vm.theme}}</textarea>
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button class="md-raised md-accent" ng-click="vm.setTheme()">
+            Set Theme
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

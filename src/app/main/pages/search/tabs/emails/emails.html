@@ -1,0 +1,117 @@
+<div class="result-info" layout="row" layout-align="space-between center" layout-xs="column" layout-align-xs="start start">
+    <div>
+        <span class="md-title" translate="SEARCH.EMAILS">E-Mails</span>
+        <span class="secondary-text">
+            <span>87</span>
+            <span translate="SEARCH.RESULTS">Results</span>
+        </span>
+    </div>
+
+    <div class="pager">
+        <span class="secondary-text">
+            <span translate="SEARCH.RESULTS">Results</span>
+            <span>:</span>
+        </span>
+
+        <span class="page-info">
+            <span>1</span>
+            <span>-</span>
+            <span>10</span>
+            <span translate="SEARCH.OF">of</span>
+            <span>100</span>
+        </span>
+
+        <md-button class="md-icon-button" aria-label="previous page" translate
+                   translate-attr-aria-label="SEARCH.PREVIOUS_PAGE">
+            <md-icon md-font-icon="icon-chevron-left"></md-icon>
+        </md-button>
+
+        <md-button class="md-icon-button" aria-label="next page" translate translate-attr-aria-label="SEARCH.NEXT_PAGE">
+            <md-icon md-font-icon="icon-chevron-right"></md-icon>
+        </md-button>
+
+    </div>
+</div>
+
+<div class="results">
+    <div class="result-item {{mail.status}}" ng-repeat="mail in vm.mails | filter: vm.search"
+         md-ink-ripple>
+        <div layout="row" layout-align="start center">
+            <img class="avatar" ng-if="mail.from.avatar" alt="{{mail.from.name}}" ng-src="{{mail.from.avatar}}">
+
+            <div class="avatar" ng-if="!mail.from.avatar" ms-random-class="vm.colors">
+                {{mail.from.name[0]}}
+            </div>
+
+            <div class="info" flex layout="column">
+                <div class="name text-truncate">
+                    {{mail.from.name}}
+                </div>
+
+                <div class="subject secondary-text text-truncate">
+                    {{mail.subject}}
+                </div>
+
+                <div class="message secondary-text text-truncate">
+                    {{mail.message | htmlToPlaintext}}
+                </div>
+            </div>
+
+            <div layout="column" layout-align="center end">
+                <div class="time secondary-text">{{mail.time}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="simple-pagination">
+    <md-button class="pagination-item disabled" md-no-ink ng-href="#" aria-label="Go to previous page" translate
+               translate-attr-aria-label="SEARCH.GO_TO_PREVIOUS">
+        <md-icon md-font-icon="icon-chevron-left"></md-icon>
+    </md-button>
+
+    <md-button class="pagination-item active" md-no-ink ng-href="#" aria-label="Go to page 1">
+        <span>1</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 2" hide-xs>
+        <span>2</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 3" hide-xs>
+        <span>3</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 4" hide-xs>
+        <span>4</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 5" hide-xs>
+        <span>5</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 6" hide-xs>
+        <span>6</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 7" hide-xs>
+        <span>7</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 8" hide-xs>
+        <span>8</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 9" hide-xs>
+        <span>9</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to page 10" hide-xs>
+        <span>10</span>
+    </md-button>
+
+    <md-button class="pagination-item" ng-href="#" aria-label="Go to next page" translate
+               translate-attr-aria-label="SEARCH.GO_TO_NEXT">
+        <md-icon md-font-icon="icon-chevron-right"></md-icon>
+    </md-button>
+</div>

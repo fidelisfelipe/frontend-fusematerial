@@ -1,0 +1,139 @@
+<!-- MAIL CONTENT -->
+<div class="mail-header">
+    <div class="subject" flex>{{vm.selectedMail.subject}}</div>
+</div>
+
+<div class="mail-content">
+    <div class="info" layout="row" layout-align="space-between start">
+
+        <div layout="column" layout-align="start start">
+            <div layout="row" layout-align="start start">
+                <div>
+                    <img ng-if="vm.selectedMail.from.avatar" alt="{{vm.selectedMail.from.name}}"
+                         ng-src="{{vm.selectedMail.from.avatar}}" class="avatar"/>
+
+                    <div ng-if="!vm.selectedMail.from.avatar" class="avatar" ms-random-class="vm.colors">
+                        {{vm.selectedMail.from.name[0]}}
+                    </div>
+                </div>
+
+                <div layout="column" layout-align="start start">
+                    <div class="name">
+                        {{vm.selectedMail.from.name}}
+                    </div>
+
+                    <div class="to" layout="row" layout-align="start center">
+                        <div class="to-text" translate="MAIL.INFO.TO">to</div>
+                        <div>{{vm.selectedMail.to[0].name}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="toggle-details md-accent-color" ng-hide="vm.selectedMailShowDetails"
+               ng-click="vm.selectedMailShowDetails = !vm.selectedMailShowDetails" translate="MAIL.SHOW_DETAILS">
+                Show Details
+            </a>
+            <a class="toggle-details md-accent-color" ng-show="vm.selectedMailShowDetails"
+               ng-click="vm.selectedMailShowDetails = !vm.selectedMailShowDetails" translate="MAIL.HIDE_DETAILS">
+                Hide Details
+            </a>
+
+            <div ng-show="vm.selectedMailShowDetails" class="details" layout="row" layout-align="start start">
+                <div layout="column">
+                    <span class="title" translate="MAIL.DETAILS.FROM">From:</span>
+                    <span class="title" translate="MAIL.DETAILS.TO">To:</span>
+                    <span class="title" translate="MAIL.DETAILS.DATE">Date:</span>
+                </div>
+
+                <div layout="column">
+                    <span class="detail">{{vm.selectedMail.from.email}}</span>
+                    <span class="detail">{{vm.selectedMail.to[0].email}}</span>
+                    <span class="detail">{{vm.selectedMail.time}}</span>
+                </div>
+            </div>
+        </div>
+
+        <md-menu>
+            <md-button aria-label="More" class="md-icon-button"
+                       ng-click="$mdOpenMenu($event)"
+                       translate translate-aria-label="MAIL.MORE">
+                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                <md-tooltip><span translate="MAIL.MORE"></span></md-tooltip>
+            </md-button>
+
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button aria-label="Reply" translate-aria-label="MAIL.REPLY" ng-click="vm.replyDialog($event)">
+                        <md-icon md-font-icon="icon-reply"></md-icon>
+                        <span translate="MAIL.REPLY">Reply</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Archive" translate-aria-label="MAIL.ARCHIVE">
+                        <md-icon md-font-icon="icon-archive"></md-icon>
+                        <span translate="MAIL.ARCHIVE">Archive</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Spam" translate-aria-label="MAIL.SPAM">
+                        <md-icon md-font-icon="icon-alert-octagon"></md-icon>
+                        <span translate="MAIL.SPAM">Spam</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Delete" translate-aria-label="MAIL.DELETE">
+                        <md-icon md-font-icon="icon-delete"></md-icon>
+                        <span translate="MAIL.DELETE">Delete</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Mark as unread" translate-aria-label="MAIL.MARK_AS_UNREAD">
+                        <md-icon md-font-icon="icon-checkbox-blank-outline"></md-icon>
+                        <span translate="MAIL.MARK_AS_UNREAD">Mark as unread</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Mark as important" translate-aria-label="MAIL.MARK_AS_IMPORTANT">
+                        <md-icon md-font-icon="icon-marker-check"></md-icon>
+                        <span translate="MAIL.MARK_AS_IMPORTANT">Mark as important</span>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button aria-label="Add label" translate-aria-label="MAIL.ADD_LABEL">
+                        <md-icon md-font-icon="icon-label"></md-icon>
+                        <span translate="MAIL.ADD_LABEL">Add label</span>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+
+    <div ng-bind-html="vm.selectedMail.message"></div>
+
+</div>
+
+<div ng-if="vm.selectedMail.attachments" class="attachments">
+    <div class="title">
+        <span translte="MAIL.ATTACHMENTS">Attachments</span> ({{vm.selectedMail.attachments.length}})
+    </div>
+    <div class="attachment-list" layout-wrap layout="row">
+        <div class="attachment" layout="column"
+             ng-repeat="attachment in vm.selectedMail.attachments">
+            <img class="preview" ng-src="{{attachment.preview}}">
+
+            <div layout="column">
+                <a href="#" class="md-accent-color link" translate="MAIL.VIEW">View</a>
+                <a href="#" class="md-accent-color link" translate="MAIL.DOWNLOAD">Download</a>
+
+                <div class="size">({{attachment.size}})</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / MAIL CONTENT -->

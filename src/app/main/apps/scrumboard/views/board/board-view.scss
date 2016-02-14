@@ -1,0 +1,276 @@
+/* List card is a mixin because we want this to be re-usable */
+@mixin list-card {
+    position: relative;
+    width: 100%;
+    margin: 16px 0;
+    background-color: white;
+    color: #000;
+    border-radius: 2px;
+    transition: box-shadow 150ms ease;
+    cursor: pointer;
+
+    &.ui-sortable-helper {
+        box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .list-card-sort-handle {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 4px;
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    .list-card-cover {
+    }
+
+    .list-card-details {
+        padding: 16px 16px 0 16px;
+
+        .list-card-labels {
+            margin-bottom: 6px;
+
+            .list-card-label {
+                width: 32px;
+                height: 6px;
+                border-radius: 6px;
+                margin: 0 6px 6px 0;
+            }
+        }
+
+        .list-card-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .list-card-badges {
+            margin-bottom: 12px;
+
+            .badge {
+                margin-right: 8px;
+                padding: 4px 8px;
+                border-radius: 2px;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: #FFFFFF;
+
+                i {
+                    margin-right: 4px;
+                }
+
+                &.due-date {
+                    background-color: material-color('green');
+
+                    &.overdue {
+                        background-color: material-color('red');
+                    }
+                }
+
+                &.check-items {
+
+                    &.completed {
+                        background-color: material-color('green');
+                    }
+                }
+            }
+        }
+
+        .list-card-members {
+            margin-bottom: 12px;
+
+            .list-card-member {
+                margin-right: 8px;
+
+                .list-card-member-avatar {
+                    border-radius: 50%;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+
+    .list-card-footer {
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 0 16px;
+
+        .list-card-footer-item {
+            height: 48px;
+            margin-right: 12px;
+            color: rgba(0, 0, 0, 0.66);
+
+            .value {
+                padding-left: 8px;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+#board {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background: #E5E7E8;
+    padding: 24px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .list-wrapper {
+        width: 344px;
+        min-width: 344px;
+        max-width: 344px;
+        padding-right: 24px;
+        height: 100%;
+
+        &.ui-sortable-helper .list {
+            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+        }
+
+        .list {
+            max-height: 100%;
+            background-color: #EEF0F2;
+            color: #000;
+            border-radius: 2px;
+            transition: box-shadow 150ms ease;
+
+            .list-header {
+                height: 64px;
+                min-height: 64px;
+                padding: 0 0 0 16px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+                .list-header-name {
+                    max-width: 80%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+
+                .list-header-option-button {
+
+                    .md-button {
+                    }
+                }
+            }
+
+            .list-content {
+                position: relative;
+                overflow: hidden;
+                overflow-y: auto;
+
+                .list-cards {
+                    position: relative;
+                    min-height: 32px;
+                    padding: 0 16px;
+
+                    .card-sortable-placeholder {
+                        background: rgba(0, 0, 0, 0.06);
+                    }
+
+                    > div {
+                        transition: none !important;
+                    }
+                }
+            }
+
+            .list-add-card {
+                position: relative;
+                height: 48px;
+                min-height: 48px;
+                padding: 0 16px;
+                text-align: left;
+                text-transform: none;
+                font-weight: 500;
+                font-size: 14px;
+                background-color: #DCDFE2;
+                cursor: pointer;
+                border-radius: 2px;
+
+                i {
+                    margin-right: 8px;
+                    color: rgba(0, 0, 0, 0.6);
+                }
+            }
+        }
+    }
+
+    .list-sortable-placeholder {
+        background: rgba(0, 0, 0, 0.06);
+        margin-right: 24px;
+    }
+
+    .new-list-wrapper {
+        width: 344px;
+        min-width: 344px;
+        max-width: 344px;
+        padding-right: 24px;
+
+        .new-list {
+            border-radius: 2px;
+            background-color: #EEF0F2;
+
+            .editable-wrap {
+                display: flex;
+                align-items: center;
+                height: 64px;
+                padding: 0 4px 0 12px;
+
+                .editable-controls {
+                    width: 100%;
+
+                    .editable-input {
+                        flex: 1;
+                    }
+                }
+            }
+
+            .new-list-form-button {
+                text-transform: none;
+                font-size: 15px;
+                height: 64px;
+                padding: 0 16px;
+                margin: 0;
+                width: 100%;
+
+                i {
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    line-height: 40px;
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
+    .list-card {
+        @include list-card;
+    }
+}
+
+.is-mobile {
+
+    #board {
+
+        .list-card {
+
+            .list-card-sort-handle {
+                display: block;
+            }
+        }
+    }
+}
+
+.list-card-sort-helper {
+    @include list-card;
+}

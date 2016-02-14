@@ -1,0 +1,30 @@
+#boards {
+    min-height: 100%;
+
+    #board-selector {
+        margin-top: 88px;
+
+        .board-list {
+            padding: 32px 0;
+
+            .board-list-item {
+                min-width: 210px;
+                width: 210px;
+                padding: 24px 0;
+                margin: 16px;
+                border-radius: 2px;
+                background: rgba(0, 0, 0, 0.12);
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: $whiteframe-shadow-4dp;
+                }
+
+                .board-name {
+                    padding-top: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

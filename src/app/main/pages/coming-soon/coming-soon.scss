@@ -1,0 +1,123 @@
+#coming-soon {
+    height: 100%;
+    background: url('/assets/images/backgrounds/march.jpg') no-repeat;
+    background-size: cover;
+
+    #coming-soon-form-wrapper {
+        flex: 1 0 auto;
+        padding: 32px;
+
+        #coming-soon-form {
+            max-width: 384px;
+            background: #FFFFFF;
+            text-align: center;
+
+            .top {
+                width: 100%;
+                padding: 32px;
+
+                .logo {
+                    width: 128px;
+                    height: 128px;
+                    line-height: 128px;
+                    font-size: 86px;
+                    font-weight: 500;
+                    margin: 32px auto;
+                    color: rgba(255, 255, 255, 1);
+                    border-radius: 2px;
+                }
+
+                .title {
+                    font-size: 17px;
+                    margin-top: 16px;
+                }
+
+                .subtitle {
+                    margin: 16px auto 0 auto;
+                    text-align: center;
+                    max-width: 300px;
+                    color: rgba(0, 0, 0, 0.54);
+                    font-size: 15px;
+                }
+
+                timer {
+                    margin: 48px 0 24px 0;
+                    width: 100%;
+
+                    > div {
+                        padding: 0 16px;
+                        text-align: center;
+
+                        .value {
+                            font-size: 34px;
+                        }
+
+                        .type {
+                            color: rgba(0, 0, 0, 0.54);
+                        }
+                    }
+                }
+            }
+
+            form {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.03);
+                padding: 32px;
+
+                .message {
+                    font-weight: 500;
+                    margin: 8px auto 32px auto;
+                }
+
+                md-input-container {
+                    width: 320px;
+                    margin: 8px auto 16px auto;
+                }
+
+                .md-button {
+                    width: 220px;
+                    margin: 16px auto;
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    #coming-soon {
+
+        #coming-soon-form-wrapper {
+            padding: 16px;
+
+            #coming-soon-form {
+                width: 100%;
+
+                .top {
+                    padding: 24px;
+
+                    timer {
+
+                        > div {
+                            padding: 16px 8px;
+                        }
+                    }
+                }
+
+                form {
+                    padding: 24px;
+
+                    md-input-container {
+                        width: 100%;
+                    }
+
+                    .md-button {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+}

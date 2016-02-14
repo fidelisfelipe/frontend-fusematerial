@@ -1,0 +1,66 @@
+<div id="chartJs" class="page-layout simple fullwidth doc-page chart-doc-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">COMPONENTS</span>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">CHARTS</span>
+            </div>
+            <div class="title">Chart.js</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button" href="https://github.com/jtblin/angular-chart.js"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <div class="md-title">Line Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <canvas id="line" class="chart chart-line" chart-data="vm.lineChart.data"
+                    chart-labels="vm.lineChart.labels" chart-legend="true" chart-series="vm.lineChart.series">
+            </canvas>
+        </div>
+
+        <div class="md-title">Bar Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <canvas id="bar" class="chart chart-bar" chart-data="vm.barChart.data" chart-labels="vm.barChart.labels"></canvas>
+        </div>
+
+        <div class="md-title">Doughnut Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <canvas id="doughnut" class="chart chart-doughnut" chart-data="vm.doughnutChart.data"
+                    chart-labels="vm.doughnutChart.labels"></canvas>
+        </div>
+
+        <div class="md-title">Radar Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <canvas id="radar" class="chart chart-radar" chart-data="vm.radarChart.data"
+                    chart-labels="vm.radarChart.labels"></canvas>
+        </div>
+
+        <div class="md-title">Pie Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <canvas id="pie" class="chart chart-pie" chart-data="vm.pieChart.data" chart-labels="vm.pieChart.labels"></canvas>
+        </div>
+
+        <div class="md-title">Polar Area Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <canvas id="polar-area" class="chart chart-polar-area" chart-data="vm.polarChart.data" chart-labels="vm.polarChart.labels"></canvas>
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

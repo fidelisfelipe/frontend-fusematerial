@@ -1,0 +1,50 @@
+<!-- LIST VIEW -->
+<table class="simple list-view">
+    <thead>
+        <tr>
+            <th></th>
+            <th translate="FM.NAME">Name</th>
+            <th hide show-gt-sm translate="FM.TYPE">Type</th>
+            <th hide-xs translate="FM.OWNER">Owner</th>
+            <th hide-xs translate="FM.SIZE">Size</th>
+            <th hide show-gt-md translate="FM.LAST_MODIFIED">Last Modified</th>
+            <th hide-gt-md></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="folder in vm.folders | filter:global.search" ng-click="vm.select(folder)"
+            ng-class="{'selected' : vm.selected === folder}">
+            <td class="file-icon">
+                <md-icon md-font-icon="icon-{{folder.type}}"></md-icon>
+            </td>
+            <td class="name">{{folder.name}}</td>
+            <td class="type" hide show-gt-sm>{{folder.type}}</td>
+            <td class="owner" hide-xs>{{folder.owner}}</td>
+            <td class="size" hide-xs>{{folder.size === '' ? '-': folder.size}}</td>
+            <td class="last-modified" hide show-gt-md>{{folder.modified}}</td>
+            <td class="show-details" hide-gt-md>
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(folder)" aria-label="Toggle details sidenav">
+                    <md-icon md-font-icon="icon-information-outline"></md-icon>
+                </md-button>
+            </td>
+        </tr>
+
+        <tr ng-repeat="file in vm.files | filter:global.search" ng-click="vm.select(file)" ng-class="{'selected' : vm.selected === file}">
+            <td class="file-icon">
+                <md-icon md-font-icon="icon-{{file.type}}"></md-icon>
+            </td>
+            <td class="name">{{file.name}}</td>
+            <td class="type" hide show-gt-sm>{{file.type}}</td>
+            <td class="owner" hide-xs>{{file.owner}}</td>
+            <td class="size" hide-xs>{{file.size === '' ? '-': file.size}}</td>
+            <td class="last-modified" hide show-gt-md>{{file.modified}}</td>
+            <td class="show-details" hide-gt-md>
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleDetails(file)" aria-label="Details" translate translate-attr-aria-label="FM.DETAILS">
+                    <md-icon md-font-icon="icon-information-outline"></md-icon>
+                </md-button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- / LIST VIEW -->

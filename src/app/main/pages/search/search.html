@@ -1,0 +1,63 @@
+<div id="search" class="page-layout simple tabbed">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+        <div class="search" flex layout="row" layout-align="start center">
+            <md-icon md-font-icon="icon-magnify" class="icon search-icon"></md-icon>
+
+            <input class="search-input" ng-model="vm.search" type="text" placeholder="Search.." translate
+                   translate-attr-placeholder="SEARCH.SEARCH" flex>
+        </div>
+
+        <md-menu class="search-settings" md-position-mode="target-right target">
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu()" aria-label="Search settings" translate translate-attr-aria-label="SEARCH.SEARCH_SETTINGS">
+                <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-cog" class="icon s16"></md-icon>
+            </md-button>
+
+            <md-menu-content width="3">
+                <md-menu-item>
+                    <md-button ng-click="vm.dummyFunction()">
+                        <p translate="SEARCH.SETTINGS_1">Settings 1</p>
+                    </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                    <md-button ng-click="vm.dummyFunction()">
+                        <p translate="SEARCH.SETTINGS_2">Settings 2</p>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" flex>
+
+        <md-tabs md-dynamic-height>
+            <md-tab label="Classic">
+                <md-content class="classic-tab"
+                            ng-include="'app/main/pages/search/tabs/classic/classic.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Emails">
+                <md-content class="emails-tab"
+                            ng-include="'app/main/pages/search/tabs/emails/emails.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Users">
+                <md-content class="users-tab"
+                            ng-include="'app/main/pages/search/tabs/users/users.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Contacts">
+                <md-content class="contacts-tab"
+                            ng-include="'app/main/pages/search/tabs/contacts/contacts.html'">
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

@@ -1,0 +1,49 @@
+#icons {
+
+    .content {
+
+        #icons-toolbar {
+            margin-bottom: 32px;
+
+            .search {
+                height: 56px;
+                line-height: 56px;
+                padding: 18px;
+
+                md-icon {
+                    min-width: 20px;
+                    max-width: 20px;
+                    margin: 0;
+                    top: 0;
+                    bottom: 0;
+                    left: 16px;
+                    color: rgba(0, 0, 0, 0.54);
+                }
+
+                input {
+                    padding: 0 0 0 18px;
+                    border: none;
+                    height: 56px;
+                    color: rgba(0, 0, 0, 0.54);
+                    outline: none;
+                }
+            }
+        }
+
+        #icons-list {
+            padding: 16px 16px 0 16px;
+
+            .item {
+                width: 140px;
+                padding: 8px;
+                margin-bottom: 32px;
+                text-align: center;
+
+                .name {
+                    font-size: 11px;
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}

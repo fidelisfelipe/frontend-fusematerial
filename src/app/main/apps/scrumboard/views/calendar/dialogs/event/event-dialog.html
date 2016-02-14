@@ -1,0 +1,103 @@
+<md-dialog class="event-calendar-dialog" aria-label="Event Dialog" ng-cloak>
+
+    <!-- DIALOG TOOLBAR -->
+    <md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
+        <div class="md-toolbar-tools">
+            <h2 class="title">{{vm.dueDate | date:'mediumDate':'UTC'}}</h2>
+            <span flex></span>
+
+            <!-- CLOSE DIALOG BUTTON -->
+            <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="close dialog">
+                <md-icon md-font-icon="icon-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+            <!-- / CLOSE DIALOG BUTTON -->
+        </div>
+    </md-toolbar>
+    <!-- / DIALOG TOOLBAR -->
+
+    <!-- DIALOG CONTENT -->
+    <md-dialog-content ms-scroll>
+
+        <md-tabs md-dynamic-height>
+
+            <!-- ADD NEW CARD TAB -->
+            <md-tab>
+                <md-tab-label>
+                    <span translate="SB.ADD_A_CARD">Add a card</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="new-card" layout="column">
+                        <form name="newCardForm" novalidate>
+                            <md-input-container class="new-card-name md-block" md-no-float>
+                                <input name="name" ng-model="vm.newCard.name" placeholder="Card name" required>
+                                <div ng-messages="newCardForm.name.$error" role="alert">
+                                    <div ng-message="required">
+                                        <span translate="SB.ERRORS.TITLE_REQUIRED">Title field is required</span>
+                                    </div>
+                                </div>
+                            </md-input-container>
+
+                            <div class="lists">
+                                <p>Select a list:</p>
+                                <md-radio-group ng-model="vm.newCard.listId" required>
+                                    <md-radio-button ng-repeat="list in vm.board.lists" ng-value="list.id">
+                                        {{list.name}}
+                                    </md-radio-button>
+                                </md-radio-group>
+                            </div>
+
+                            <md-dialog-actions>
+                                <md-button class="md-accent md-raised" ng-click="vm.addNewCard()"
+                                           ng-disabled="newCardForm.$invalid || newCardForm.$pristine">
+                                    Add
+                                </md-button>
+                            </md-dialog-actions>
+                        </form>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+            <!-- / ADD NEW CARD TAB -->
+
+            <!-- ASSIGN DUE DATE -->
+            <md-tab>
+                <md-tab-label>
+                    <span translate="SB.ASSIGN_THE_DATE_TO_CARDS">Assign the date to cards</span>
+                </md-tab-label>
+
+                <md-tab-body>
+                    <div class="assign-due-date">
+                        <md-list class="cards">
+                            <md-content class="cards-content" flex ms-scroll>
+                                <md-list-item class="card" ng-repeat="card in vm.board.cards"
+                                              ng-click="vm.toggleInArray(card.id, vm.selectedCards)"
+                                              aria-label="card">
+                                    <p layout="column" layout-align="start start">
+                                        <span class="card-name">{{card.name}}</span>
+                                        <span ng-if="card.due" class="card-date">{{card.due | date}}</span>
+                                    </p>
+                                    <md-checkbox ng-checked="vm.exists(card.id, vm.selectedCards)"
+                                                 ng-click="vm.toggleInArray(card.id, vm.selectedCards)"
+                                                 class="md-secondary" aria-label="card">
+                                    </md-checkbox>
+                                </md-list-item>
+                            </md-content>
+                        </md-list>
+
+                        <md-dialog-actions>
+                            <md-button ng-disabled="!vm.selectedCards[0]" ng-click="vm.assignDueDate()"
+                                       class="md-accent md-raised">
+                                Assign
+                            </md-button>
+                        </md-dialog-actions>
+                    </div>
+                </md-tab-body>
+            </md-tab>
+            <!-- / ASSIGN DUE DATE -->
+
+        </md-tabs>
+
+    </md-dialog-content>
+    <!-- / DIALOG CONTENT -->
+
+</md-dialog>

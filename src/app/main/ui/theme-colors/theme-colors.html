@@ -1,0 +1,51 @@
+<div id="theme-colors" class="page-layout simple tabbed doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
+
+            <div class="title">Theme Colors</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised md-warn reference-button" ng-click="vm.createTheme($event);">
+                <md-icon md-font-icon="icon-palette"></md-icon>
+                <span>Create Your Own Theme!</span>
+            </md-button>
+        </div>
+
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <md-tabs class="color-tabs" md-dynamic-height md-swipe-content md-stretch-tabs="always">
+            <md-tab label="Primary Color">
+                <md-content class="color-tab" ng-include="'app/main/ui/theme-colors/tabs/primary/primary.html'"></md-content>
+            </md-tab>
+
+            <md-tab label="Accent Color">
+                <md-content class="color-tab" ng-include="'app/main/ui/theme-colors/tabs/accent/accent.html'"></md-content>
+            </md-tab>
+
+            <md-tab label="Warn Color">
+                <md-content class="color-tab" ng-include="'app/main/ui/theme-colors/tabs/warn/warn.html'"></md-content>
+            </md-tab>
+
+            <md-tab label="Background Color">
+                <md-content class="color-tab"
+                            ng-include="'app/main/ui/theme-colors/tabs/background/background.html'"></md-content>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

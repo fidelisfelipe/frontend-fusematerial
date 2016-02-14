@@ -1,0 +1,207 @@
+<!-- BOARD -->
+<div id="board" ng-class="vm.board.settings.color+'-100-bg'" ui-sortable="vm.sortableListOptions"
+     ng-model="vm.board.lists" layout="row">
+
+    <!-- LIST -->
+    <div class="list-wrapper" ng-repeat="list in vm.board.lists track by list.id">
+
+        <div class="list md-whiteframe-1dp" layout="column">
+
+            <!-- LIST HEADER -->
+            <div class="list-header" layout="row" layout-align="space-between center">
+
+                <div class="list-header-name">
+                    <span editable-text="list.name">{{list.name}}</span>
+                </div>
+
+                <md-menu md-offset="0 48px" class="options list-header-option-button">
+
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="Options"
+                               translate translate-attr-aria-label="SB.OPTIONS">
+                        <md-icon md-menu-origin md-font-icon="icon-dots-vertical"></md-icon>
+                    </md-button>
+
+                    <md-menu-content class="options-menu-content" width="4">
+                        <md-menu-item>
+                            <md-button ng-click="vm.removeList($event,list)" aria-label="Remove List"
+                                       translate translate-attr-aria-label="SB.REMOVE_LIST">
+                                <md-icon md-font-icon="icon-delete" md-menu-align-target></md-icon>
+                                <span translate="SB.REMOVE_LIST">Remove List</span>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+
+                </md-menu>
+
+            </div>
+            <!-- / LIST HEADER -->
+
+            <!-- LIST CONTENT -->
+            <div class="list-content" ms-scroll>
+
+                <div class="list-cards" ui-sortable="vm.sortableCardOptions" ng-model="list.idCards">
+
+                    <!-- CARD -->
+                    <div ng-if="cardId" class="list-card md-whiteframe-3dp"
+                         ng-repeat="cardId in list.idCards | filter: vm.cardFilter track by $index"
+                         ng-click="vm.openCardDialog($event, cardId)">
+
+                        <!-- CARD COVER -->
+                        <div ng-if="vm.board.settings.cardCoverImages && vm.board.cards.getById(cardId).idAttachmentCover"
+                             class="list-card-cover">
+                            <img ng-src="{{vm.board.cards.getById(cardId).attachments.getById(vm.board.cards.getById(cardId).idAttachmentCover).src}}">
+                        </div>
+                        <!-- / CARD COVER -->
+
+                        <!-- CARD DETAILS -->
+                        <div class="list-card-details">
+
+                            <!-- CARD SORT HANDLE -->
+                            <div class="list-card-sort-handle">
+                                <md-icon md-font-icon="icon-cursor-move" class="icon s16"></md-icon>
+                            </div>
+                            <!-- /CARD SORT HANDLE -->
+
+                            <!-- CARD LABELS -->
+                            <div ng-if="vm.board.cards.getById(cardId).idLabels.length > 0" class="list-card-labels"
+                                 layout="row" layout-wrap>
+                                <span class="list-card-label"
+                                      ng-class="'md-'+vm.board.labels.getById(labelId).color+'-bg'"
+                                      ng-repeat="labelId in vm.board.cards.getById(cardId).idLabels">
+                                    <md-tooltip>
+                                        {{vm.board.labels.getById(labelId).name}}
+                                    </md-tooltip>
+                                </span>
+                            </div>
+                            <!-- / CARD LABELS -->
+
+                            <!-- CARD NAME -->
+                            <div class="list-card-name">{{vm.board.cards.getById(cardId).name}}</div>
+                            <!-- / CARD NAME -->
+
+                            <div ng-if="vm.board.cards.getById(cardId).due || vm.board.cards.getById(cardId).checkItems"
+                                 class="list-card-badges" layout="row" layout-align="start center">
+
+                                <!-- CARD DUE -->
+                                <span class="badge due-date"
+                                      ng-class="{'overdue': vm.isOverdue(vm.board.cards.getById(cardId).due)}"
+                                      ng-if="vm.board.cards.getById(cardId).due" layout="row"
+                                      layout-align="start center">
+                                    <i class="icon-clock s16"></i>
+                                    <span>{{vm.board.cards.getById(cardId).due | date:'mediumDate'}}</span>
+                                </span>
+                                <!-- / CARD DUE -->
+
+                                <!-- CARD CHECK ITEMS STATUS -->
+                                <span ng-if="vm.board.cards.getById(cardId).checkItems"
+                                      class="badge check-items"
+                                      ng-class="{'completed': vm.board.cards.getById(cardId).checkItemsChecked === vm.board.cards.getById(cardId).checkItems}"
+                                      layout="row" layout-align="start center">
+                                    <i class="icon-checkbox-marked-circle s16"></i>
+                                    <span>{{vm.board.cards.getById(cardId).checkItemsChecked}}</span>
+                                    <span>/</span>
+                                    <span>{{vm.board.cards.getById(cardId).checkItems}}</span>
+                                </span>
+                                <!-- / CARD CHECK ITEMS STATUS -->
+
+                            </div>
+
+                            <!-- CARD MEMBERS -->
+                            <div ng-if="vm.board.cards.getById(cardId).idMembers.length > 0" class="list-card-members"
+                                 layout="row">
+
+                                <div class="list-card-member"
+                                     ng-repeat="memberId in vm.board.cards.getById(cardId).idMembers">
+
+                                    <img class="list-card-member-avatar"
+                                         ng-src="{{vm.board.members.getById(memberId).avatar}}">
+
+                                    <md-tooltip>
+                                        <div class="name">{{ vm.board.members.getById(memberId).name}}</div>
+                                    </md-tooltip>
+                                </div>
+
+                            </div>
+                            <!-- / CARD MEMBERS -->
+
+                        </div>
+                        <!-- / CARD DETAILS -->
+
+                        <!-- CARD FOOTER -->
+                        <div class="list-card-footer" layout="row" layout-align="space-between center">
+
+                            <div layout="row" layout-align="start center">
+
+                                <!-- CARD SUBSCRIBE -->
+                                <span ng-if="vm.board.cards.getById(cardId).subscribed" class="list-card-footer-item"
+                                      layout="row" layout-align="start center">
+                                    <i class="icon-eye s18"></i>
+                                </span>
+                                <!-- / CARD SUBSCRIBE -->
+
+                                <!-- CARD DETAILS -->
+                                <span ng-if="vm.board.cards.getById(cardId).description !== ''"
+                                      class="list-card-footer-item" layout="row" layout-align="start center">
+                                    <i class="icon-document s18"></i>
+                                </span>
+                                <!-- / CARD DETAILS -->
+
+                            </div>
+
+                            <div layout="row" layout-align="end center">
+
+                                <!-- CARD ATTACHMENT -->
+                                <span class="list-card-footer-item" ng-if="vm.board.cards.getById(cardId).attachments"
+                                      layout="row" layout-align="start center">
+                                    <i class="icon-attachment s18"></i>
+                                    <span class="value">{{vm.board.cards.getById(cardId).attachments.length}}</span>
+                                </span>
+                                <!-- / CARD ATTACHMENT -->
+
+                                <!-- CARD COMMENTS -->
+                                <span class="list-card-footer-item" ng-if="vm.board.cards.getById(cardId).comments"
+                                      layout="row" layout-align="start center">
+                                    <i class="icon-comment s18"></i>
+                                    <span class="value">{{vm.board.cards.getById(cardId).comments.length}}</span>
+                                </span>
+                                <!-- / CARD COMMENTS -->
+
+                            </div>
+                        </div>
+                        <!-- CARD FOOTER -->
+                    </div>
+                    <!-- / CARD -->
+                </div>
+            </div>
+            <!-- / LIST CONTENT -->
+
+            <!-- NEW CARD BUTTON-->
+            <div class="list-footer list-add-card" ms-sb-add-card ms-list-id="list.id" md-ink-ripple
+                 layout="row" layout-align="start center">
+                <div>
+                    <i class="icon-plus s20"></i>
+                </div>
+                <span transalte="SB.ADD_A_CARD">Add a card</span>
+            </div>
+            <!-- / NEW CARD BUTTON-->
+
+        </div>
+    </div>
+    <!-- / LIST -->
+
+    <!-- NEW LIST BUTTON-->
+    <div class="new-list-wrapper">
+        <div class="list new-list md-whiteframe-1dp">
+            <span editable-text="vm.newListName" e-form="newListForm" onaftersave="vm.addNewList()"></span>
+            <md-button class="new-list-form-button" ng-click="newListForm.$show()" ng-hide="newListForm.$visible">
+                <div layout="row" layout-align="start center">
+                    <i class="icon-plus md-red-bg"></i>
+                    <span translate="SB.ADD_A_LIST">Add a list</span>
+                </div>
+            </md-button>
+        </div>
+    </div>
+    <!-- / NEW LIST BUTTON-->
+
+</div>
+<!-- / BOARD -->

@@ -1,0 +1,122 @@
+md-dialog {
+
+    &.compose-dialog {
+        max-width: 720px;
+        width: 720px;
+
+        md-dialog-content {
+            display: block;
+            position: relative;
+        }
+
+        md-toolbar {
+
+            .title {
+                font-size: 17px;
+            }
+        }
+
+        .message-editor {
+
+        }
+
+        .to {
+            position: relative;
+
+            &.hidden-cc {
+
+                input {
+                    padding-right: 32px;
+                }
+
+                &.hidden-bcc {
+
+                    input {
+                        padding-right: 56px;
+                    }
+                }
+            }
+
+            &.hidden-bcc {
+
+                input {
+                    padding-right: 32px;
+                }
+            }
+
+            .cc-bcc {
+                position: absolute;
+                bottom: 8px;
+                right: 0;
+
+                .show-cc,
+                .show-bcc {
+                    cursor: pointer;
+                    font-size: 12px;
+                }
+
+                .show-bcc {
+                    margin-left: 8px;
+                }
+            }
+
+        }
+
+        .attachment-list {
+            font-size: 13px;
+            padding-top: 16px;
+
+            .attachment {
+                background-color: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.16);
+                padding-left: 16px;
+                margin-top: 8px;
+                border-radius: 2px;
+
+                .filename {
+                    font-weight: 500;
+                }
+
+                .size {
+
+                }
+
+                .md-button {
+                    margin: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        md-dialog-actions {
+            position: relative;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    md-dialog {
+
+        &.compose-dialog {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    md-dialog {
+
+        &.compose-dialog {
+            width: 90%;
+        }
+    }
+}

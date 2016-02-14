@@ -1,0 +1,68 @@
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">Tables</span>
+            </div>
+            <div class="title">Simple Table</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+        Tables are used to present raw data sets, and usually appear in desktop enterprise products.
+        <p>
+            Data sets may include:
+        </p>
+
+        <ul>
+            <li>Three or more columns of data</li>
+            <li>A corresponding visualization</li>
+            <li>The ability for users to query and manipulate data at scale</li>
+        </ul>
+
+        <div class="simple-table-container md-whiteframe-4dp">
+            <div class="table-title">
+                Employees
+            </div>
+
+            <table class="simple" ms-responsive-table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th class="text-right">Age</th>
+                        <th class="text-right">Start Date</th>
+                        <th class="text-right">Salary</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    <tr ng-repeat="person in vm.employees">
+                        <td class="name">{{person.name}}</td>
+                        <td class="position">{{person.position}}</td>
+                        <td class="office">{{person.office}}</td>
+                        <td class="age text-right">{{person.age}}</td>
+                        <td class="start-date text-right">{{person.startDate}}</td>
+                        <td class="salary text-right">{{person.salary | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

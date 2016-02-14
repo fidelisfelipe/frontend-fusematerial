@@ -1,0 +1,251 @@
+<div id="dashboard-analytics">
+
+    <!-- WIDGETS -->
+    <div id="widgets">
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 1 -->
+            <ms-widget flippable="false" layout="row" flex="100">
+
+                <!-- Front -->
+                <ms-widget-front class="white-bg">
+
+                    <div class="p-24 border-bottom" layout="row" layout-align="space-between center">
+                        <div class="h3">{{vm.widget1.title}}</div>
+                        <div class="text-boxed green-600-bg white-fg">{{vm.widget1.onlineUsers}} online users</div>
+                    </div>
+
+                    <div class="pb-32 border-bottom">
+                        <nvd3 class="h-400 remove-x-lines remove-opacity"
+                              options="vm.widget1.bigChart.options"
+                              data="vm.widget1.bigChart.data"></nvd3>
+                    </div>
+
+                    <div layout="row" layout-align="start center" layout-wrap>
+
+                        <div class="p-24 grey-50-bg" layout="row" layout-align="start center" flex="100" flex-gt-xs="50"
+                             flex-gt-md="25">
+                            <div layout="column" flex>
+                                <div class="h3 secondary-text pb-8">
+                                    {{vm.widget1.sessions.title}}
+                                </div>
+
+                                <div class="font-size-32 line-height-32 pb-16">
+                                    {{vm.widget1.sessions.value}}
+                                </div>
+
+                                <div>
+                                    <nvd3 class="h-40"
+                                          options="vm.widget1.sessions.options"
+                                          data="vm.widget1.sessions.data"></nvd3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- -->
+
+                        <div class="p-24 grey-50-bg" layout="row" layout-align="start center" flex="100" flex-gt-xs="50"
+                             flex-gt-md="25">
+                            <div layout="column" flex>
+                                <div class="h3 secondary-text pb-8">
+                                    {{vm.widget1.pageviews.title}}
+                                </div>
+
+                                <div class="font-size-32 line-height-32 pb-16">
+                                    {{vm.widget1.pageviews.value}}
+                                </div>
+
+                                <div>
+                                    <nvd3 class="h-40"
+                                          options="vm.widget1.pageviews.options"
+                                          data="vm.widget1.pageviews.data"></nvd3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- -->
+
+                        <div class="p-24 grey-50-bg" layout="row" layout-align="start center" flex="100" flex-gt-xs="50"
+                             flex-gt-md="25">
+                            <div layout="column" flex>
+                                <div class="h3 secondary-text pb-8">
+                                    {{vm.widget1.pagesSessions.title}}
+                                </div>
+
+                                <div class="font-size-32 line-height-32 pb-16">
+                                    {{vm.widget1.pagesSessions.value}}
+                                </div>
+
+                                <div>
+                                    <nvd3 class="h-40"
+                                          options="vm.widget1.pagesSessions.options"
+                                          data="vm.widget1.pagesSessions.data"></nvd3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- -->
+
+                        <div class="p-24 grey-50-bg" layout="row" layout-align="start center" flex="100" flex-gt-xs="50"
+                             flex-gt-md="25">
+                            <div layout="column" flex>
+                                <div class="h3 secondary-text pb-8">
+                                    {{vm.widget1.avgSessionDuration.title}}
+                                </div>
+
+                                <div class="font-size-32 line-height-32 pb-16">
+                                    {{vm.widget1.avgSessionDuration.value}}
+                                </div>
+
+                                <div>
+                                    <nvd3 class="h-40"
+                                          options="vm.widget1.avgSessionDuration.options"
+                                          data="vm.widget1.avgSessionDuration.data"></nvd3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 1 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 2 -->
+            <ms-widget flippable="false" layout="column" flex="100" flex-gt-md="65">
+
+                <!-- Front -->
+                <ms-widget-front class="white-bg">
+                    <div class="p-16" layout="row" layout-align="space-between center">
+                        <div class="h3">{{vm.widget2.title}}</div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div>
+                        <ui-gmap-google-map center="vm.widget2.map.center" zoom="vm.widget2.map.zoom"
+                                            options="vm.widget2.map.options">
+                            <ui-gmap-markers models="vm.widget2.map.markers" coords="'coords'">
+                                <ui-gmap-windows show="show">
+                                    <div ng-non-bindable>{{sessions}}</div>
+                                </ui-gmap-windows>
+                            </ui-gmap-markers>
+                        </ui-gmap-google-map>
+                    </div>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 2 -->
+
+            <!-- WIDGET 3 -->
+            <ms-widget flippable="false" layout="column" flex="100" flex-gt-md="35">
+
+                <!-- Front -->
+                <ms-widget-front class="white-bg">
+                    <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
+                        <div class="h3">{{vm.widget3.title}}</div>
+
+                        <div class="pv-16">
+                            <md-select class="simplified" ng-model="vm.widget3.currentRange"
+                                       aria-label="Change range">
+                                <md-option ng-repeat="(key, range) in vm.widget3.ranges"
+                                           value="{{key}}">
+                                    {{range}}
+                                </md-option>
+                            </md-select>
+                        </div>
+                    </div>
+
+                    <div class="ph-16 pv-20 border-bottom"
+                         ng-repeat="page in vm.widget3.pages[vm.widget3.currentRange]"
+                         layout="row" layout-align="space-between center">
+                        <div layout="column" flex>
+                            <span class="h4 pb-10">{{page.path}}</span>
+                            <md-progress-linear class="md-accent" md-mode="determinate"
+                                                value="{{page.value}}"></md-progress-linear>
+                        </div>
+                        <div class="pl-32 h3 font-weight-500 secondary-text">
+                            {{page.value}}%
+                        </div>
+                    </div>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 3 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 4 -->
+            <ms-widget flippable="false" layout="row" flex="100">
+
+                <!-- Front -->
+                <ms-widget-front class="white-bg">
+                    <div class="ph-16 pt-16 pb-8 md-accent-bg">
+                        <div class="h3">{{vm.widget4.title}}</div>
+                    </div>
+
+                    <md-tabs class="md-accent no-radius" md-dynamic-height>
+                        <md-tab label="{{tab.label}}" ng-repeat="tab in vm.widget4.tabs">
+
+                            <div layout="row" layout-align="start center" layout-wrap>
+
+                                <div flex="100" flex-gt-xs="50" flex-gt-md="25"
+                                     ng-repeat="group in tab.groups">
+                                    <div class="h2 m-16 pb-16 border-bottom">{{group.title}}</div>
+
+                                    <div class="p-16 pb-32" ng-repeat="data in group.data">
+                                        <div class="pb-8" layout="row" layout-align="space-between start">
+                                            <span class="h3">{{data.title}}</span>
+                                            <span class="h3 secondary-text font-weight-500">{{data.value}}%</span>
+                                        </div>
+                                        <md-progress-linear class="{{data.progressColor}}" md-mode="determinate"
+                                                            value="{{data.value}}"></md-progress-linear>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </md-tab>
+                    </md-tabs>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 4 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+    </div>
+</div>

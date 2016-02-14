@@ -1,0 +1,62 @@
+md-dialog {
+
+    &.event-calendar-dialog {
+        width: 480px;
+        min-width: 480px;
+        overflow: hidden;
+
+        md-dialog-content {
+            position: relative;
+            padding: 0;
+
+            md-tabs {
+
+                md-tabs-wrapper {
+                    box-shadow: $whiteframe-shadow-2dp;
+                }
+
+                .new-card {
+
+                    .new-card-name {
+                        margin: 24px 0 18px 0;
+                        padding: 0 16px;
+                    }
+
+                    .lists {
+                        padding: 0 16px 16px 16px;
+
+                        p {
+                            color: rgba(0, 0, 0, 0.35);
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .assign-due-date {
+
+                    .cards {
+
+                        .cards-content {
+                            max-height: 200px;
+
+                            .card {
+
+                                .card-date {
+                                    font-size: 11px;
+                                    color: rgba(0, 0, 0, 0.54);
+                                    line-height: 1;
+                                    padding: 0 0 8px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                md-dialog-actions {
+                    border-top: 1px solid rgba(0,0,0,.12);
+                    background-color: rgba(0,0,0,.03);
+                }
+            }
+        }
+    }
+}

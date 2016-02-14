@@ -1,0 +1,94 @@
+#dashboard-project {
+
+    > .center {
+
+        > .header {
+            height: 160px;
+            min-height: 160px;
+            max-height: 160px;
+            padding-bottom: 0;
+
+            .selected-project {
+                background: rgba(0, 0, 0, 0.12);
+                color: #FFFFFF;
+                padding: 8px 16px;
+                height: 40px;
+                line-height: 24px;
+                font-size: 16px;
+            }
+
+            .project-selector {
+                margin-left: 1px;
+                border-radius: 0;
+                background: rgba(0, 0, 0, 0.12);
+
+                md-icon {
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        > .content {
+            background: none;
+            padding: 0;
+
+            > md-tabs {
+
+                > md-tabs-wrapper {
+                    background: #FFFFFF;
+                    box-shadow: $whiteframe-shadow-1dp;
+                    padding: 0 24px;
+
+                    md-tabs-canvas {
+                        height: 56px;
+
+                        md-pagination-wrapper {
+                            height: 56px;
+                        }
+
+                        .md-tab {
+                            padding: 16px 24px;
+                            text-transform: none;
+                        }
+                    }
+                }
+
+                &:not(.md-dynamic-height) {
+
+                    md-tabs-content-wrapper {
+                        top: 56px;
+                    }
+                }
+
+                > md-tabs-content-wrapper {
+
+                    md-tab-content {
+                        padding: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    > .sidenav {
+        width: 330px;
+        min-width: 330px;
+        max-width: 330px;
+        padding: 0;
+        z-index: 51;
+        box-shadow: $whiteframe-shadow-8dp;
+
+        &.md-locked-open {
+            width: 250px;
+            min-width: 250px;
+            max-width: 250px;
+            z-index: 2;
+            box-shadow: none;
+            background: material-color('grey', '200');
+        }
+    }
+
+    #widgets {
+
+    }
+}

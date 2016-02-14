@@ -1,0 +1,158 @@
+<div id="invoice" class="page-layout blank" layout="row" ms-scroll>
+    <div class="invoice-container">
+
+        <!-- INVOICE -->
+        <div class="card md-whiteframe-8dp">
+            <div class="header" layout="row" layout-align="space-between start">
+                <div class="ids" layout="column">
+                    <div layout="row" class="seller" layout-align="start center">
+                        <div class="logo md-accent-bg" layout="row" layout-align="center center">
+                            <div>F</div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="detail">
+                            <div class="title">{{vm.invoice.from.title}}</div>
+                            <div ng-if="vm.invoice.from.address" class="address">{{vm.invoice.from.address}}</div>
+                            <div ng-if="vm.invoice.from.phone" class="phone"><span
+                                    translate="INVOICE.PHONE">Phone</span>:
+                                {{vm.invoice.from.phone}}
+                            </div>
+                            <div ng-if="vm.invoice.from.email" class="email"><span
+                                    translate="INVOICE.EMAIL">Email</span>:
+                                {{vm.invoice.from.email}}
+                            </div>
+                            <div ng-if="vm.invoice.from.website" class="website"><span
+                                    translate="INVOICE.WEB">Web</span>:
+                                {{vm.invoice.from.website}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div layout="row" class="client" layout-align="start center">
+                        <div class="label" layout="row" layout-align="end center">
+                            <div translate="INVOICE.CLIENT">CLIENT</div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="detail">
+                            <div class="title">{{vm.invoice.client.title}}</div>
+                            <div ng-if="vm.invoice.client.address" class="address">{{vm.invoice.client.address}}</div>
+                            <div ng-if="vm.invoice.client.phone" class="phone"><span
+                                    translate="INVOICE.PHONE">Phone</span>:
+                                {{vm.invoice.client.phone}}
+                            </div>
+                            <div ng-if="vm.invoice.client.email" class="email"><span
+                                    translate="INVOICE.EMAIL">Email</span>:
+                                {{vm.invoice.client.email}}
+                            </div>
+                            <div ng-if="vm.invoice.client.website" class="website"><span
+                                    translate="INVOICE.WEB">Web</span>:
+                                {{vm.invoice.client.website}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="summary">
+                    <tr class="code">
+                        <td class="label" translate="INVOICE.INVOICE">INVOICE</td>
+                        <td class="value">{{vm.invoice.number}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label" translate="INVOICE.INVOICE_DATE">INVOICE DATE</td>
+                        <td class="value">{{vm.invoice.date}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label" translate="INVOICE.DUE_DATE">DUE DATE</td>
+                        <td class="value">{{vm.invoice.dueDate}}</td>
+                    </tr>
+
+                    <tr>
+                        <td class="label" translate="INVOICE.TOTAL_DUE">TOTAL DUE</td>
+                        <td class="value">{{vm.invoice.total | currency}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="content">
+                <table class="simple invoice-table">
+                    <thead>
+                        <th translate="INVOICE.SERVICE">SERVICE</th>
+                        <th translate="INVOICE.UNIT">UNIT</th>
+                        <th class="text-right" translate="INVOICE.UNIT_PRICE">UNIT PRICE</th>
+                        <th class="text-right" translate="INVOICE.QUANTITY">QUANTITY</th>
+                        <th class="text-right" translate="INVOICE.TOTAL">TOTAL</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="service in vm.invoice.services">
+                            <td>
+                                <div class="title"> {{service.title}}</div>
+                                <div class="detail"> {{service.detail}}</div>
+                            </td>
+                            <td>
+                                {{service.unit}}
+                            </td>
+                            <td class="text-right">
+                                {{service.unitPrice | currency}}
+                            </td>
+                            <td class="text-right">
+                                {{service.quantity}}
+                            </td>
+                            <td class="text-right">
+                                {{service.total | currency}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="simple invoice-table-footer">
+                    <tbody>
+                        <tr class="subtotal">
+                            <td translate="INVOICE.SUBTOTAL">SUBTOTAL</td>
+                            <td>{{vm.invoice.subtotal | currency}}</td>
+                        </tr>
+                        <tr class="tax">
+                            <td translate="INVOICE.TAX">TAX</td>
+                            <td>{{vm.invoice.tax | currency}}</td>
+                        </tr>
+                        <tr class="discount">
+                            <td translate="INVOICE.DISCOUNT">DISCOUNT</td>
+                            <td>-{{vm.invoice.discount | currency}}</td>
+                        </tr>
+                        <tr class="total">
+                            <td translate="INVOICE.TOTAL">TOTAL</td>
+                            <td>{{vm.invoice.total | currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer">
+                <div class="note" translate="INVOICE.NOTE">Please pay within 15 days. Thank you for your business.</div>
+                <div layout="row" layout-align="start start">
+                    <div class="logo md-accent-bg" layout="row" layout-align="center center">
+                        <div>F</div>
+                    </div>
+                    <div class="small-note" translate="INVOICE.SMALL_NOTE">
+                        In condimentum malesuada efficitur. Mauris volutpat placerat auctor. Ut ac congue dolor. Quisque
+                        scelerisque lacus sed feugiat fermentum. Cras aliquet facilisis pellentesque. Nunc hendrerit
+                        quam at leo commodo, a suscipit tellus dapibus. Etiam at felis volutpat est mollis lacinia.
+                        Mauris placerat sem sit amet velit mollis, in porttitor ex finibus. Proin eu nibh id libero
+                        tincidunt lacinia et eget eros.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / INVOICE -->
+
+        <!-- Use the following element to add breaks to your pages -->
+        <!-- This will make sure that the section after this element will be printed on a new page -->
+        <div class="page-break"></div>
+
+    </div>
+</div>

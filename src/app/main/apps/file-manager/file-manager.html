@@ -1,0 +1,90 @@
+<div id="file-manager" class="page-layout simple right-sidenav" layout="row">
+
+    <!-- MAIN SIDENAV (EXTRA SIDENAV) -->
+    <md-sidenav class="main-sidenav" md-component-id="main-sidenav"
+                ng-include="'app/main/apps/file-manager/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / MAIN SIDENAV (EXTRA SIDENAV) -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- HEADER -->
+        <div class="header md-accent-bg">
+
+            <div class="header-content" layout="column" layout-align="space-between">
+
+                <!-- TOOLBAR -->
+                <div class="toolbar" layout="row" layout-align="space-between">
+
+                    <md-button class="md-icon-button main-sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')"
+                               aria-label="Toggle Main Sidenav" translate
+                               translate-attr-aria-label="FILE.TOOGLE_MAIN_SIDENAV">
+                        <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+                    </md-button>
+
+                    <div class="right-side" layout="row">
+                        <md-button class="md-icon-button" aria-label="Search" translate
+                                   translate-attr-aria-label="FM.SEARCH">
+                            <md-icon md-font-icon="icon-magnify"></md-icon>
+                            <md-tooltip><span translate="FM.SEARCH">Search</span></md-tooltip>
+                        </md-button>
+
+                        <md-button ng-if="vm.currentView === 'list'" class="md-icon-button"
+                                   ng-click="vm.toggleView()"
+                                   aria-label="view type" translate
+                                   translate-attr-aria-label="FM.GRID_VIEW">
+                            <md-icon md-font-icon="icon-view-module"></md-icon>
+                            <md-tooltip><span translate="FM.GRID_VIEW">Grid View</span></md-tooltip>
+                        </md-button>
+
+                        <md-button ng-if="vm.currentView === 'grid'" class="md-icon-button" aria-label="view type"
+                                   ng-click="vm.toggleView()" translate
+                                   translate-attr-aria-label="FM.LIST_VIEW">
+                            <md-icon md-font-icon="icon-view-headline"></md-icon>
+                            <md-tooltip><span translate="FM.LIST_VIEW">List View</span></md-tooltip>
+                        </md-button>
+                    </div>
+                </div>
+                <!-- / TOOLBAR -->
+
+                <!-- BREADCRUMB -->
+                <div class="breadcrumb text-truncate" layout="row" layout-align="start center">
+                <span data-ng-repeat="path in vm.path">{{path}}
+                    <md-icon md-font-icon="icon-chevron-right" class="icon separator"></md-icon>
+                </span>
+                </div>
+                <!-- / BREADCRUMB -->
+            </div>
+
+            <!-- ADD FILE BUTTON -->
+            <md-button class="add-file-button md-fab md-warn"
+                       ng-click="vm.addFile($event)" aria-label="Add file" translate
+                       translate-attr-aria-label="FM.ADD_FILE">
+                <md-icon md-font-icon="icon-plus"></md-icon>
+            </md-button>
+            <!-- / ADD FILE BUTTON -->
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT -->
+        <md-content class="content" flex ms-scroll>
+            <div ng-if="vm.currentView === 'grid'"
+                 ng-include="'app/main/apps/file-manager/views/grid/grid-view.html'"></div>
+            <div ng-if="vm.currentView === 'list'"
+                 ng-include="'app/main/apps/file-manager/views/list/list-view.html'"></div>
+        </md-content>
+        <!-- / CONTENT -->
+
+    </div>
+    <!-- / CENTER -->
+
+    <!-- SIDENAV -->
+    <md-sidenav class="sidenav details-sidenav md-sidenav-right" md-is-locked-open="$mdMedia('gt-md')"
+                md-component-id="details-sidenav"
+                ng-include="'app/main/apps/file-manager/sidenavs/details/details-sidenav.html'" ms-scroll
+                ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / SIDENAV -->
+
+</div>

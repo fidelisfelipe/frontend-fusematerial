@@ -1,0 +1,824 @@
+<div id="widgets" class="page-layout simple fullwidth doc-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">COMPONENTS</span>
+            </div>
+            <div class="title">Widgets</div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <p class="h3 m-16">
+            Here you can see some of the other widget styles. These are just tiny example of what you can do with using
+            <code class="no-highlight">ms-widget</code> directive and helper classes. You are not limited to
+            these styles or widgets, you can easily create wide variety of widgets.
+        </p>
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 1 -->
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="h-170 p-16 light-blue-bg">
+                    <div class="pb-8" layout="row" layout-align="space-between center">
+                        <div class="h4 font-weight-500 secondary-text">{{vm.widget1.title}}</div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                        Details
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div class="white-fg" layout="column" layout-align="space-between" flex>
+                        <div class="md-display-1" layout="row" layout-align="start center">
+                            <span>{{vm.widget1.value | number}}</span>
+                            <md-icon md-font-icon="icon-trending-up" class="s36 ml-16"></md-icon>
+                        </div>
+
+                        <div layout="row" layout-align="start center">
+                            <span>Last week: {{vm.widget1.lastWeekValue | number}}</span>
+                            <span class="text-boxed-light">{{vm.widget1.lastWeekDiff}}</span>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="p-16 light-blue-bg white-fg">
+                    <div class="flip-to-front">
+                        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                            <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <div>
+                        {{vm.widget1.detail}}
+                    </div>
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 1 -->
+
+            <!-- WIDGET 2 -->
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="h-170 p-16 green-bg">
+                    <div class="pb-8" layout="row" layout-align="space-between center">
+                        <div class="h4 font-weight-500 secondary-text">{{vm.widget2.title}}</div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                        Details
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div class="white-fg" layout="column" layout-align="space-between" flex>
+                        <div>
+                            <div class="md-display-1 pb-16">{{vm.widget2.value}}%</div>
+
+                            <div class="pb-16">
+                                <md-progress-linear md-mode="determinate"
+                                                    value="{{vm.widget2.value}}"></md-progress-linear>
+                            </div>
+                        </div>
+
+                        <div layout="row" layout-align="start center">
+                            <span>Last week: {{vm.widget2.lastWeekValue}}%</span>
+                            <span class="text-boxed-light">{{vm.widget2.lastWeekDiff}}</span>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="p-16 green-bg white-fg">
+                    <div class="flip-to-front">
+                        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                            <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <div>
+                        {{vm.widget2.detail}}
+                    </div>
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 2 -->
+
+            <!-- WIDGET 3 -->
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="h-170 p-16 blue-grey-bg white-fg">
+                    <div class="pb-8" layout="row" layout-align="space-between center">
+                        <div class="h4 font-weight-500 secondary-text">{{vm.widget3.title}}</div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                        Details
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div layout="column" layout-align="space-between" flex>
+                        <div>
+                            <div class="md-display-1 pb-16">{{vm.widget3.value}}%</div>
+
+                            <div class="pb-8">
+                                <md-progress-linear md-mode="determinate"
+                                                    value="{{vm.widget3.value}}"></md-progress-linear>
+                            </div>
+                        </div>
+
+                        <div>See more details...</div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="p-16 blue-grey-bg white-fg">
+                    <div class="flip-to-front">
+                        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                            <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <div>
+                        {{vm.widget3.detail}}
+                    </div>
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 3 -->
+
+            <!-- WIDGET 4 -->
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="h-170 p-16 deep-purple-bg white-fg">
+                    <div class="pb-8" layout="row" layout-align="space-between center">
+                        <div class="h4 font-weight-500 secondary-text">{{vm.widget4.title}}</div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                        Details
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div layout="column" layout-align="space-between" flex>
+                        <div class="md-display-1 pb-8" layout="row" layout-align="start center">
+                            <span>{{vm.widget4.value | number}}</span>
+                            <md-icon md-font-icon="icon-trending-down" class="s36 ml-16"></md-icon>
+                        </div>
+
+                        <div>See more details...</div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="p-16 deep-purple-bg white-fg">
+                    <div class="flip-to-front">
+                        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                            <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <div>
+                        {{vm.widget4.detail}}
+                    </div>
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 4 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 5 -->
+            <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg" layout="row" flex>
+                    <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+                        <div class="md-display-1 pb-8">{{vm.widget5.value}}</div>
+                        <div class="font-weight-500 secondary-text">{{vm.widget5.title}}</div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 5 -->
+
+            <!-- WIDGET 6 -->
+            <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg" layout="row" flex>
+                    <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+                        <div class="font-weight-500 secondary-text pb-8">{{vm.widget6.title}}</div>
+                        <div class="md-display-1">{{vm.widget6.value}}</div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 6 -->
+
+            <!-- WIDGET 7 -->
+            <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg" layout="row" flex>
+                    <div class="pt-8 pb-8" layout="row" layout-align="space-between center" flex>
+                        <div class="pl-8" layout="column" layout-align="center start">
+                            <span class="md-display-1 pb-8">{{vm.widget7.value}}</span>
+                            <span class="font-weight-500 secondary-text">{{vm.widget7.title}}</span>
+                        </div>
+
+                        <div>
+                            <md-icon md-font-icon="icon-thumb-up" class="s48 hint-text"></md-icon>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 7 -->
+
+            <!-- WIDGET 8 -->
+            <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg" layout="row" flex>
+                    <div class="pt-8 pb-8" layout="row" layout-align="space-between center" flex>
+                        <div>
+                            <md-icon md-font-icon="icon-lock-unlocked" class="s48 hint-text"></md-icon>
+                        </div>
+
+                        <div class="pr-8" layout="column" layout-align="center end">
+                            <div class="md-display-1 pb-8">{{vm.widget8.value}}</div>
+                            <div class="font-weight-500 secondary-text">{{vm.widget8.title}}</div>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 8 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 9 -->
+            <ms-widget class="h-300" layout="column" flex="100" flex-gt-xs="50"
+                       flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 deep-orange-bg white-fg" layout="row" flex>
+                    <div layout="column" layout-align="center center" flex>
+                        <div class="md-display-3 pb-8">{{vm.widget9.value}}</div>
+                        <div class="h3 font-weight-500">{{vm.widget9.title}}</div>
+                    </div>
+
+                    <div class="background-image-center">
+                        <md-icon md-font-icon="icon-music-note" class="s256 faint-text"></md-icon>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 9 -->
+
+            <!-- WIDGET 10 -->
+            <ms-widget class="h-300" layout="column" flex="100" flex-gt-xs="50"
+                       flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 cyan-bg white-fg" layout="row" flex>
+                    <div layout="column" layout-align="center center" flex>
+                        <div class="md-display-3 pb-8">{{vm.widget10.value}}</div>
+                        <div class="h3 font-weight-500">{{vm.widget10.title}}</div>
+                    </div>
+
+                    <div class="background-image-center">
+                        <md-icon md-font-icon="icon-filmstrip" class="s256 faint-text"></md-icon>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 10 -->
+
+            <!-- WIDGET 11 -->
+            <ms-widget class="h-300" layout="column" flex="100" flex-gt-md="50">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 teal-bg white-fg" layout="row" flex>
+                    <div layout="column" layout-align="center center" flex>
+                        <div class="md-display-3 pb-8">{{vm.widget11.value}}</div>
+                        <div class="h3 font-weight-500">{{vm.widget11.title}}</div>
+                    </div>
+
+                    <div class="background-image-center">
+                        <md-icon md-font-icon="icon-file-document" class="s256 faint-text"></md-icon>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 11 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 12 -->
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 light-blue-bg" layout="column" flex>
+                    <div class="pb-8" layout="row" layout-align="space-between center">
+                        <div class="h4 secondary-text">
+                            <md-icon md-font-icon="icon-arrow-left" class="s16 mr-8"></md-icon>
+                            <span class="font-weight-500">{{vm.widget12.date}}</span>
+                            <md-icon md-font-icon="icon-arrow-right" class="s16 ml-8"></md-icon>
+                        </div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                        Details
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div class="white-fg" layout="column" layout-align="center center" flex>
+                        <div>
+                            <md-icon md-font-icon="{{vm.widget12.icon}}" class="s96"></md-icon>
+                        </div>
+
+                        <div class="pt-16" layout="row" layout-align="center center">
+                            <div class="md-display-2">{{vm.widget12.temperature}}&deg;</div>
+
+                            <div class="pl-16" layout="column">
+                                <div class="h1 text-semibold">{{vm.widget12.event}}</div>
+                                <div class="h4 secondary-text">{{vm.widget12.location}}</div>
+                            </div>
+                        </div>
+
+                        <div class="pt-32" layout="row" layout-align="center center">
+                            <div layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-weather-windy" class="s16"></md-icon>
+                                <span class="pl-8">22 km/h</span>
+                            </div>
+
+                            <div class="pl-16" layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-compass" class="s16"></md-icon>
+                                <span class="pl-8">NW</span>
+                            </div>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="p-16 light-blue-bg" layout="column" flex>
+                    <div class="flip-to-front">
+                        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                            <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <div class="pt-16 pb-16 white-fg">
+                        <span class="h1">Next 5 days</span>
+                    </div>
+
+                    <div class="pl-8 pr-8" layout="row" layout-align="space-between">
+                        <div layout="column" layout-align="start center" ng-repeat="detail in vm.widget12.detail">
+                            <div class="h4 pb-8 black-fg secondary-text ">{{detail.day}}</div>
+                            <md-icon md-font-icon="{{detail.icon}}" class="s36 white-fg"></md-icon>
+                            <div class="h3 pt-8 white-fg">{{detail.temperature}}&deg;</div>
+                        </div>
+                    </div>
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 12 -->
+
+            <!-- WIDGET 13 -->
+            <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg" layout="column" flex>
+                    <div class="pb-8" layout="row" layout-align="space-between center">
+                        <div class="h4 secondary-text">
+                            <md-icon md-font-icon="icon-arrow-left" class="s16 mr-8"></md-icon>
+                            <span class="font-weight-500">{{vm.widget13.date}}</span>
+                            <md-icon md-font-icon="icon-arrow-right" class="s16 ml-8"></md-icon>
+                        </div>
+
+                        <md-menu>
+                            <md-button aria-label="more" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-font-icon="icon-dots-vertical"></md-icon>
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item>
+                                    <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                        Details
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="refreshWidget()" aria-label="Refresh widget">
+                                        Refresh
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+
+                    <div layout="column" layout-align="center center" flex>
+                        <div>
+                            <md-icon md-font-icon="{{vm.widget13.icon}}" class="s96"></md-icon>
+                        </div>
+
+                        <div class="pt-16" layout="row" layout-align="center center">
+                            <div class="md-display-2">{{vm.widget13.temperature}}&deg;</div>
+
+                            <div class="pl-16" layout="column">
+                                <div class="h1 text-semibold">{{vm.widget13.event}}</div>
+                                <div class="h4 secondary-text">{{vm.widget13.location}}</div>
+                            </div>
+                        </div>
+
+                        <div class="pt-32" layout="row" layout-align="center center">
+                            <div layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-weather-windy" class="s16"></md-icon>
+                                <span class="pl-8">22 km/h</span>
+                            </div>
+
+                            <div class="pl-16" layout="row" layout-align="start center">
+                                <md-icon md-font-icon="icon-compass" class="s16"></md-icon>
+                                <span class="pl-8">NW</span>
+                            </div>
+                        </div>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+                <!-- Back -->
+                <ms-widget-back class="p-16 light-blue-bg" layout="column" flex>
+                    <div class="flip-to-front">
+                        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                            <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <div class="pt-16 pb-16 white-fg">
+                        <span class="h1">Next 5 days</span>
+                    </div>
+
+                    <div class="pl-8 pr-8" layout="row" layout-align="space-between">
+                        <div layout="column" layout-align="start center" ng-repeat="detail in vm.widget13.detail">
+                            <div class="h4 pb-8 black-fg secondary-text ">{{detail.day}}</div>
+                            <md-icon md-font-icon="{{detail.icon}}" class="s36 white-fg"></md-icon>
+                            <div class="h3 pt-8 white-fg">{{detail.temperature}}&deg;</div>
+                        </div>
+                    </div>
+                </ms-widget-back>
+                <!-- / Back -->
+
+            </ms-widget>
+            <!-- / WIDGET 13 -->
+
+            <!-- WIDGET 14 -->
+            <ms-widget layout="column" flex="100" flex-gt-md="50">
+
+                <!-- Front -->
+                <ms-widget-front class="white-bg">
+                    <div class="ph-16 pt-16 pb-8 md-accent-bg">
+                        <div class="h3">{{vm.widget14.title}}</div>
+                    </div>
+
+                    <md-tabs class="md-accent no-radius" md-dynamic-height>
+                        <md-tab label="{{tab.label}}" ng-repeat="tab in vm.widget14.tabs">
+
+                            <div layout="row" layout-align="start center" layout-wrap>
+
+                                <div flex="100" flex-gt-md="50"
+                                     ng-repeat="group in tab.groups">
+                                    <div class="h2 m-16 pb-16 border-bottom">{{group.title}}</div>
+
+                                    <div class="p-16 pb-32" ng-repeat="data in group.data">
+                                        <div class="pb-8" layout="row" layout-align="space-between start">
+                                            <span class="h3">{{data.title}}</span>
+                                            <span class="h3 secondary-text font-weight-500">{{data.value}}%</span>
+                                        </div>
+                                        <md-progress-linear class="{{data.progressColor}}" md-mode="determinate"
+                                                            value="{{data.value}}"></md-progress-linear>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </md-tab>
+                    </md-tabs>
+
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 14 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 15 -->
+            <ms-widget class="h-250" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 red-bg white-fg" layout="column" layout-align="space-between"
+                                 flex>
+                    <div class="pb-16">
+                        <div class="h4 weight-500 pb-8">{{vm.widget15.title}}</div>
+
+                        <div layout="row" layout-align="start center">
+                            <div class="pr-8">
+                                <md-icon md-font-icon="icon-alert" class="s24 hint-text"></md-icon>
+                            </div>
+
+                            <div class="h1 secondary-text">{{vm.widget15.value}}%</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <c3chart class="c3 stroke-2" bindto-id="cpu-usage">
+                            <chart-column ng-repeat="column in vm.widget15.chart.columns"
+                                          column-id="{{column.id}}"
+                                          column-name="{{column.name}}"
+                                          column-color="{{column.color}}"
+                                          column-values="{{column.values}}"
+                                          column-type="{{column.type}}"
+                            />
+                            <chart-axis>
+                                <chart-axis-y show="false"></chart-axis-y>
+                            </chart-axis>
+                            <chart-legend show-legend="false"/>
+                            <chart-size chart-height="120"/>
+                        </c3chart>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 15 -->
+
+            <!-- WIDGET 16 -->
+            <ms-widget class="h-250" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg" layout="column" layout-align="space-between" flex>
+                    <div class="pb-16">
+                        <div class="h4 weight-500 pb-8">{{vm.widget16.title}}</div>
+                        <div layout="row" layout-align="start center">
+                            <div class="h1 secondary-text">{{vm.widget16.value}}</div>
+                            <md-icon md-font-icon="icon-trending-up" class="mh-8"></md-icon>
+                        </div>
+                    </div>
+
+                    <div>
+                        <c3chart class="c3 stroke-2" bindto-id="stock">
+                            <chart-column ng-repeat="column in vm.widget16.chart.columns"
+                                          column-id="{{column.id}}"
+                                          column-name="{{column.name}}"
+                                          column-color="{{column.color}}"
+                                          column-values="{{column.values}}"
+                                          column-type="{{column.type}}"
+                            />
+                            <chart-axis>
+                                <chart-axis-x show="false"></chart-axis-x>
+                                <chart-axis-y show="false"></chart-axis-y>
+                            </chart-axis>
+                            <chart-legend show-legend="false"/>
+                            <chart-size chart-height="120"/>
+                        </c3chart>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 16 -->
+
+            <!-- WIDGET 17 -->
+            <ms-widget class="h-250" layout="column" flex="100" flex-gt-md="50">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg" layout="column" layout-align="space-between" flex>
+                    <div class="pb-16">
+                        <div class="h4 weight-500 pb-8">{{vm.widget17.title}}</div>
+                        <div class="secondary-text">{{vm.widget17.subtitle}}</div>
+                    </div>
+
+                    <div>
+                        <c3chart class="c3 stroke-2" bindto-id="io-rate">
+                            <chart-column ng-repeat="column in vm.widget17.chart.columns"
+                                          column-id="{{column.id}}"
+                                          column-name="{{column.name}}"
+                                          column-color="{{column.color}}"
+                                          column-values="{{column.values}}"
+                                          column-type="{{column.type}}"
+                            />
+                            <chart-axis>
+                                <chart-axis-y show="false"></chart-axis-y>
+                            </chart-axis>
+                            <chart-size chart-height="120"/>
+                        </c3chart>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 3 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+
+        <!-- WIDGET GROUP -->
+        <div class="widget-group" layout="row" flex="100" layout-wrap>
+
+            <!-- WIDGET 18 -->
+            <ms-widget class="h-300" layout="column" flex="100" flex-gt-md="50">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 white-bg">
+                    <div layout="row" layout-align="space-between">
+                        <div class="mr-16">
+                            <div class="h4 weight-500 pb-8">{{vm.widget18.title}}</div>
+                            <div class="h1 secondary-text">{{vm.widget18.value | number}}</div>
+                            <div class="pt-8" layout="row" layout-align="start center">
+                                <div>LW: {{vm.widget18.lastWeekValue | number}}</div>
+                                <div class="text-boxed">{{vm.widget18.lastWeekDiff}}</div>
+                            </div>
+                        </div>
+
+                        <c3chart flex bindto-id="weekly-visitors">
+                            <chart-column ng-repeat="column in vm.widget18.chart.columns"
+                                          column-id="{{column.id}}"
+                                          column-name="{{column.name}}"
+                                          column-color="{{column.color}}"
+                                          column-values="{{column.values}}"
+                                          column-type="{{column.type}}"
+                            />
+                            <chart-legend show-legend="false"/>
+                            <chart-bar width="10"/>
+                            <chart-size chart-height="240"/>
+                        </c3chart>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 18 -->
+
+            <!-- WIDGET 19 -->
+            <ms-widget class="h-300" layout="column" flex="100" flex-gt-md="50">
+
+                <!-- Front -->
+                <ms-widget-front class="p-16 light-blue-bg white-fg">
+                    <div layout="row" layout-align="space-between">
+                        <div class="mr-16">
+                            <div class="h1 weight-500 pb-8">{{vm.widget19.title}}</div>
+                            <div class="h4 secondary-text weight-500 pb-8">{{vm.widget19.subtitle}}</div>
+                            <div layout="row" layout-align="start center">
+                                <div class="md-display-1 pr-8">{{vm.widget19.value}}</div>
+                                <md-icon md-font-icon="icon-trending-up" class="s24"></md-icon>
+                            </div>
+                        </div>
+
+                        <c3chart flex bindto-id="goog-nasdaq">
+                            <chart-column ng-repeat="column in vm.widget19.chart.columns"
+                                          column-id="{{column.id}}"
+                                          column-name="{{column.name}}"
+                                          column-color="{{column.color}}"
+                                          column-values="{{column.values}}"
+                                          column-type="{{column.type}}"
+                            />
+                            <chart-legend show-legend="false"/>
+                            <chart-bar width="10"/>
+                            <chart-size chart-height="240"/>
+                        </c3chart>
+                    </div>
+                </ms-widget-front>
+                <!-- / Front -->
+
+            </ms-widget>
+            <!-- / WIDGET 19 -->
+
+        </div>
+        <!-- / WIDGET GROUP -->
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

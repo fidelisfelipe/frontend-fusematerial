@@ -1,0 +1,40 @@
+<div id="icons" class="page-layout simple fullwidth doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
+
+            <div class="title">Icons</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button"
+                       href="https://materialdesignicons.com/"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" layout="column">
+
+        <div id="icons-list" class="card md-whiteframe-1dp" layout="row" layout-wrap>
+            <div class="item" ng-repeat="icon in ::vm.icons track by icon.properties.id"
+                 layout-align="start center">
+                <i class="icon icon-{{::icon.properties.name}} s40"></i>
+                <div class="name secondary-text text-center">icon-{{::icon.properties.name}}</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

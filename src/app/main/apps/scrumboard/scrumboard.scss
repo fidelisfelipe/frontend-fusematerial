@@ -1,0 +1,154 @@
+#scrumboard {
+    height: 100%;
+    
+    > .header {
+        position: relative;
+        height: 96px;
+        min-height: 96px;
+        max-height: 96px;
+        background-image: none;
+        z-index: 49;
+
+        .header-content {
+
+            .header-boards-button {
+                margin: 0;
+            }
+
+            .header-board-name {
+                font-size: 16px;
+
+                .board-subscribe {
+                    margin-right: 8px;
+                }
+
+                .editable-buttons {
+
+                    md-icon {
+                        color: #FFFFFF !important;
+                    }
+                }
+            }
+
+            .right-side {
+
+                > .md-button:last-child {
+                    margin-right: 0;
+                }
+            }
+
+        }
+    }
+
+    #board-selector {
+        position: absolute;
+        top: 96px;
+        right: 0;
+        left: 0;
+        height: 192px;
+        z-index: 48;
+        padding: 24px;
+        opacity: 1;
+
+        .board-list-item {
+            width: 128px;
+            height: 192px;
+            padding: 16px;
+            cursor: pointer;
+            position: relative;
+
+            .board-name {
+                text-align: center;
+                padding: 16px 0;
+            }
+
+            .selected-icon {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 32px;
+                height: 32px;
+                margin-left: -16px;
+                border-radius: 50%;
+                text-align: center;
+                color: white;
+
+                i {
+                    line-height: 32px !important;
+                }
+            }
+
+            &.add-new-board {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .content {
+        padding: 0;
+        background: transparent;
+    }
+
+    .editable-click {
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        border-bottom: none;
+    }
+
+    .editable-wrap {
+        position: relative;
+
+        .editable-controls {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+
+            .editable-input {
+                width: inherit;
+                background-color: white;
+                padding: 8px;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .editable-buttons {
+                display: inherit;
+
+                .md-button {
+                    margin: 0;
+
+                    &:first-of-type {
+                        padding-right: 0;
+                    }
+
+                    .icon-cancel {
+                        color: rgba(0, 0, 0, 0.32);
+                    }
+                }
+            }
+        }
+    }
+
+    .board-selector-backdrop {
+        z-index: 47;
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    #scrumboard {
+
+        .header {
+            height: 120px;
+            max-height: 120px;
+            min-height: 120px;
+
+        }
+
+        #board-selector {
+            top: 120px;
+        }
+    }
+}

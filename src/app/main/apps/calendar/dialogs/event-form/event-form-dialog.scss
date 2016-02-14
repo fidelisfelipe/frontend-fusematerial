@@ -1,0 +1,75 @@
+md-dialog {
+
+    &.event-form-dialog {
+        max-width: 720px;
+        width: 720px;
+
+        md-dialog-content {
+            display: block;
+            position: relative;
+        }
+
+        form {
+            overflow: hidden;
+
+            md-toolbar {
+
+                .title {
+                    font-size: 17px;
+                }
+            }
+
+            md-input-container {
+
+                textarea {
+                    min-height: 120px;
+                }
+            }
+
+            .date-row {
+
+                md-datepicker {
+                    margin-right: 24px;
+                }
+            }
+
+            .notifications {
+                padding: 16px 0;
+
+                > .md-button {
+                    margin: 0;
+                }
+            }
+        }
+
+        md-dialog-actions {
+            position: relative;
+            overflow-y: hidden;
+            overflow-x: auto;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    md-dialog {
+
+        &.event-form-dialog {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    md-dialog {
+
+        &.event-form-dialog {
+            width: 90%;
+        }
+    }
+}

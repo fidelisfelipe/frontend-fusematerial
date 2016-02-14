@@ -1,0 +1,38 @@
+#scrumboard {
+
+    // Filters sidenav
+    .filters-sidenav {
+        z-index: 51;
+        box-shadow: $whiteframe-shadow-8dp;
+        overflow-x: hidden;
+
+        .md-toolbar-tools {
+            .menu-title {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+
+        md-content {
+            overflow-x: hidden;
+            position: absolute;
+            top: 64px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-top: 12px;
+            md-divider {
+                margin: 16px 0;
+            }
+            .md-subheader{
+                margin: 16px;
+            }
+            .label {
+                .label-icon {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+            }
+        }
+    }
+}

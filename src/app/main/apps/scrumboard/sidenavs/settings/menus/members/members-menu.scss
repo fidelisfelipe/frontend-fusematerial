@@ -1,0 +1,29 @@
+#scrumboard {
+
+    .settings-sidenav {
+
+        md-content {
+
+            &.members {
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+                md-list {
+                    padding-top: 8px;
+
+                    md-list-item {
+                        padding-left: 16px;
+
+                        &.add-new-member {
+                            
+                            form {
+                                font-size: 13px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

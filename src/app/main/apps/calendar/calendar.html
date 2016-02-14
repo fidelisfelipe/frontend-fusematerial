@@ -1,0 +1,86 @@
+<div id="calendar" class="page-layout simple fullwidth" layout="column">
+
+    <!-- HEADER -->
+    <div class="header" ng-class="vm.currentMonthShort">
+
+        <div class="header-content" layout="column" layout-align="space-between">
+
+            <div class="header-top" layout="row" layout-align="space-between center" layout-xs="column">
+                <div class="logo" layout="row" layout-align="start center">
+                    <span class="logo-icon">
+                        <md-icon md-font-icon="icon-calendar-today"></md-icon>
+                    </span>
+
+                    <span class="logo-text" translate="CALENDAR.CALENDAR">Calendar</span>
+                </div>
+
+                <!-- TOOLBAR -->
+                <div class="toolbar" layout="row" layout-align="start center">
+                    <md-button class="md-icon-button" aria-label="Search" translate
+                               translate-attr-aria-label="CALENDAR.SEARCH">
+                        <md-icon md-font-icon="icon-magnify"></md-icon>
+                        <md-tooltip><span translate="CALENDAR.SEARCH">Search</span></md-tooltip>
+                    </md-button>
+
+                    <md-button class="md-icon-button" ng-click="vm.calendar.today()" aria-label="Today" translate
+                               translate-attr-aria-label="CALENDAR.TODAY">
+                        <md-icon md-font-icon="icon-calendar-today"></md-icon>
+                        <md-tooltip><span translate="CALENDAR.TODAY">Today</span></md-tooltip>
+                    </md-button>
+
+                    <md-button class="md-icon-button" ng-click="vm.calendar.changeView('agendaDay')" aria-label="Day"
+                               translate translate-attr-aria-label="CALENDAR.DAY">
+                        <md-icon md-font-icon="icon-view-day"></md-icon>
+                        <md-tooltip><span translate="CALENDAR.DAY">Day</span></md-tooltip>
+                    </md-button>
+
+                    <md-button class="md-icon-button" ng-click="vm.calendar.changeView('agendaWeek')" aria-label="Week"
+                               translate translate-attr-aria-label="CALENDAR.WEEK">
+                        <md-icon md-font-icon="icon-view-week"></md-icon>
+                        <md-tooltip><span translate="CALENDAR.WEEK">Week</span></md-tooltip>
+                    </md-button>
+
+                    <md-button class="md-icon-button" ng-click="vm.calendar.changeView('month')" aria-label="Month"
+                               translate translate-attr-aria-label="CALENDAR.MONTH">
+                        <md-icon md-font-icon="icon-view-module"></md-icon>
+                        <md-tooltip><span translate="CALENDAR.MONTH">Month</span></md-tooltip>
+                    </md-button>
+                </div>
+            </div>
+            <!-- / TOOLBAR -->
+
+            <!-- HEADER BOTTOM -->
+            <div class="header-bottom" layout="row" layout-align="center center">
+                <md-button class="md-icon-button arrow" ng-click="vm.calendar.prev()" aria-label="Previous"
+                           translate translate-attr-aria-label="CALENDAR.PREVIOUS">
+                    <md-icon md-font-icon="icon-chevron-left"></md-icon>
+                </md-button>
+
+                <div class="title">
+                    {{vm.calendarView.title}}
+                </div>
+
+                <md-button class="md-icon-button arrow" ng-click="vm.calendar.next()" aria-label="Next" translate
+                           translate-attr-aria-label="CALENDAR.NEXT">
+                    <md-icon md-font-icon="icon-chevron-right"></md-icon>
+                </md-button>
+            </div>
+            <!-- / HEADER BOTTOM -->
+        </div>
+
+        <!-- ADD EVENT BUTTON -->
+        <md-button class="add-event-button md-fab md-warn" ng-click="vm.addEvent($event)"
+                   aria-label="Add event" translate translate-attr-aria-label="CALENDAR.ADD_EVENT">
+            <md-icon md-font-icon="icon-plus"></md-icon>
+        </md-button>
+        <!-- / ADD EVENT BUTTON -->
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+        <div id="calendarView" ui-calendar="vm.calendarUiConfig.calendar" ng-model="vm.events" calendar="main"></div>
+    </div>
+    <!-- / CONTENT -->
+
+</div>

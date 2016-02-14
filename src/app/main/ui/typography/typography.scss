@@ -1,0 +1,25 @@
+#typography {
+
+    .content {
+
+        .card {
+
+            > div {
+                margin-bottom: 16px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .preview {
+                padding: 16px;
+                font-size: 16px;
+
+                .md-caption {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}

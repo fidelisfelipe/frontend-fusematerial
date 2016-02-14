@@ -1,0 +1,73 @@
+md-dialog {
+
+    &.event-detail-dialog {
+        max-width: 560px;
+        width: 560px;
+
+        md-dialog-content {
+            position: relative;
+            display: block;
+        }
+
+        md-toolbar {
+
+            .md-toolbar-tools {
+                position: relative;
+
+                .title {
+                    font-size: 20px;
+                    padding-left: 8px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                .edit-event-button {
+                    position: absolute;
+                    right: 24px;
+                    bottom: -28px;
+                }
+            }
+        }
+
+        md-dialog-content {
+            padding: 32px 24px 24px 24px;
+
+            .event-details {
+
+                md-icon {
+                    margin: 0 16px 0 0;
+                }
+
+                .event-detail-row {
+                    margin-bottom: 32px;
+
+                    &:last-child {
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    md-dialog {
+
+        &.event-detail-dialog {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    md-dialog {
+
+        &.event-detail-dialog {
+            width: 90%;
+        }
+    }
+}

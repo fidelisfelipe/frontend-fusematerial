@@ -1,0 +1,54 @@
+#todo {
+
+    // Center
+    .center {
+
+        .header {
+            padding: 24px 0;
+
+            .sidenav-toggle {
+                margin: 0;
+                width: 56px;
+                height: 56px;
+                background: #FFFFFF;
+                border-radius: 0;
+                border-right: 1px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .search {
+                height: 56px;
+                line-height: 56px;
+                padding: 18px;
+                background: #FFFFFF;
+
+                .icon {
+                    margin: 0;
+                }
+
+                input {
+                    padding-left: 16px;
+                    height: 56px;
+                    color: rgba(0, 0, 0, 0.54);
+                }
+            }
+        }
+
+        .content-card {
+
+            .toolbar {
+                padding: 8px 16px;
+                position: relative;
+            }
+
+            .content {
+                padding: 0;
+                overflow: hidden;
+
+                .todo-list-pane {
+                    background: #FAFAFA;
+                }
+
+            }
+        }
+    }
+}

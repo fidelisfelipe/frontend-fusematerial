@@ -1,0 +1,22 @@
+<ui-gmap-google-map center="vm.simpleMarkerMap.center" zoom="vm.simpleMarkerMap.zoom">
+    <ui-gmap-marker coords="vm.simpleMarkerMap.marker.coords"
+                    idkey="vm.simpleMarkerMap.marker.id">
+        <ui-gmap-window show="'true'">
+            <div ng-non-bindable="">
+                <div id="siteNotice"></div>
+                <h1 id="firstHeading" class="firstHeading">Uluru</h1>
+
+                <div id="bodyContent">
+                    <p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large
+                        sandstone rock formation in the southern part of the
+                        Northern Territory, central Australia. </p>
+
+                    <p>Attribution: Uluru, <a
+                            href="//en.wikipedia.org/w/index.php?title=Uluru&amp;oldid=297882194">
+                        http://en.wikipedia.org/w/index.php?title=Uluru</a>
+                        (last visited June 22, 2009).</p>
+                </div>
+            </div>
+        </ui-gmap-window>
+    </ui-gmap-marker>
+</ui-gmap-google-map>

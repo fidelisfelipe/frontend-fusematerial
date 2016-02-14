@@ -1,0 +1,158 @@
+#board-calendar {
+
+    #calendar {
+        position: relative;
+        margin: 24px;
+
+        &.Jan {
+            background-image: url('/assets/images/backgrounds/january.jpg');
+            background-position: 0 45%;
+        }
+        &.Feb {
+            background-image: url('/assets/images/backgrounds/february.jpg');
+            background-position: 0 50%;
+        }
+        &.Mar {
+            background-image: url('/assets/images/backgrounds/march.jpg');
+            background-position: 0 45%;
+        }
+        &.Apr {
+            background-image: url('/assets/images/backgrounds/april.jpg');
+            background-position: 0 48%;
+        }
+        &.May {
+            background-image: url('/assets/images/backgrounds/may.jpg');
+            background-position: 0 47%;
+        }
+        &.Jun {
+            background-image: url('/assets/images/backgrounds/june.jpg');
+            background-position: 0 48%;
+        }
+        &.Jul {
+            background-image: url('/assets/images/backgrounds/july.jpg');
+            background-position: 0 3%;
+        }
+        &.Aug {
+            background-image: url('/assets/images/backgrounds/august.jpg');
+            background-position: 0 61%;
+        }
+        &.Sep {
+            background-image: url('/assets/images/backgrounds/september.jpg');
+            background-position: 0 58%;
+        }
+        &.Oct {
+            background-image: url('/assets/images/backgrounds/october.jpg');
+            background-position: 0 50%;
+        }
+        &.Nov {
+            background-image: url('/assets/images/backgrounds/november.jpg');
+            background-position: 0 46%;
+        }
+        &.Dec {
+            background-image: url('/assets/images/backgrounds/december.jpg');
+            background-position: 0 43%;
+        }
+
+        .calendar-header {
+            padding: 16px 0;
+            min-height: 80px;
+            background: rgba(255, 255, 255, 0.84);
+        }
+
+        .calendar-main {
+            position: relative;
+            padding: 0 16px 16px 16px;
+            background: rgba(255, 255, 255, 0.84);
+
+            &.fc {
+
+                .fc-widget-header {
+                    border: none;
+                    color: rgba(0, 0, 0, 0.54);
+
+                    .fc-day-header {
+                        text-align: left;
+                        border: none;
+                        font-weight: 500;
+                        padding: 8px;
+                    }
+                }
+
+                .fc-widget-content {
+                    color: rgba(0, 0, 0, 0.54);
+
+                    .fc-day-grid-container {
+
+                        .fc-day-grid {
+
+                            .fc-day-number {
+                                text-align: left;
+                                padding: 8px 8px 0 8px;
+                            }
+                        }
+                    }
+
+                    .fc-time-grid-container {
+                        overflow: hidden;
+                        height: auto !important;
+
+                        .fc-axis {
+                            font-weight: 500;
+                            border: none;
+                        }
+                    }
+                }
+
+                .fc-event {
+                    border: none;
+                }
+                .fc-day-grid-event {
+                    margin: 4px 8px 0 8px;
+                    padding: 2px 4px;
+                    font-size: 13px;
+                    color: #FFFFFF;
+                }
+
+                .fc-time-grid-event {
+                    color: #FFFFFF;
+                }
+
+                .fc-month-view {
+                    //padding: 24px;
+                }
+
+                .fc-agenda-view {
+
+                    .fc-widget-header {
+
+                        .fc-day-header {
+                            border: 1px solid #DDD;
+                            line-height: 50px;
+                            font-size: 17px;
+                        }
+                    }
+
+                    > table > tbody > tr > td.fc-widget-content {
+                        border: none;
+                    }
+
+                    .fc-minor .fc-widget-content {
+                        border-top: none;
+                    }
+
+                    .fc-week, .fc-day {
+                        height: 100px !important;
+                    }
+
+                    .fc-widget-content {
+                        height: 50px;
+                    }
+
+                    .fc-axis {
+                        padding-left: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,225 @@
+#splash-screen {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3C4252;
+    z-index: 99999;
+
+    &.ng-leave {
+        opacity: 1;
+        transition: all linear 200ms;
+    }
+
+    &.ng-leave-active {
+        opacity: 0;
+    }
+
+    .center {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .logo {
+        width: 96px;
+        height: 96px;
+        line-height: 96px;
+        margin: 0 auto 48px auto;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 56px;
+        text-align: center;
+        border-radius: 2px;
+        background-color: #039BE5;
+        color: #FFFFFF;
+        box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.22);
+    }
+
+    .spinner-wrapper {
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+        transform: translate3d(0, 0, 0);
+
+        .outer-spinner {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            animation: rotate 2.25s linear infinite;
+
+            .spinner {
+                display: inline-block;
+                position: relative;
+                width: 48px;
+                height: 48px;
+                animation: sporadic-rotate 5s ease infinite;
+
+                .left {
+                    position: absolute;
+                    overflow: hidden;
+                    top: 0;
+                    left: 0;
+                    width: 24px;
+                    height: 48px;
+
+                    .circle {
+                        width: 48px;
+                        height: 48px;
+                        border: 4px solid #4285F4;
+                        border-right-color: transparent;
+                        border-bottom-color: transparent;
+                        border-radius: 50%;
+                        animation: animate-left-circle 1.25s ease infinite, left-circle-colors 5s linear infinite;
+                    }
+                }
+
+                .right {
+                    position: absolute;
+                    overflow: hidden;
+                    top: 0;
+                    left: 50%;
+                    width: 24px;
+                    height: 48px;
+
+                    .circle {
+                        position: relative;
+                        right: 100%;
+                        width: 48px;
+                        height: 48px;
+                        border: 4px solid #4285F4;
+                        border-left-color: transparent;
+                        border-bottom-color: transparent;
+                        border-radius: 50%;
+                        animation: animate-right-circle 1.25s ease infinite, right-circle-colors 5s linear infinite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Rotate
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// Sporadic rotate
+@keyframes sporadic-rotate {
+    12.5% {
+        transform: rotate(135deg);
+    }
+
+    25% {
+        transform: rotate(270deg);
+    }
+
+    37.5% {
+        transform: rotate(405deg);
+    }
+
+    50% {
+        transform: rotate(540deg);
+    }
+
+    62.5% {
+        transform: rotate(675deg);
+    }
+
+    75% {
+        transform: rotate(810deg);
+    }
+
+    87.5% {
+        transform: rotate(945deg);
+    }
+
+    100% {
+        transform: rotate(1080deg);
+    }
+}
+
+// Animate left circle
+@keyframes animate-left-circle {
+    0%, 100% {
+        transform: rotate(130deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+}
+
+// Animate right circle
+@keyframes animate-right-circle {
+    0%, 100% {
+        transform: rotate(-130deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+// Left circle colors
+@keyframes left-circle-colors {
+    0%, 100% {
+        border-color: #4285F4;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    25% {
+        border-color: #DE3E35;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    50% {
+        border-color: #F7C223;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    75% {
+        border-color: #1B9A59;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+}
+
+// Right circle colors
+@keyframes right-circle-colors {
+    0%, 100% {
+        border-color: #4285F4;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    25% {
+        border-color: #DE3E35;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    50% {
+        border-color: #F7C223;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    75% {
+        border-color: #1B9A59;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+}

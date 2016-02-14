@@ -1,0 +1,83 @@
+<div id="chartist" class="page-layout simple fullwidth doc-page chart-doc-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">COMPONENTS</span>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">CHARTS</span>
+            </div>
+            <div class="title">Chartist</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button" href="https://github.com/paradox41/angular-chartist.js"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <div class="md-title">Line Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.lineChart.data" chartist-chart-type="Line" chartist-chart-options="vm.lineChart.options"></chartist>
+        </div>
+
+        <div class="md-title">Line Area Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.lineAreaChart.data" chartist-chart-type="Line" chartist-chart-options="vm.lineAreaChart.options"></chartist>
+        </div>
+
+        <div class="md-title">Bi-polar Line Chart With Area Only</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.biPolarLineChart.data" chartist-chart-type="Line" chartist-chart-options="vm.biPolarLineChart.options"></chartist>
+        </div>
+
+        <div class="md-title">Bar Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.barChart.data" chartist-chart-type="Bar" chartist-chart-options="vm.barChart.options" chartist-responsive-options="vm.barChart.responsiveOptions"></chartist>
+        </div>
+
+        <div class="md-title">Horizontal Bar Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.horizontalBarChart.data" chartist-chart-type="Bar" chartist-chart-options="vm.horizontalBarChart.options"></chartist>
+        </div>
+
+        <div class="md-title">Bi-polar Bar Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.biPolarBarChart.data" chartist-chart-type="Bar" chartist-chart-options="vm.biPolarBarChart.options"></chartist>
+        </div>
+
+        <div class="md-title">Stacked Bar Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.stackedBarChart.data" chartist-chart-type="Bar" chartist-chart-options="vm.stackedBarChart.options" chartist-events="vm.stackedBarChart.events"></chartist>
+        </div>
+
+
+        <div class="md-title">Doughnut Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.donutChart.data" chartist-chart-type="Pie" chartist-chart-options="vm.donutChart.options"></chartist>
+        </div>
+
+        <div class="md-title">Pie Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.pieChart.data" chartist-chart-type="Pie" chartist-chart-options="vm.pieChart.options" chartist-responsive-options="vm.pieChart.responsiveOptions"></chartist>
+        </div>
+
+        <div class="md-title">Gauge Chart</div>
+        <div class="card md-whiteframe-4dp">
+            <chartist class="ct-chart ct-golden-section" chartist-data="vm.gaugeChart.data" chartist-chart-type="Pie" chartist-chart-options="vm.gaugeChart.options"></chartist>
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

@@ -1,0 +1,55 @@
+#scrumboard {
+
+    .settings-sidenav {
+
+        md-content {
+
+            &.labels {
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+                md-list {
+                    padding-top: 8px;
+
+                    .label {
+
+                        > div {
+                            padding-left: 8px;
+                            width: 100%;
+                        }
+
+                        .label-color-button {
+                            margin: 0 16px 0 0;
+                        }
+
+                        .title {
+                            margin: 0;
+                            line-height: 40px;
+                            cursor: pointer;
+                        }
+
+                        .editable-text {
+                            .editable-controls {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.labels-settings-menu-content {
+
+    .new-label-color-pick {
+        padding: 0 8px;
+        width: 208px;
+
+        .color {
+            width: 24px;
+            height: 24px;
+            margin: 4px;
+        }
+    }
+}

@@ -1,0 +1,119 @@
+#mail {
+
+    .mail-read-pane {
+        background: #FFFFFF;
+
+        .mail-header {
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+            .subject {
+                font-size: 17px;
+                font-weight: 500;
+            }
+        }
+
+        .mail-content {
+            padding: 24px 0;
+
+            .to {
+                color: rgba(0, 0, 0, 0.54);
+
+                .to-text {
+                    margin-right: 4px;
+                    text-transform: lowercase;
+                }
+            }
+
+            .info {
+                padding-bottom: 16px;
+
+                .avatar {
+                    margin-right: 16px;
+                }
+
+                .name {
+                    margin-right: 8px;
+                    font-weight: 500;
+                }
+
+                .toggle-details {
+                    padding-top: 16px;
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+
+                .details {
+                    padding-top: 8px;
+
+                    .title {
+                        font-weight: 500;
+                        margin-right: 6px;
+                    }
+
+                    .detail {
+                        color: rgba(0, 0, 0, 0.54);
+                    }
+                }
+
+            }
+        }
+
+        .attachments {
+            padding: 24px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+            .title {
+                margin-bottom: 16px;
+                font-weight: 500;
+            }
+
+            .attachment {
+
+                .preview {
+                    width: 100px;
+                    margin: 0 16px 8px 0;
+                }
+
+                .link {
+                    margin-bottom: 2px;
+                }
+
+                .size {
+                    font-size: 11px;
+                }
+            }
+        }
+
+        .reply {
+            padding: 24px 0;
+
+            .form {
+                border: 1px solid rgba(0, 0, 0, 0.12);
+
+                textarea {
+                    width: 100% !important;
+                    height: 140px !important;
+                    border: none;
+                    padding: 8px;
+                    box-sizing: border-box;
+                }
+
+                .actions {
+                    padding: 8px 16px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.12);
+                    background-color: rgba(0, 0, 0, 0.03);
+
+                    .send-button {
+                        margin: 0;
+                        width: 64px;
+                        min-width: 64px;
+                        height: 30px;
+                        line-height: 30px;
+                        min-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

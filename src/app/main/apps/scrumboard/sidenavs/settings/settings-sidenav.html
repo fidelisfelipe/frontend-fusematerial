@@ -1,0 +1,89 @@
+<!-- SIDENAV HEADER -->
+<md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
+    <div class="md-toolbar-tools">
+
+        <md-button ng-hide="vm.selectedMenu === 'Settings'" class="md-icon-button"
+                   ng-click="vm.selectedMenu = 'Settings'" aria-label="back" translate
+                   translate-attr-aria-label="SB.BACK">
+            <md-icon md-font-icon="icon-arrow-left"></md-icon>
+        </md-button>
+
+        <span flex class="menu-title">{{vm.selectedMenu}}</span>
+
+    </div>
+</md-toolbar>
+<!-- / SIDENAV HEADER -->
+
+<!-- SETTINGS -->
+<md-content ng-show="vm.selectedMenu === 'Settings'" class="animate-slide-right settings" ms-scroll ms-sidenav-helper>
+    <md-list>
+
+        <md-list-item class="item" ng-click="vm.selectedMenu = 'Board Color'">
+            <md-icon md-font-icon="icon-format-color-fill" class="s18"></md-icon>
+            <p class="title" translate="SB.BOARD_COLOR">Board Color</p>
+        </md-list-item>
+
+        <md-list-item class="item" ng-click="vm.board.settings.cardCoverImages = !vm.board.settings.cardCoverImages">
+            <md-icon md-font-icon="icon-image-area" class="s18"></md-icon>
+            <p flex class="title" translate="SB.CARD_COVER_IMAGES">Card Cover Images</p>
+            <md-icon ng-show="vm.board.settings.cardCoverImages" md-font-icon="icon-check" class="s18"></md-icon>
+        </md-list-item>
+
+        <md-list-item class="item" ng-click="vm.board.settings.subscribed = !vm.board.settings.subscribed">
+            <md-icon md-font-icon="icon-eye" class="s18"></md-icon>
+            <p flex class="title" translate="SB.SUBSCRIBE">Subscribe</p>
+            <md-icon ng-show="vm.board.settings.subscribed" md-font-icon="icon-check" class="s18"></md-icon>
+        </md-list-item>
+
+        <md-list-item class="item">
+            <md-icon md-font-icon="icon-content-copy" class="s18"></md-icon>
+            <p class="title" translate="SB.COPY_BOARD">Copy Board</p>
+        </md-list-item>
+
+        <md-list-item class="item">
+            <md-icon md-font-icon="icon-delete" class="s18"></md-icon>
+            <p class="title" translate="SB.DELETE_BOARD">Delete Board</p>
+        </md-list-item>
+
+        <md-divider></md-divider>
+
+        <md-list-item class="item" ng-click="vm.selectedMenu = 'Labels'" aria-label="inbox">
+            <md-icon md-font-icon="icon-label" class="s18"></md-icon>
+            <p class="title" translate="SB.LABELS">Labels</p>
+        </md-list-item>
+
+        <md-list-item class="item" ng-click="vm.selectedMenu = 'Members'" aria-label="inbox">
+            <md-icon md-font-icon="icon-account-multiple" class="s18"></md-icon>
+            <p class="title" translate="SB.MEMBERS">Members</p>
+        </md-list-item>
+
+    </md-list>
+</md-content>
+<!-- / SETTINGS -->
+
+<!-- COLOR -->
+<md-content ng-show="vm.selectedMenu === 'Board Color'" class="animate-slide-left board-color-selection">
+    <div layout="column" layout-fill
+         ng-include="'app/main/apps/scrumboard/sidenavs/settings/menus/color/color-menu.html'"
+         ng-controller="ColorMenuController as vm">
+    </div>
+</md-content>
+<!-- COLOR -->
+
+<!-- LABELS -->
+<md-content ng-show="vm.selectedMenu === 'Labels'" class="animate-slide-left labels">
+    <div layout="column" layout-fill
+         ng-include="'app/main/apps/scrumboard/sidenavs/settings/menus/labels/labels-menu.html'"
+         ng-controller="LabelsMenuController as vm">
+    </div>
+</md-content>
+<!-- LABELS -->
+
+<!-- MEMBERS -->
+<md-content ng-show="vm.selectedMenu === 'Members'" class="animate-slide-left members">
+    <div layout="column" layout-fill
+         ng-include="'app/main/apps/scrumboard/sidenavs/settings/menus/members/members-menu.html'"
+         ng-controller="MembersMenuController as vm">
+    </div>
+</md-content>
+<!-- MEMBERS -->

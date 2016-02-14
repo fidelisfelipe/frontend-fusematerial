@@ -1,0 +1,28 @@
+<div class="md-title sidenav-title">Scheduled Cards</div>
+
+<div class="cards">
+    <div ng-if="vm.cards.length <= 0">
+        <span translate="SB.NO_SCHEDULED_CARD">There is no scheduled card.</span>
+    </div>
+    <!-- CARD -->
+    <div class="card" layout="row" ng-repeat="card in vm.cards">
+
+        <!-- CARD DATE -->
+        <md-button class="md-raised card-date" ng-click="vm.goToDate(card.start)">
+            <div class="day-in-week">{{card.due | date:'EEEE'}}</div>
+            <div class="day">{{card.due | date:'d' }}</div>
+            <div class="month-year">{{card.due | date:'MMM yyyy'}}</div>
+        </md-button>
+        <!-- / CARD DATE -->
+
+        <!-- CARD NAME -->
+        <div class="card-title" flex layout="column" layout-align="center start"
+             ng-click="vm.openCardDialog($event, card.idCard)">
+            <span>{{card.title}}</span>
+        </div>
+        <!-- / CARD NAME -->
+
+    </div>
+    <!-- / CARD -->
+
+</div>

@@ -1,0 +1,19 @@
+#maps {
+
+    > .content {
+
+        md-tabs {
+            box-shadow: $whiteframe-shadow-1dp;
+        }
+
+        .card {
+            max-width: 1200px;
+            padding: 16px;
+            margin: 24px;
+
+            .angular-google-map-container {
+                height: 400px;
+            }
+        }
+    }
+}

@@ -1,0 +1,534 @@
+md-dialog {
+
+    &.card-dialog {
+        width: 90%;
+        max-width: 800px;
+        overflow: hidden;
+
+        md-toolbar {
+
+            .md-toolbar-tools {
+
+                > .md-menu {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+
+                    .md-button {
+                    }
+                }
+
+                .due-date {
+
+                    .moment-picker {
+
+                        .moment-picker-container {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+
+        md-dialog-content {
+            position: relative;
+            background-color: #F5F5F5;
+
+            .card-breadcrumb {
+                font-weight: 500;
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .card-subscribe {
+                margin-right: 8px;
+                color: rgba(0, 0, 0, 0.6);
+            }
+
+            .card-name {
+                font-size: 24px;
+
+                .editable-input {
+                    font-size: 24px;
+                }
+            }
+
+            .due-date {
+
+                .moment-picker {
+
+                    .picker {
+                        background: material-color('grey', '200');
+                        padding: 8px 10px;
+
+                        &:hover {
+                            background: material-color('grey', '300');
+                        }
+
+                        i {
+                            margin-right: 8px;
+                        }
+                    }
+
+                    .moment-picker-container {
+                        margin-top: 8px;
+                        right: 0;
+
+                        &:before, &:after {
+                            right: 15px;
+                            left: auto;
+                        }
+                    }
+                }
+
+                .remove-due-date {
+                    background: material-color('grey', '200');
+                    padding: 9px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: material-color('grey', '300');
+                    }
+                }
+            }
+
+            .description {
+                padding-bottom: 16px;
+
+                textarea {
+                    max-height: 96px;
+                }
+            }
+
+            .sections {
+
+                .section {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    margin-bottom: 32px;
+
+                    &:last-child {
+                        border-bottom: none;
+                        margin-bottom: 0;
+
+                        .section-content {
+                            padding-bottom: 0;
+                        }
+                    }
+
+                    .section-header {
+                        font-size: 16px;
+
+                        i {
+                            margin-right: 8px;
+                            color: rgba(0, 0, 0, 0.6);
+                        }
+
+                        .section-title {
+                            font-weight: 500;
+                        }
+                    }
+
+                    .section-content {
+                        padding: 24px 0 32px 0;
+                    }
+
+                    .labels {
+
+                        .section-content {
+                            padding: 8px 0 32px 0;
+                        }
+
+                        .label-chips {
+
+                            .md-chips {
+                                box-shadow: none;
+                                padding: 0;
+
+                                md-chip {
+                                    background: transparent;
+                                    padding-right: 0 !important;
+                                    padding-left: 0 !important;
+
+                                    .label-chip {
+                                        padding: 0 32px 0 12px;
+                                        border-radius: 16px;
+                                        display: block;
+                                        height: 32px;
+                                        line-height: 32px;
+                                        font-size: 14px;
+                                    }
+
+                                    .md-chip-remove-container {
+                                        right: 12px;
+                                        line-height: 32px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .members {
+
+                        .section-content {
+                            padding: 8px 0 32px 0;
+                        }
+
+                        .member-chips {
+
+                            .md-chips {
+                                box-shadow: none;
+                                padding: 0;
+
+                                md-chip {
+                                    padding-left: 0;
+
+                                    .member-chip {
+
+                                        .member-chip-avatar {
+                                            width: 32px;
+                                            border-radius: 50%;
+                                        }
+                                    }
+
+                                    .md-chip-remove-container {
+                                        right: 6px;
+                                        line-height: 32px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .attachments {
+
+                        .attachment {
+                            margin-bottom: 16px;
+
+                            .attachment-preview {
+                                background-color: #EEF0F2;
+                                width: 160px;
+                                height: 128px;
+                                background-size: contain;
+                                background-position: 50% 50%;
+                                background-repeat: no-repeat;
+                                margin-right: 24px;
+                                font-weight: 500;
+                                color: rgba(0, 0, 0, 0.6);
+                            }
+
+                            .attachment-content {
+
+                                .attachment-url,
+                                .attachment-name {
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                }
+
+                                .attachment-is-cover {
+                                    margin-left: 6px;
+                                }
+
+                                .attachment-time {
+                                    color: rgba(0, 0, 0, 0.6);
+                                }
+
+                                .attachment-actions-button {
+                                    background-color: white;
+                                    text-transform: capitalize;
+                                    margin: 12px 0 0 0;
+                                    padding-left: 12px;
+
+                                    i {
+                                        margin-left: 8px;
+                                        color: rgba(0, 0, 0, 0.6);
+                                    }
+                                }
+                            }
+                        }
+
+                        .add-attachment-button {
+                            margin: 0;
+
+                            i {
+                                color: rgba(0, 0, 0, 0.6);
+                                margin-right: 8px;
+                            }
+
+                            span {
+                                font-weight: 500;
+                                text-transform: capitalize;
+                            }
+                        }
+                    }
+
+                    .checklist {
+
+                        .checklist-progress {
+                            margin-bottom: 16px;
+
+                            .checklist-progress-value {
+                                margin-right: 12px;
+                                font-weight: 500;
+                                white-space: nowrap;
+                                font-size: 14px;
+                            }
+
+                            .checklist-progressbar {
+                            }
+                        }
+
+                        .check-items {
+
+                            .check-item {
+
+                                md-checkbox {
+
+                                    .md-label {
+                                        font-size: 14px;
+                                    }
+
+                                    &.md-checked {
+
+                                        .md-label {
+                                            text-decoration: line-through;
+                                            color: rgba(0, 0, 0, 0.6);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .new-check-item-form {
+                            padding-top: 16px;
+
+                            md-input-container {
+                                margin: 0;
+                            }
+
+                            .md-button {
+                                margin: 0 0 0 16px;
+                            }
+                        }
+                    }
+
+                    .comments {
+
+                        .comment {
+                            margin-bottom: 16px;
+
+                            .comment-member-avatar {
+                                width: 32px;
+                                height: 32px;
+                                border-radius: 50%;
+                                margin-right: 16px;
+                            }
+
+                            .comment-member-name {
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+
+                            .comment-time {
+                                font-size: 12px;
+                            }
+
+                            .comment-bubble {
+                                position: relative;
+                                padding: 8px;
+                                background-color: white;
+                                border: 1px solid rgb(220, 223, 225);
+                                font-size: 14px;
+                                margin: 4px 0;
+
+                                &:after,
+                                &:before {
+                                    content: ' ';
+                                    position: absolute;
+                                    width: 0;
+                                    height: 0;
+                                }
+
+                                &:after {
+                                    left: -7px;
+                                    right: auto;
+                                    top: 0px;
+                                    bottom: auto;
+                                    border: 11px solid;
+                                    border-color: white transparent transparent transparent;
+                                }
+
+                                &:before {
+                                    left: -9px;
+                                    right: auto;
+                                    top: -1px;
+                                    bottom: auto;
+                                    border: 8px solid;
+                                    border-color: rgb(220, 223, 225) transparent transparent transparent;
+                                }
+                            }
+
+                            &.new-comment {
+
+                                md-input-container {
+                                    margin: 0;
+                                    border: none;
+
+                                    textarea {
+                                        border: 1px solid rgb(220, 223, 225);
+                                        background-color: white;
+                                        padding: 8px;
+                                        min-height: 96px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .activities {
+
+                        .activity {
+                            margin-bottom: 12px;
+
+                            .activity-member-avatar {
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                                margin-right: 16px;
+                            }
+
+                            .activity-member-name {
+                                font-size: 14px;
+                                font-weight: 500;
+                                margin-right: 8px;
+                            }
+
+                            .activity-message {
+                                font-size: 14px;
+                                margin-right: 8px;
+                            }
+
+                            .activity-time {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checklist-menu-content {
+    padding: 8px 16px 16px 16px;
+
+    md-input-container {
+        width: 100%;
+        margin: 8px 0 8px 0;
+    }
+
+    .md-button {
+        margin: 8px 0 0 0;
+    }
+}
+
+.labels-menu-content {
+    position: relative;
+    padding: 4px 0;
+    max-height: 400px;
+
+    md-tabs-wrapper {
+        height: 0;
+        overflow: hidden;
+    }
+
+    md-tabs-content-wrapper {
+        top: 0;
+    }
+
+    md-input-container {
+
+        input {
+            font-size: 16px;
+        }
+    }
+
+    .label {
+        padding: 4px 16px;
+
+        .label-toggle-button {
+            font-size: 13px;
+        }
+
+        .label-edit-button {
+            margin: 0 0 0 8px;
+            padding: 0;
+            text-align: center;
+
+            md-icon {
+                margin: 0;
+            }
+        }
+    }
+
+    md-menu-divider {
+        display: block;
+    }
+
+    .add-label-tab-content,
+    .edit-label-tab-content {
+
+        .header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .content {
+            padding: 0 16px 8px 16px;
+
+            .label-color-picker {
+                width: 240px;
+                margin: 0 -4px 0 2px;
+
+                .color {
+                    width: 24px;
+                    height: 24px;
+                    margin: 0 6px 6px 0;
+                    cursor: pointer;
+                }
+            }
+
+            .create-button {
+                margin: 16px 0 8px 0;
+            }
+        }
+    }
+}
+
+.members-menu-content {
+    position: relative;
+    padding: 4px 0;
+    max-height: 400px;
+
+    md-input-container {
+
+        input {
+            font-size: 16px;
+        }
+    }
+
+    .member {
+
+        .md-button {
+
+            .avatar {
+                margin-right: 16px;
+                width: 32px;
+                height: 32px;
+                min-width: 32px;
+            }
+
+            .member-name {
+                font-size: 13px;
+            }
+        }
+    }
+}

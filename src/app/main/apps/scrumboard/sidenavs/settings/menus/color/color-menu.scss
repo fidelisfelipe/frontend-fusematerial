@@ -1,0 +1,35 @@
+#scrumboard {
+
+    .settings-sidenav {
+
+        md-content {
+
+            &.board-color-selection {
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+                .header {
+
+                    .selected-color {
+
+                        .title {
+                            padding-left: 16px;
+                        }
+
+                        .preview {
+                            padding: 8px 16px;
+                        }
+                    }
+                }
+
+                .content {
+                    position: relative;
+
+                    md-list {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

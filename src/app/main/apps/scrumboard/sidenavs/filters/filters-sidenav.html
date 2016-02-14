@@ -1,0 +1,58 @@
+<!-- SIDENAV HEADER -->
+<md-toolbar class="md-accent" ng-class="'md-'+vm.board.settings.color+'-bg'">
+    <div class="md-toolbar-tools">
+        <span flex class="menu-title" translate="SB.FILTER_CARDS">Filter Cards</span>
+        <md-button ng-if="vm.filteringIsOn()" ng-click="vm.clearFilters()" class="md-icon-button"
+                   aria-label="clear filters">
+            <md-icon md-font-icon="icon-filter-remove"></md-icon>
+            <md-tooltip>
+                <span translate="SB.CLEAR_FILTER">Clear Filters</span>
+            </md-tooltip>
+        </md-button>
+    </div>
+</md-toolbar>
+<!-- / SIDENAV HEADER -->
+
+<!-- CONTENT -->
+<md-content class="" ms-scroll>
+    <md-list>
+
+        <!-- FILTER BY NAME -->
+        <md-subheader class="md-no-sticky" translate="SB.FILTER_BY_CARD_NAME">Filter by Card Name</md-subheader>
+
+        <md-list-item>
+            <input flex placeholder="Type Card Name" type="text" ng-model="vm.cardFilters.name"
+                   translate translate-attr-placeholder="SB.TYPE_CARD_NAME">
+        </md-list-item>
+        <!-- / FILTER BY NAME -->
+
+        <md-divider></md-divider>
+
+        <!-- FILTER BY LABELS -->
+        <md-subheader class="md-no-sticky" translate="SB.FILTER_BY_LABELS">Filter by Labels</md-subheader>
+
+        <md-list-item class="label" ng-repeat="label in vm.labels"
+                      ng-click="vm.toggleInArray(label.id, vm.cardFilters.labels)">
+            <md-icon md-font-icon="icon-label" ng-class="label.color+'-fg'" class="label-icon"></md-icon>
+            <p>{{label.name}}</p>
+            <i class="icon-check s16" ng-if="vm.exists(label.id, vm.cardFilters.labels)"></i>
+        </md-list-item>
+        <!-- / FILTER BY LABELS -->
+
+        <md-divider></md-divider>
+
+        <!-- FILTER BY MEMBERS -->
+        <md-subheader class="md-no-sticky" translate="SB.FILTER_BY_MEMBERS">Filter by Members</md-subheader>
+
+        <md-list-item class="member" ng-repeat="member in vm.members"
+                      ng-click="vm.toggleInArray(member.id, vm.cardFilters.members)"
+                      aria-label="Toggle Member">
+            <img alt="{{ member.name }}" ng-src="{{ member.avatar }}" class="md-avatar"/>
+            <p class="member-name">{{ member.name }}</p>
+            <i class="icon-check s16" ng-if="vm.exists(member.id, vm.cardFilters.members)"></i>
+        </md-list-item>
+        <!-- / FILTER BY MEMBERS -->
+
+    </md-list>
+</md-content>
+<!-- / CONTENT -->

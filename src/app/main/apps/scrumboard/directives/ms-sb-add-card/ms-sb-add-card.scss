@@ -1,0 +1,24 @@
+#ms-sb-add-card-close-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    z-index: 998;
+}
+
+.ms-sb-add-card-form {
+    z-index: 999;
+    background: white;
+    display: block;
+    position: relative;
+    padding: 8px;
+    margin: 0 16px 16px 16px;
+
+    md-input-container {
+        width: 100%;
+        margin: 0;
+        padding: 12px 8px;
+    }
+}

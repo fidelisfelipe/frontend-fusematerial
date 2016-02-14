@@ -1,0 +1,78 @@
+#mail {
+
+    // Sidenav
+    .sidenav {
+
+        .header {
+
+            .logo {
+
+                .logo-icon {
+                    margin: 0 16px 0 0;
+                }
+
+                .logo-text {
+                    font-size: 24px;
+                }
+            }
+
+            .account {
+                width: 100%;
+
+                .account-selection {
+                    margin: 0;
+                    padding: 0;
+
+                    .md-select-label {
+                        width: 100%;
+                    }
+
+                    .md-select-value {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+
+        .content {
+            padding: 24px 0;
+
+            .compose-button {
+                padding: 0 24px 24px 24px;
+
+                .md-button {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+
+        &.md-locked-open {
+
+            .header {
+                color: #FFFFFF;
+
+                .logo {
+                    padding-top: 27px;
+
+                    .logo-icon {
+
+                        md-icon {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:not(.md-locked-open) {
+
+            .header {
+                height: 150px;
+                min-height: 150px;
+                max-height: 150px;
+                padding-top: 24px;
+            }
+        }
+    }
+}

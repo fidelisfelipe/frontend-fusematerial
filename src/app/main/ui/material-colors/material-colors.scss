@@ -1,0 +1,38 @@
+#material-colors {
+
+    .content {
+        max-width: none !important;
+
+        .color-tabs {
+            box-shadow: $whiteframe-shadow-1dp;
+
+            md-tabs-content-wrapper {
+                display: none;
+            }
+        }
+
+        .color-tab {
+            padding: 24px;
+            background: none;
+
+            .color-header {
+                overflow: hidden;
+                margin-bottom: 8px;
+            }
+
+            .color {
+                overflow: hidden;
+                margin-bottom: 24px;
+
+                .fg-box {
+                    min-width: 128px;
+                    padding: 8px;
+                }
+            }
+
+            .colored-bg {
+                transition: background-color 400ms ease;
+            }
+        }
+    }
+}

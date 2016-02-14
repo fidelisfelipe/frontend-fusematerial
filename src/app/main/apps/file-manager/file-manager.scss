@@ -1,0 +1,112 @@
+#file-manager {
+
+    .center {
+
+        .header {
+            position: relative;
+
+            .header-content {
+                height: 100%;
+
+                .breadcrumb {
+                    font-size: 24px;
+                    padding-left: 90px;
+
+                    span {
+                        cursor: pointer;
+
+                        md-icon {
+                            cursor: default;
+                        }
+
+                        &:last-child {
+
+                            md-icon {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .separator {
+                        margin-left: 8px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            .add-file-button {
+                position: absolute;
+                bottom: -32px;
+                left: 16px;
+            }
+        }
+
+        .content {
+            padding: 0;
+            background: #FFFFFF;
+        }
+    }
+
+    .file-icon {
+
+        .icon-folder {
+
+            &:before {
+                color: #FFB300;
+            }
+        }
+
+        .icon-document {
+
+            &:before {
+                color: #1565C0;
+            }
+        }
+
+        .icon-spreadsheet {
+
+            &:before {
+                color: #4CAF50;
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-md) {
+
+    #file-manager {
+
+        .center {
+
+            .header {
+
+                .header-content {
+
+                    .breadcrumb {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    #file-manager {
+
+        .center {
+
+            .header {
+
+                .header-content {
+
+                    .breadcrumb {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

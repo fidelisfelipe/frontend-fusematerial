@@ -1,0 +1,49 @@
+<!-- MAIL LIST ITEMS -->
+<div class="mail-list-item {{mail.status}}" ng-repeat="mail in vm.inbox | filter: vm.search | filter: global.search"
+     md-ink-ripple
+     ng-click="vm.selectMail(mail)"
+     ng-class="{'starred': mail.starred, 'selected': vm.selectedMail === mail, 'checked': vm.isChecked(mail)}">
+
+    <div layout="row" layout-align="start center">
+        <md-checkbox class="no-label"
+                     ng-checked="vm.isChecked(mail)"
+                     ng-click="vm.toggleCheck(mail, $event)"
+                     aria-label="{{vm.isChecked(mail)? 'Uncheck':'check'}}">
+        </md-checkbox>
+
+
+        <div class="info" flex layout="column">
+            <div class="name" layout="row" layout-align="start center">
+                <img class="avatar" ng-if="mail.from.avatar" alt="{{mail.from.name}}" ng-src="{{mail.from.avatar}}"/>
+
+                <div class="avatar" ng-if="!mail.from.avatar" ms-random-class="vm.colors">
+                    {{mail.from.name[0]}}
+                </div>
+
+                <span class="text-truncate">{{mail.from.name}}</span>
+
+                <md-icon md-font-icon="icon-paperclip" class="has-attachment s16" ng-if="mail.hasAttachments"></md-icon>
+            </div>
+
+            <div class="subject text-truncate">
+                {{mail.subject}}
+            </div>
+
+            <div class="message">
+                {{mail.message | htmlToPlaintext | limitTo:90}}{{mail.message.length > 90 ? '...' : ''}}
+            </div>
+        </div>
+
+        <div layout="column" layout-align="space-between end">
+            <div class="time">{{mail.time}}</div>
+
+            <md-button class="md-icon-button" ng-click="vm.toggleStarred(mail, $event)"
+                       aria-label="Toggle starred" translate translate-attr-toogle-starred="MAIL.TOGGLE_STARRED">
+                <md-icon ng-if="mail.starred" md-font-icon="icon-star"
+                         class="amber-fg"></md-icon>
+                <md-icon ng-if="!mail.starred" md-font-icon="icon-star-outline"></md-icon>
+            </md-button>
+        </div>
+    </div>
+</div>
+<!-- / MAIL LIST ITEMS -->

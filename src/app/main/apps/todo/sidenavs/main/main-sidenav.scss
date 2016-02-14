@@ -1,0 +1,78 @@
+#todo {
+
+    // Sidenav
+    .sidenav {
+
+        .header {
+
+            .logo {
+
+                .logo-icon {
+                    margin: 0 16px 0 0;
+                }
+
+                .logo-text {
+                    font-size: 24px;
+                }
+            }
+
+            .project-selection {
+                margin: 0;
+            }
+        }
+
+        .content {
+            padding: 24px 0;
+
+            .add-task-button {
+                padding: 0 32px 24px 32px;
+
+                .md-button {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+
+            .item {
+                cursor: pointer;
+
+                &.selected {
+                    background-color: rgba(0, 0, 0, 0.06);
+                }
+
+                label {
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        &.md-locked-open {
+
+            .header {
+                color: #FFFFFF;
+
+                .logo {
+                    padding-top: 27px;
+
+                    .logo-icon {
+
+                        md-icon {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:not(.md-locked-open) {
+
+            .header {
+                height: 150px;
+                min-height: 150px;
+                max-height: 150px;
+                padding-top: 24px;
+            }
+        }
+    }
+}

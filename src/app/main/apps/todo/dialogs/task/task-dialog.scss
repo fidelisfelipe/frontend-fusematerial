@@ -1,0 +1,129 @@
+md-dialog {
+
+    &.task-dialog {
+        max-width: 720px;
+        width: 720px;
+
+        md-dialog-content {
+            display: block;
+            position: relative;
+        }
+
+        md-toolbar {
+
+            .title {
+                font-size: 17px;
+            }
+        }
+
+        md-input-container {
+
+            textarea {
+                min-height: 150px;
+            }
+        }
+
+        .date-container {
+            padding: 16px 0 24px 0;
+        }
+
+        .notes {
+
+            > label {
+                color: rgba(0, 0, 0, 0.54);
+            }
+
+            .mce-tinymce {
+                margin-top: 8px;
+            }
+        }
+
+        .tags {
+            margin: 8px 0;
+
+            label {
+                font-size: 11px;
+                color: rgba(0, 0, 0, 0.54);
+            }
+
+            .md-chips {
+                font-size: 13px;
+
+                .md-chip {
+
+                    md-chip-template {
+
+                        .color {
+                            display: inline-block;
+                            position: relative;
+                            width: 8px;
+                            height: 8px;
+                            top: -1px;
+                            border-radius: 50%;
+                            margin: -2px 4px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .attachment-list {
+            font-size: 13px;
+            padding-top: 16px;
+
+            .attachment {
+                background-color: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.12);
+                padding-left: 16px;
+                margin-top: 8px;
+                border-radius: 2px;
+
+                .filename {
+                    font-weight: 500;
+                }
+
+                .size {
+
+                }
+
+                .md-button {
+                    margin: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        md-dialog-actions {
+            position: relative;
+            overflow-y: hidden;
+            overflow-x: auto;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-md) {
+
+    md-dialog {
+
+        &.task-dialog {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    md-dialog {
+
+        &.task-dialog {
+            width: 90%;
+        }
+    }
+}

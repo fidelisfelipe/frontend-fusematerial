@@ -1,0 +1,73 @@
+<div id="material-colors" class="page-layout simple tabbed doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">USER INTERFACE</span>
+            </div>
+
+            <div class="title">Material Colors</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button"
+                       href="https://www.google.com/design/spec/style/color.html#color-color-palette"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <md-tabs class="color-tabs" md-dynamic-height md-swipe-content>
+            <md-tab ng-repeat="(paletteName, palette) in vm.palettes"
+                    md-on-select="vm.selected = paletteName; vm.selectedPalette = palette">
+                <md-tab-label>
+                    <span class="text-capitalize">{{paletteName}}</span>
+                </md-tab-label>
+            </md-tab>
+        </md-tabs>
+
+        <md-content class="color-tab">
+            <div class="h3 pb-16">Fuse has classes for every single color from <a
+                    href="https://www.google.com/design/spec/style/color.html#color-color-palette" target="_blank">Material
+                Design Color Palette</a> for your convenient. You can use them with pretty much every element except
+                Angular Material directives.
+            </div>
+
+            <div class="color-header colored-bg" ng-class="'md-'+vm.selected+'-bg'" layout="row" layout-align="start start" layout-wrap layout-padding>
+                <div flex="100">
+                    <h3 class="text-capitalize">{{vm.selected}}</h3>
+                </div>
+                <div layout="row" layout-align="space-between center" flex="100">
+                    <div>500</div>
+                    <div>
+                        rgb({{vm.selectedPalette['500'].value[0]}},{{vm.selectedPalette['500'].value[1]}},{{vm.selectedPalette['500'].value[2]}})
+                    </div>
+                </div>
+            </div>
+
+            <div class="color" layout="row" layout-wrap layout-align="center center">
+                <div class="colored-bg" ng-repeat="(hue, hueValue) in vm.selectedPalette" flex="100" layout="row"
+                     layout-sm="column" layout-padding
+                     ng-class="vm.selected+'-'+hue+'-bg'">
+                    <div flex>{{hue}}</div>
+                    <div class="colored-bg" ng-class="'md-'+vm.selected+'-'+hue+'-bg'" flex>.{{'md-'+vm.selected+'-'+hue+'-bg'}}</div>
+                    <div flex>.{{vm.selected+'-'+hue+'-bg'}}</div>
+                    <div class="fg-box white-bg md-whiteframe-2dp" ng-class="vm.selected+'-'+hue+'-fg'">
+                        .{{vm.selected+'-'+hue+'-fg'}}
+                    </div>
+                </div>
+            </div>
+        </md-content>
+    </div>
+    <!-- / CONTENT -->
+
+</div>

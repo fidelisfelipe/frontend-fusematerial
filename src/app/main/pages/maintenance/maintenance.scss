@@ -1,0 +1,57 @@
+#maintenance {
+    height: 100%;
+    background: url('/assets/images/backgrounds/march.jpg') no-repeat;
+    background-size: cover;
+
+    #maintenance-form-wrapper {
+        flex: 1 0 auto;
+        padding: 32px;
+
+        #maintenance-form {
+            max-width: 384px;
+            padding: 32px;
+            background: #FFFFFF;
+            text-align: center;
+
+            .logo {
+                width: 128px;
+                height: 128px;
+                line-height: 128px;
+                font-size: 86px;
+                font-weight: 500;
+                margin: 32px auto;
+                color: rgba(255, 255, 255, 1);
+                border-radius: 2px;
+            }
+
+            .title {
+                font-size: 17px;
+                margin-top: 16px;
+            }
+
+            .subtitle {
+                margin: 16px 0;
+                max-width: 300px;
+                color: rgba(0, 0, 0, 0.54);
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    #maintenance {
+
+        #maintenance-form-wrapper {
+            padding: 16px;
+
+            #maintenance-form {
+                padding: 24px;
+                width: 100%;
+            }
+        }
+    }
+
+}

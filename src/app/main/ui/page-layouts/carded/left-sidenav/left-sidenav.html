@@ -1,0 +1,71 @@
+<div class="page-layout carded left-sidenav" layout="row">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- SIDENAV -->
+    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="sidenav" ms-scroll
+                ms-sidenav-helper>
+
+        <!-- SIDENAV HEADER -->
+        <div class="header">
+            <p>Sidenav header</p>
+        </div>
+        <!-- / SIDENAV HEADER -->
+
+        <!-- SIDENAV CONTENT -->
+        <md-content class="content" flex ms-scroll>
+
+            <!-- DEMO SIDENAV -->
+            <div ng-include="'app/main/ui/page-layouts/demo/demo-sidenav.html'"></div>
+            <!-- / DEMO SIDENAV -->
+
+        </md-content>
+        <!-- / SIDENAV CONTENT -->
+
+    </md-sidenav>
+    <!-- / SIDENAV -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- CONTENT HEADER -->
+        <div class="header" layout="row">
+            <div>
+                <span class="h2 white-fg">Left sidenav with independent scroll</span>
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar" layout="row" layout-align="start center">
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('sidenav')" hide-gt-md
+                           aria-label="Toggle left sidenav">
+                    <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+                </md-button>
+
+                <p>Content toolbar</p>
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <md-content class="content" flex ms-scroll>
+
+                <!-- DEMO CONTENT -->
+                <div ng-include="'app/main/ui/page-layouts/demo/demo-content.html'"></div>
+                <!-- / DEMO CONTENT -->
+
+            </md-content>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

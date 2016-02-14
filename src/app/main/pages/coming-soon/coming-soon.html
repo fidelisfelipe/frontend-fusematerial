@@ -1,0 +1,55 @@
+<div id="coming-soon" class="flex-scrollable" layout="column" ms-scroll>
+    <div id="coming-soon-form-wrapper" layout="column" layout-align="center center">
+        <div id="coming-soon-form" class="md-whiteframe-8dp">
+            <div class="top">
+                <div class="logo md-accent-bg">
+                    <span>F</span>
+                </div>
+
+                <div class="title" translate="COMINGSOON.TITLE">Hey! Thank you for checking out our app.</div>
+                <div class="subtitle" translate="COMINGSOON.SUBTITLE">It’s not quite ready yet, but we are working hard
+                    and
+                    it will be ready in approximately:
+                </div>
+
+                <timer end-time="vm.endTime" layout="row" layout-wrap>
+                    <div flex-xs="50">
+                        <div class="value">{{days}}</div>
+                        <div class="type" translate="COMINGSOON.DAYS">days</div>
+                    </div>
+
+                    <div flex-xs="50">
+                        <div class="value">{{hours}}</div>
+                        <div class="type" translate="COMINGSOON.HOURS">hours</div>
+                    </div>
+
+                    <div flex-xs="50">
+                        <div class="value">{{minutes}}</div>
+                        <div class="type" translate="COMINGSOON.MINUTES">minutes</div>
+                    </div>
+
+                    <div flex-xs="50">
+                        <div class="value">{{seconds}}</div>
+                        <div class="type" translate="COMINGSOON.SECONDS">seconds</div>
+                    </div>
+                </timer>
+            </div>
+
+            <form>
+                <div class="message" translate="COMINGSOON.MESSAGE">
+                    If you would like to be notified when the app is ready, you can subscribe to our e-mail list.
+                </div>
+
+                <md-input-container flex md-no-float>
+                    <input type="email" placeholder="Email address" translate
+                           translate-attr-placeholder="COMINGSOON.EMAIL_ADRESS">
+                </md-input-container>
+
+                <md-button class="md-raised md-accent" aria-label="SUBSCRIBE" translate="COMINGSOON.SUBSCRIBE"
+                           translate-attr-aria-label="COMINGSOON.SUBSCRIBE">
+                    SUBSCRIBE
+                </md-button>
+            </form>
+        </div>
+    </div>
+</div>

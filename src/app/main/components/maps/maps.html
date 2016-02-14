@@ -1,0 +1,41 @@
+<div id="maps" class="page-layout simple tabbed doc-page" layout="column">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">COMPONENTS</span>
+            </div>
+            <div class="title">Maps</div>
+        </div>
+
+        <div layout="row" layout-align="start center">
+            <md-button class="md-raised reference-button" href="http://angular-ui.github.io/angular-google-maps/"
+                       target="_blank">
+                <md-icon md-font-icon="icon-link"></md-icon>
+                <span>Reference</span>
+            </md-button>
+        </div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <md-tabs md-stretch-tabs md-selected="vm.selectedIndex">
+            <md-tab ui-sref="app.components_maps">Simple Map</md-tab>
+            <md-tab ui-sref="app.components_maps.satellite">Satellite Map</md-tab>
+            <md-tab ui-sref="app.components_maps.terrain">Terrain Map</md-tab>
+            <md-tab ui-sref="app.components_maps.simple-marker">Simple Marker</md-tab>
+            <md-tab ui-sref="app.components_maps.custom-marker">Custom Marker</md-tab>
+            <md-tab ui-sref="app.components_maps.info-window">Info Window</md-tab>
+        </md-tabs>
+
+        <md-content ui-view="tabContent" flex class="card md-whiteframe-4dp"></md-content>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

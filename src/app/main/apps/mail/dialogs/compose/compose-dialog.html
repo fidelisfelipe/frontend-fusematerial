@@ -1,0 +1,97 @@
+<md-dialog class="compose-dialog" aria-label="New Message">
+    <form class="md-inline-form">
+        <md-toolbar class="md-accent md-hue-2">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <span class="title" translate="MAIL.NEW_MESSAGE">New Message</span>
+                <md-button class="md-icon-button" ng-click="vm.closeDialog()" aria-label="Close dialog" tranlate
+                           translate-aria-label="MAIL.CLOSE_DIALOG">
+                    <md-icon md-font-icon="icon-close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content ms-scroll>
+            <md-input-container class="md-block">
+                <label translate="MAIL.FROM">From</label>
+                <input ng-model="vm.form.from" type="email" disabled>
+            </md-input-container>
+
+            <md-input-container class="md-block to" ng-class="{'hidden-cc': vm.hiddenCC, 'hidden-bcc': vm.hiddenBCC}">
+                <label translate="MAIL.TO">To</label>
+                <input ng-model="vm.form.to" type="email">
+
+                <div class="cc-bcc" layout="row" layout-align="start center">
+                    <div class="show-cc" ng-show="vm.hiddenCC" ng-click="vm.hiddenCC = false">CC</div>
+                    <div class="show-bcc" ng-show="vm.hiddenBCC" ng-click="vm.hiddenBCC = false">BCC</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" ng-hide="vm.hiddenCC">
+                <label translate="MAIL.CC">Cc</label>
+                <input ng-model="vm.form.cc" type="email">
+            </md-input-container>
+
+            <md-input-container class="md-block" ng-hide="vm.hiddenBCC">
+                <label translate="MAIL.BCC">Bcc</label>
+                <input ng-model="vm.form.bcc" type="t">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label translate="MAIL.SUBJECT">Subject</label>
+                <input ng-model="vm.form.subject" type="text">
+            </md-input-container>
+
+            <text-angular ng-model="vm.form.message"></text-angular>
+
+            <div class="attachment-list">
+                <div class="attachment" layout="row" layout-align="space-between center">
+                    <div>
+                        <span class="filename">attachment-2.doc</span>
+                        <span class="size">(12 Kb)</span>
+                    </div>
+
+                    <md-button class="md-icon-button" aria-label="Delete attachment" translate
+                               translate-attr-aria-label="MAIL.DELETE_ATTACHMENT">
+                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                    </md-button>
+                </div>
+
+                <div class="attachment" layout="row" layout-align="space-between center">
+                    <div>
+                        <span class="filename">attachment-1.jpg</span>
+                        <span class="size">(350 Kb)</span>
+                    </div>
+
+                    <md-button class="md-icon-button" aria-label="Delete attachment" translate
+                               translate-attr-aria-label="MAIL.DELETE_ATTACHMENT">
+                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                    </md-button>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row" layout-align="space-between center">
+            <div layout="row" layout-align="start center">
+                <md-button ng-click="vm.closeDialog()" class="send-button md-accent md-raised" aria-label="Send"
+                           translate="MAIL.SEND"
+                           translate-attr-aria-label="MAIL.SEND">
+                    SEND
+                </md-button>
+
+                <md-button class="md-icon-button" aria-label="Attach file"
+                           translate-attr-aria-label="MAIL.ATTACH_FILE">
+                    <md-icon md-font-icon="icon-paperclip"></md-icon>
+                    <md-tooltip><span translate="MAIL.ATTACH_FILE"></span></md-tooltip>
+                </md-button>
+            </div>
+
+            <div layout="row">
+                <md-button class="md-icon-button" aria-label="Delete"
+                           translate-attr-aria-label="MAIL.DELETE">
+                    <md-icon md-font-icon="icon-delete"></md-icon>
+                    <md-tooltip><span translate="MAIL.DELETE"></span></md-tooltip>
+                </md-button>
+            </div>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

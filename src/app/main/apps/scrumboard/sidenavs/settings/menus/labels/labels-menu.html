@@ -1,0 +1,72 @@
+<md-list>
+
+    <!-- ADD NEW LABEL -->
+    <md-subheader class="md-no-sticky">Add New Label</md-subheader>
+
+    <md-list-item class="label">
+        <div layout="row" layout-align="start center">
+            <md-menu md-offset="0 52px">
+                <md-button class="md-icon-button label-color-button" ng-click="$mdOpenMenu($event)"
+                           aria-label="label color">
+                    <md-icon md-font-icon="icon-label" ng-class="vm.newLabelColor+'-fg'" class="label-icon"></md-icon>
+                </md-button>
+                <md-menu-content class="labels-settings-menu-content" width="3">
+                    <div class="new-label-color-pick" layout="row" layout-wrap>
+                        <label class="color" ng-repeat="(palette, hues) in vm.palettes"
+                               ng-style="{'background-color': vm.rgba(hues['500'].value), 'color': vm.rgba(hues['500'].contrast, 1)}"
+                               layout="column" layout-align="center center">
+                            <input class="ng-hide" type="radio"
+                                   ng-model="vm.newLabelColor"
+                                   ng-value="palette"
+                                   aria-label="{{palette}}"
+                                   ng-click="$mdMenu.hide()">
+                            <i class="icon-check s18"
+                               ng-if="label.color === palette"></i>
+                        </label>
+                    </div>
+                </md-menu-content>
+            </md-menu>
+            <span editable-text="vm.newLabelName" e-form="newLabelForm" onaftersave="vm.addNewLabel()"></span>
+            <p flex class="title new-label-form-button" ng-click="newLabelForm.$show()" ng-hide="newLabelForm.$visible">
+                Enter New Label Name
+            </p>
+        </div>
+    </md-list-item>
+    <!-- / ADD NEW LABEL -->
+
+    <md-divider></md-divider>
+
+    <!-- LABELS -->
+    <md-list-item class="label" ng-repeat="label in vm.board.labels">
+        <div layout="row" layout-align="start center">
+            <md-menu md-offset="0 52px">
+                <md-button class="md-icon-button label-color-button" ng-click="$mdOpenMenu($event)"
+                           aria-label="label color">
+                    <md-icon md-font-icon="icon-label" ng-class="label.color+'-fg'" class="label-icon"></md-icon>
+                </md-button>
+                <md-menu-content class="labels-settings-menu-content" width="3">
+                    <div class="new-label-color-pick" layout="row" layout-wrap>
+                        <label class="color" ng-repeat="(palette, hues) in vm.palettes"
+                               ng-style="{'background-color': vm.rgba(hues['500'].value), 'color': vm.rgba(hues['500'].contrast, 1)}"
+                               layout="column" layout-align="center center">
+                            <input class="ng-hide" type="radio"
+                                   ng-model="label.color"
+                                   ng-value="palette"
+                                   aria-label="{{palette}}"
+                                   ng-click="$mdMenu.hide()">
+                            <i class="icon-check s18"
+                               ng-if="label.color === palette"></i>
+                        </label>
+                    </div>
+                </md-menu-content>
+            </md-menu>
+            <p flex class="title" editable-text="label.name">{{label.name}} </p>
+            <md-button ng-click="vm.removeLabel($event, label.id);"
+                       class="remove-button md-icon-button" aria-label="remove">
+                <md-icon md-font-icon="icon-delete"></md-icon>
+            </md-button>
+        </div>
+    </md-list-item>
+    <!-- / LABELS -->
+
+</md-list>

@@ -1,0 +1,21 @@
+#forms {
+
+    .content {
+
+        .form-wrapper {
+
+        }
+
+        .form-data-wrapper {
+            margin-left: 16px;
+
+            .json-data-wrapper {
+                overflow: hidden;
+
+                pre {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

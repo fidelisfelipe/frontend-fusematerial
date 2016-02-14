@@ -1,0 +1,77 @@
+<div id="board-calendar" class="page-layout simple right-sidenav" flex layout="row"
+     ng-class="vm.board.settings.color+'-100-bg'">
+
+    <!-- SCHEDULED CARDS SIDENAV -->
+    <md-sidenav class="sidenav scheduled-tasks-sidenav md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')"
+                md-component-id="scheduled-tasks-sidenav"
+                ng-include="'app/main/apps/scrumboard/views/calendar/sidenavs/scheduled-tasks/scheduled-tasks-sidenav.html'"
+                ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / SCHEDULED CARDS SIDENAV -->
+
+    <!-- CALENDAR -->
+    <div id="calendar" class="md-whiteframe-2dp" flex layout="column" ng-class="vm.currentMonthShort">
+
+        <!-- CALENDAR HEADER -->
+        <div class="calendar-header" layout="row" layout-align="space-between center" layout-xs="column">
+
+            <md-button hide-gt-md class="md-icon-button" ng-click="vm.toggleSidenav('scheduled-tasks-sidenav')"
+                       aria-label="Scheduled Cards Sidenav">
+                <md-icon md-font-icon="icon-calendar-clock"></md-icon>
+                <md-tooltip><span translate="SB.SCHEDULED_CARDS">Scheduled Cards</span></md-tooltip>
+            </md-button>
+
+            <div class="" layout="row" layout-align="start center">
+                <md-button class="md-icon-button arrow" ng-click="vm.calendar.prev()" aria-label="Previous"
+                           translate translate-attr-aria-label="SB.PREVIOUS">
+                    <md-icon md-font-icon="icon-chevron-left"></md-icon>
+                </md-button>
+
+                <div class="title">
+                    {{vm.calendarView.title}}
+                </div>
+
+                <md-button class="md-icon-button arrow" ng-click="vm.calendar.next()" aria-label="Next" translate
+                           translate-attr-aria-label="SB.NEXT">
+                    <md-icon md-font-icon="icon-chevron-right"></md-icon>
+                </md-button>
+            </div>
+
+            <div>
+
+                <md-button class="md-icon-button" ng-click="vm.calendar.today()" aria-label="Today" translate
+                           translate-attr-aria-label="SB.TODAY">
+                    <md-icon md-font-icon="icon-calendar-today"></md-icon>
+                    <md-tooltip><span translate="SB.TODAY">Today</span></md-tooltip>
+                </md-button>
+
+                <md-button class="md-icon-button" ng-click="vm.calendar.changeView('agendaDay')" aria-label="Day"
+                           translate translate-attr-aria-label="SB.DAY">
+                    <md-icon md-font-icon="icon-view-day"></md-icon>
+                    <md-tooltip><span translate="SB.DAY">Day</span></md-tooltip>
+                </md-button>
+
+                <md-button class="md-icon-button" ng-click="vm.calendar.changeView('agendaWeek')" aria-label="Week"
+                           translate translate-attr-aria-label="SB.WEEK">
+                    <md-icon md-font-icon="icon-view-week"></md-icon>
+                    <md-tooltip><span translate="SB.WEEK">Week</span></md-tooltip>
+                </md-button>
+
+                <md-button class="md-icon-button" ng-click="vm.calendar.changeView('month')" aria-label="Month"
+                           translate translate-attr-aria-label="SB.MONTH">
+                    <md-icon md-font-icon="icon-view-module"></md-icon>
+                    <md-tooltip><span translate="SB.MONTH">Month</span></md-tooltip>
+                </md-button>
+            </div>
+        </div>
+        <!-- / CALENDAR HEADER -->
+
+        <!-- CALENDAR MAIN -->
+        <div class="calendar-main" ms-scroll flex ui-calendar="vm.calendarUiConfig.calendar" ng-model="vm.eventSources"
+             calendar="main"></div>
+        <!-- / CALENDAR MAIN -->
+
+    </div>
+    <!-- / CALENDAR -->
+
+</div>

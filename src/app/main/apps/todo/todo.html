@@ -1,0 +1,86 @@
+<div id="todo" class="page-layout carded left-sidenav" layout="row">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- LEFT SIDENAV -->
+    <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav"
+                ng-include="'app/main/apps/todo/sidenavs/main/main-sidenav.html'" ms-scroll ms-sidenav-helper>
+    </md-sidenav>
+    <!-- / LEFT SIDENAV -->
+
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+
+        <!-- CONTENT HEADER -->
+        <div class="header" layout="row" layout-align="start center">
+            <div class="search-wrapper md-whiteframe-4dp" flex layout="row" layout-align="start center">
+                <md-button class="md-icon-button sidenav-toggle" ng-click="vm.toggleSidenav('main-sidenav')" hide-gt-md
+                           aria-label="Toggle sidenav" translate translate-attr-aria-label="TODO.TOGGLE_SIDENAV">
+                    <md-icon md-font-icon="icon-menu" class="icon"></md-icon>
+                </md-button>
+
+                <div class="search" flex layout="row" layout-align="start center">
+                    <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
+                    <input flex ng-model="vm.taskFilters.search" type="text" placeholder="Search for a task or tag"
+                           translate
+                           translate-attr-placeholder="TODO.SEARCH">
+                </div>
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar" layout="row" layout-align="space-between center">
+
+                <md-select class="simplified" ng-model="vm.selectedFilter.dueDate" placeholder="Due Date">
+                    <md-option value="Next 3 days" translate="TODO.NEXT_3_DAYS">Next 3 days</md-option>
+                    <md-option value="Next 7 days" translate="TODO.NEXT_7_DAYS">Next 7 days</md-option>
+                    <md-option value="Next 2 weeks" translate="TODO.NEXT_2_WEEKS">Next 2 weeks</md-option>
+                    <md-option value="Next month" translate="TODO.NEXT_MONTH">Next month</md-option>
+                </md-select>
+
+                <div layout="row" layout-align="start center">
+                    <md-select class="simplified" ng-model="vm.taskOrder" placeholder="Order"
+                               ng-change="vm.taskOrderDescending = vm.taskOrder === '' ? false : vm.taskOrderDescending">
+                        <md-option value="startDateTimestamp" translate="TODO.START_DATE">Start Date</md-option>
+                        <md-option value="dueDateTimestamp" translate="TODO.DUE_DATE">Due Date</md-option>
+                        <md-option value="" translate="TODO.MANUAL">Manual</md-option>
+                        <md-option value="title" translate="TODO.TITLE">Title</md-option>
+                    </md-select>
+
+                    <md-button class="md-icon-button" ng-disabled="vm.taskOrder === ''"
+                               ng-click="vm.taskOrderDescending = !vm.taskOrderDescending"
+                               aria-label="Sort Direction"
+                               translate translate-attr-aria-label="TODO.SORT_DIRECTION">
+                        <md-icon md-font-icon="icon-sort-ascending" ng-if="vm.taskOrderDescending === false"></md-icon>
+                        <md-icon md-font-icon="icon-sort-descending" ng-if="vm.taskOrderDescending === true"></md-icon>
+                    </md-button>
+                </div>
+
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <div class="content" layout="row" flex>
+
+                <!-- Todo list pane -->
+                <md-content class="todo-list-pane" flex
+                            ng-include="'app/main/apps/todo/views/list/list-view.html'" ms-scroll="vm.msScrollOptions">
+                </md-content>
+                <!-- / Todo list pane -->
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARDb-->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>
