@@ -22,19 +22,19 @@
 
             // Apps
             'app.dashboards',
-            'app.calendar',
-            'app.mail',
-            'app.file-manager',
-            'app.scrumboard',
-            'app.todo',
+//            'app.calendar',
+//            'app.mail',
+//            'app.file-manager',
+//            'app.scrumboard',
+//            'app.todo',
 
             // Pages
-            'app.pages',
+//            'app.pages',
 
             // User Interface
-            'app.ui',
+//            'app.ui',
 
             // Components
-            'app.components'
+//            'app.components'
         ]);
 })();
