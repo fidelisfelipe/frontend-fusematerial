@@ -178,7 +178,8 @@
         api.dashboard = {
             project  : $resource(api.baseUrl + 'dashboard/project/data.json'),
             server   : $resource(api.baseUrl + 'dashboard/server/data.json'),
-            analytics: $resource(api.baseUrl + 'dashboard/analytics/data.json')
+            analytics: $resource(api.baseUrl + 'dashboard/analytics/data.json'),
+            home: $resource(api.baseUrl + 'dashboard/home/data.json')
         };
 
         api.cards = $resource(api.baseUrl + 'cards/cards.json');

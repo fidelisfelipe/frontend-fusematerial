@@ -1,0 +1,516 @@
+{
+    "widget_vencimento": {
+        "ranges": {
+            "DM": "Este Mês",
+            "DS": "Esta Semana",
+            "DH": "Hoje"
+        },
+        "currentRange": "DH",
+        "data": {
+            "label": "Vencendo",
+            "count": {
+                "DM": 21,
+                "DS": 25,
+                "DH": 19
+            },
+            "extra": {
+                "label": "",
+                "count": {
+                    "DM": "",
+                    "DS": "",
+                    "DH": ""
+                }
+            }
+        },
+        "detail": "Clientes com Propostas Vencendo"
+    },
+    "widget_fechadas": {
+        "ranges": {
+            "DM": "Este Mês",
+            "DS": "Esta Semana",
+            "DH": "Hoje"
+        },
+        "currentRange": "DH",
+        "data": {
+            "label": "Fechadas",
+            "count": {
+                "DM": 20,
+                "DS": 10,
+                "DH": 5
+            },
+            "extra": {
+                "label": "",
+                "count": {
+                    "DM": "",
+                    "DS": "",
+                    "DH": ""
+                }
+            }
+        },
+        "detail": "Clientes com Propostas Fechadas"
+    },
+    "widget_nao_fechados": {
+        "ranges": {
+            "DM": "Este Mês",
+            "DS": "Esta Semana",
+            "DH": "Hoje"
+        },
+        "currentRange": "DH",
+        "data": {
+            "label": "Não Fechados",
+            "count": {
+                "DM": 5,
+                "DS": 3,
+                "DH": 1
+            },
+            "extra": {
+                "label": "",
+                "count": {
+                    "DM": "",
+                    "DS": "",
+                    "DH": ""
+                }
+            }
+        },
+        "detail": "Clientes com Propostas Não Fechadas"
+    },
+    "widget5": {
+        "title": "Status de Propostas",
+        "ranges": {
+            "TW": "Esta Semana",
+            "LW": "Última Semana",
+            "2W": "Última Quinzena"
+        },
+        "mainChart": [
+            {
+            	"color": "green",
+                "key": "Vencendo",
+                "values": {
+                    "2W": [
+                        {"x": "Mon", "y": 5},
+                        {"x": "Tue", "y": 15},
+                        {"x": "Wed", "y": 16},
+                        {"x": "Thu", "y": 12},
+                        {"x": "Fri", "y": 1},
+                        {"x": "Sat", "y": 8},
+                        {"x": "Sun", "y": 2}
+                    ],
+                    "LW": [
+                        {"x": "Mon", "y": 1},
+                        {"x": "Tue", "y": 2},
+                        {"x": "Wed", "y": 4},
+                        {"x": "Thu", "y": 5},
+                        {"x": "Fri", "y": 1},
+                        {"x": "Sat", "y": 2},
+                        {"x": "Sun", "y": 3}
+                    ],
+                    "TW": [
+                        {"x": "Mon", "y": 2},
+                        {"x": "Tue", "y": 1},
+                        {"x": "Wed", "y": 1},
+                        {"x": "Thu", "y": 1},
+                        {"x": "Fri", "y": 1},
+                        {"x": "Sat", "y": 2},
+                        {"x": "Sun", "y": 1}
+                    ]
+                }
+            },
+            {
+                "key": "Fechadas",
+                "values": {
+                    "2W": [
+                        {"x": "Mon", "y": 9},
+                        {"x": "Tue", "y": 12},
+                        {"x": "Wed", "y": 9},
+                        {"x": "Thu", "y": 12},
+                        {"x": "Fri", "y": 7},
+                        {"x": "Sat", "y": 8},
+                        {"x": "Sun", "y": 16}
+                    ],
+                    "LW": [
+                        {"x": "Mon", "y": 12},
+                        {"x": "Tue", "y": 8},
+                        {"x": "Wed", "y": 7},
+                        {"x": "Thu", "y": 13},
+                        {"x": "Fri", "y": 7},
+                        {"x": "Sat", "y": 6},
+                        {"x": "Sun", "y": 10}
+                    ],
+                    "TW": [
+                        {"x": "Mon", "y": 11},
+                        {"x": "Tue", "y": 10},
+                        {"x": "Wed", "y": 8},
+                        {"x": "Thu", "y": 11},
+                        {"x": "Fri", "y": 8},
+                        {"x": "Sat", "y": 10},
+                        {"x": "Sun", "y": 17}
+                    ]
+                }
+            },
+            {
+                "key": "Não Fechadas",
+                "values": {
+                    "2W": [
+                        {"x": "Mon", "y": 37},
+                        {"x": "Tue", "y": 32},
+                        {"x": "Wed", "y": 39},
+                        {"x": "Thu", "y": 27},
+                        {"x": "Fri", "y": 18},
+                        {"x": "Sat", "y": 24},
+                        {"x": "Sun", "y": 20}
+                    ],
+                    "LW": [
+                        {"x": "Mon", "y": 37},
+                        {"x": "Tue", "y": 24},
+                        {"x": "Wed", "y": 51},
+                        {"x": "Thu", "y": 31},
+                        {"x": "Fri", "y": 29},
+                        {"x": "Sat", "y": 17},
+                        {"x": "Sun", "y": 31}
+                    ],
+                    "TW": [
+                        {"x": "Mon", "y": 42},
+                        {"x": "Tue", "y": 28},
+                        {"x": "Wed", "y": 43},
+                        {"x": "Thu", "y": 34},
+                        {"x": "Fri", "y": 20},
+                        {"x": "Sat", "y": 25},
+                        {"x": "Sun", "y": 22}
+                    ]
+                }
+            }
+        ],
+        "supporting": {
+            "naoFechadas": {
+                "label": "Não Fechadas",
+                "count": {
+                    "2W": 48,
+                    "LW": 46,
+                    "TW": 54
+                },
+                "chart": {
+                    "key": "Não Fechadas",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 8},
+                            {"x": 2, "y": 5},
+                            {"x": 3, "y": 6},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ]
+                    }
+                }
+            },
+            "fechadas": {
+                "label": "Fechadas",
+                "count": {
+                    "2W": 27,
+                    "LW": 31,
+                    "TW": 26
+                },
+                "chart": {
+                    "key": "Fechadas",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 5},
+                            {"x": 2, "y": 4},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 7},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ]
+                    }
+                }
+            },
+            "vencendo": {
+                "label": "Vencendo",
+                "count": {
+                    "2W": 4,
+                    "LW": 5,
+                    "TW": 2
+                },
+                "chart": {
+                    "key": "Vencendo",
+                    "values": {
+                        "2W": [
+                            {"x": 0, "y": 6},
+                            {"x": 1, "y": 3},
+                            {"x": 2, "y": 7},
+                            {"x": 3, "y": 5},
+                            {"x": 4, "y": 5},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 7}
+                        ],
+                        "LW": [
+                            {"x": 0, "y": 5},
+                            {"x": 1, "y": 7},
+                            {"x": 2, "y": 8},
+                            {"x": 3, "y": 8},
+                            {"x": 4, "y": 6},
+                            {"x": 5, "y": 4},
+                            {"x": 6, "y": 1}
+                        ],
+                        "TW": [
+                            {"x": 0, "y": 3},
+                            {"x": 1, "y": 2},
+                            {"x": 2, "y": 1},
+                            {"x": 3, "y": 4},
+                            {"x": 4, "y": 8},
+                            {"x": 5, "y": 8},
+                            {"x": 6, "y": 4}
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "widget11": {
+        "title": "Propostas",
+        "table": {
+            "columns": [
+                {
+                    "title": ""
+                },
+                {
+                    "title": "Nome"
+                },
+                {
+                    "title": "Profissão"
+                },
+                {
+                    "title": "Local Trabalho"
+                },
+                {
+                    "title": "E-Mail"
+                },
+                {
+                	"title": "Veículo"
+                },
+                {
+                    "title": "Telefone"
+                }
+            ],
+            "rows": [
+                [
+                    "james.jpg",
+                    "Jack Gilbert",
+                    "Design Manager",
+                    "Johor Bahru",
+                    "jgilbert48@mail.com",
+                    "Ranger",
+                    "+16 298 032 7774"
+                ],
+                [
+                    "katherine.jpg",
+                    "Kathy Anderson",
+                    "Recruiting Manager",
+                    "Solţānābād",
+                    "kanderson49@mail.com.br",
+                     "Ranger",
+                    "+23 572 311 1136"
+                ],
+                [
+                    "andrew.jpg",
+                    "Mark Turner",
+                    "Recruiting Manager",
+                    "Neftegorsk",
+                    "mturner4a@mail.com",
+                     "Ranger",
+                    "+01 139 803 9263"
+                ],
+                [
+                    "jane.jpg",
+                    "Kathryn Martinez",
+                    "Director of Sales",
+                    "Palekastro",
+                    "kmartinez4b@mail.com",
+                     "Ranger",
+                    "+25 467 022 5393"
+                ],
+                [
+                    "alice.jpg",
+                    "Annie Gonzales",
+                    "Actuary",
+                    "Candon",
+                    "agonzales4c@mail.edu",
+                     "Ranger",
+                    "+99 891 619 7138"
+                ],
+                [
+                    "vincent.jpg",
+                    "Howard King",
+                    "Human Resources",
+                    "Bergen op Zoom",
+                    "hking4d@mail.gov",
+                     "Ranger",
+                    "+46 984 348 1409"
+                ],
+                [
+                    "joyce.jpg",
+                    "Elizabeth Dixon",
+                    "Electrical Engineer",
+                    "Písečná",
+                    "edixon4e@mail.gov",
+                     "Ranger",
+                    "+33 332 067 9063"
+                ],
+                [
+                    "danielle.jpg",
+                    "Dorothy Morris",
+                    "Office Assistant",
+                    "Magsaysay",
+                    "dmorris4f@mail.com",
+                     "Ranger",
+                    "+05 490 958 6120"
+                ],
+                [
+                    "carl.jpg",
+                    "Mark Gonzales",
+                    "Quality Control",
+                    "Matsue-shi",
+                    "mgonzales4g@mail.com",
+                     "Ranger",
+                    "+03 168 394 9935"
+                ],
+                [
+                    "profile.jpg",
+                    "Catherine Rogers",
+                    "Programmer Analyst",
+                    "Kangar",
+                    "crogers4h@mail.com",
+                     "Ranger",
+                    "+86 235 407 5373"
+                ],
+                [
+                    "garry.jpg",
+                    "Ruth Grant",
+                    "Community Outreach",
+                    "Beaune",
+                    "rgrant4i@mail.pl",
+                     "Ranger",
+                    "+36 288 083 8460"
+                ],
+                [
+                    "james.jpg",
+                    "Phyllis Gutierrez",
+                    "Administrative Assistant",
+                    "Shlissel’burg",
+                    "pgutierrez4j@mail.net",
+                     "Ranger",
+                    "+52 749 861 9304"
+                ],
+                [
+                    "alice.jpg",
+                    "Lillian Morris",
+                    "Media Planner",
+                    "Berlin",
+                    "lmorris4k@mail.de",
+                     "Ranger",
+                    "+59 695 110 3856"
+                ],
+                [
+                    "vincent.jpg",
+                    "Jeremy Anderson",
+                    "Systems Engineer",
+                    "Lũng Hồ",
+                    "janderson4l@mail.uk",
+                     "Ranger",
+                    "+40 384 115 1448"
+                ],
+                [
+                    "carl.jpg",
+                    "Arthur Lawrence",
+                    "Nurse Practicioner",
+                    "Sarkanjut",
+                    "alawrence4m@mail.com",
+                     "Ranger",
+                    "+36 631 599 7867"
+                ],
+                [
+                    "andrew.jpg",
+                    "David Simmons",
+                    "Social Worker",
+                    "Ushumun",
+                    "dsimmons4n@mail.com",
+                     "Ranger",
+                    "+01 189 681 4417"
+                ],
+                [
+                    "danielle.jpg",
+                    "Daniel Johnston",
+                    "Help Desk",
+                    "São Carlos",
+                    "djohnston4o@mail.gov",
+                     "Ranger",
+                    "+60 028 943 7919"
+                ],
+                [
+                    "joyce.jpg",
+                    "Ann King",
+                    "Internal Auditor",
+                    "Liren",
+                    "aking4p@mail.com",
+                     "Ranger",
+                    "+91 103 932 6545"
+                ],
+                [
+                    "james.jpg",
+                    "Phillip Franklin",
+                    "VP Accounting",
+                    "Soba",
+                    "pfranklin4q@mail.com",
+                     "Ranger",
+                    "+25 820 986 7626"
+                ],
+                [
+                    "garry.jpg",
+                    "Gary Gonzalez",
+                    "Speech Pathologist",
+                    "Gangkou",
+                    "ggonzalez4r@mail.cc",
+                     "Ranger",
+                    "+10 862 046 7916"
+                ]
+            ]
+        }
+    }
+}
