@@ -5,15 +5,40 @@
     angular
         .module('app.ui.formswizard.test')
         .controller('FormsTestController', FormsTestController);
-
+    
     /** @ngInject */
     function FormsTestController($mdDialog)
     {
         var vm = this;
 
         // Data
+        vm.tracker_page = {
+        	currentLabel:'Serviços | Criar Proposta Automóvel'
+        };
         vm.basicForm = {};
-        vm.formWizard = {};
+        
+        vm.formWizard = {
+        		title:'Proposta', 
+        		titleForm:'',
+        		tabs: {
+        			tab1: 'Proprietario', 
+        			tab2: 'Condutor',
+        			tab3: 'Condutor/Perfil',
+        			tab4: 'Menor 25 anos',
+        			tab5: 'Veículo', 
+        			tab6: 'Coberturas',
+        			tab7: 'Preparado'
+        				},
+        		firstname: 'John',
+        		lastname: 'Malter',
+        		email: 'johnm@sec.com',
+        		password: '123456',
+        		passwordConfirm: '123456',
+        		city: 'Brasília',
+        		postalCode: '72145000',
+        		address: 'Rua 25 esquina com a Rua 35'
+        		
+        };
 
         vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
         'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +

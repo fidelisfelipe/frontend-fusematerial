@@ -6,10 +6,10 @@
             <div class="breadcrumb" layout="row" layout-align="start center">
                 <md-icon md-font-icon="icon-home" class="s16"></md-icon>
                 <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-                <span class="parent">USER INTERFACE</span>
+                <span class="parent" ng-bind="vm.tracker_page.currentLabel"></span>
             </div>
 
-            <div class="title">Forms Test</div>
+            <div class="title" ng-bind="vm.formWizard.title"></div>
         </div>
     </div>
     <!-- / HEADER -->
@@ -17,10 +17,9 @@
     <!-- CONTENT -->
     <div class="content" layout="column">
 
-        <div class="md-title">Form Wizard Test</div>
+        <div class="md-title"  ng-bind="vm.formWizard.titleForm"></div>
         <div class="pb-16">
-            Form wizard is a combination of md-tabs and forms that we have created for you. You can have as many steps
-            as you want.
+            <!-- description null -->
         </div>
         <div layout="row">
 
@@ -35,7 +34,7 @@
                                 <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep1.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
-                                <span class="ms-form-wizard-step-text">Personal Information</span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab1"></span>
                             </span>
                         </md-tab-label>
 
@@ -123,7 +122,7 @@
                                 <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep2.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
-                                <span class="ms-form-wizard-step-text">Address</span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab2"></span>
                             </span>
                         </md-tab-label>
 
@@ -186,7 +185,7 @@
                                 <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep3.$valid">
                                     <i class="icon-check s16"></i>
                                 </span>
-                                <span class="ms-form-wizard-step-text">Payment Method</span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab3"></span>
                             </span>
                         </md-tab-label>
                         <md-tab-body>
@@ -250,6 +249,89 @@
                             </form>
                         </md-tab-body>
                     </md-tab>
+                    
+                    <md-tab ng-disabled="wizardStep1.$invalid || wizardStep2.$invalid || wizardStep3.$invalid">
+                        <md-tab-label>
+                            <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep4.$invalid">4</span>
+                                <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep3.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab4"></span>
+                            </span>
+                        </md-tab-label>
+                        <md-tab-body>
+                            <form name="wizardStep4" ms-form-wizard-form novalidate>
+                            </form>
+                        </md-tab-body>
+                    </md-tab>
+                    
+                    <md-tab ng-disabled="wizardStep1.$invalid 
+                    					|| wizardStep2.$invalid 
+                    					|| wizardStep3.$invalid 
+                    					|| wizardStep4.$invalid">
+                        <md-tab-label>
+                            <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep5.$invalid">5</span>
+                                <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep4.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab5"></span>
+                            </span>
+                        </md-tab-label>
+                        <md-tab-body>
+                            <form name="wizardStep5" ms-form-wizard-form novalidate>
+                            </form>
+                        </md-tab-body>
+                    </md-tab>
+                    
+                    <md-tab ng-disabled="wizardStep1.$invalid 
+                    					|| wizardStep2.$invalid 
+                    					|| wizardStep3.$invalid 
+                    					|| wizardStep4.$invalid
+                    					|| wizardStep5.$invalid">
+                        <md-tab-label>
+                            <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep6.$invalid">6</span>
+                                <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep5.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab6"></span>
+                            </span>
+                        </md-tab-label>
+                        <md-tab-body>
+                            <form name="wizardStep6" ms-form-wizard-form novalidate>
+                            </form>
+                        </md-tab-body>
+                        
+                    </md-tab>
+                    <md-tab ng-disabled="wizardStep1.$invalid 
+                    					|| wizardStep2.$invalid 
+                    					|| wizardStep3.$invalid 
+                    					|| wizardStep4.$invalid
+                    					|| wizardStep5.$invalid
+                    					|| wizardStep6.$invalid">
+                        <md-tab-label>
+                            <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep7.$invalid">7</span>
+                                <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep7.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab7"></span>
+                            </span>
+                        </md-tab-label>
+                        <md-tab-body>
+                            <form name="wizardStep7" ms-form-wizard-form novalidate>
+                            </form>
+                        </md-tab-body>
+                        
+                    </md-tab>
+                    
+                    
                 </md-tabs>
 
                 <div class="navigation" flex layout="row" layout-align="center center">
