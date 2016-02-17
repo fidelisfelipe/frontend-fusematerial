@@ -6,7 +6,7 @@
         .module('app.ui', [
             'app.ui.forms',
             //add new form wizard
-            'app.ui.formswizard.test',
+            'app.ui.forms-wizard.forms.test',
             'app.ui.icons',
             'app.ui.material-colors',
             'app.ui.page-layouts.blank',

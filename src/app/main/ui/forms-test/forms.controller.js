@@ -1,11 +1,23 @@
+function Seguro(tipoSeguro){
+	this.tipoSeguro = tipoSeguro;
+}
+function Pessoa(nome){
+	this.nome = nome;
+}
+function Proposta(seguro, pessoa){
+	this.seguro = seguro;
+	this.proprietario = pessoa;
+}
+
 (function ()
 {
     'use strict';
 
     angular
-        .module('app.ui.formswizard.test')
+        .module('app.ui.forms-wizard.forms.test')
         .controller('FormsTestController', FormsTestController);
-    
+		    
+
     /** @ngInject */
     function FormsTestController($mdDialog)
     {
@@ -18,34 +30,58 @@
         vm.basicForm = {};
         
         vm.formWizard = {
-        		title:'Proposta', 
+        		title:'FormTest',//Proposta 
         		titleForm:'',
         		tabs: {
-        			tab1: 'Proprietario', 
-        			tab2: 'Condutor',
-        			tab3: 'Condutor/Perfil',
-        			tab4: 'Menor 25 anos',
-        			tab5: 'Veículo', 
-        			tab6: 'Coberturas',
-        			tab7: 'Preparado'
-        				},
+        			tab1: 'Seguro', 
+        			tab2: 'Proprietario', 
+        			tab3: 'Condutor',
+        			tab4: 'Condutor/Perfil',
+        			tab5: 'Menor 25 anos',
+        			tab6: 'Veículo', 
+        			tab7: 'Coberturas',
+        			tab8: 'Preparado'
+        		},
+        		proposta: {
+        			seguro: {tipoSeguro: 'Novo', ci: '1234', seguradora: 'Bradesco'},		
+        			proprietario: {nome: 'Jonh'}},
+        		//seguro - tab1
+        		dtVigenciaInicio: '10/01/2016',
+        		dtVigenciaFim: '10/01/2016',
+        		apolice: '123456',
+        		classeBonus: 'Classe A',
+        		isSinistro: 'Não',
+        		//proprietario - tab2
+        		
         		firstname: 'John',
         		lastname: 'Malter',
         		email: 'johnm@sec.com',
         		password: '123456',
         		passwordConfirm: '123456',
+        		//condutor - tab2
         		city: 'Brasília',
-        		postalCode: '72145000',
-        		address: 'Rua 25 esquina com a Rua 35'
+        		postalCode: '72145800',
+        		address: 'Rua 25 esquina com a Rua 35',
+        		//condutor-perfil - tab3
+        		cardholder: '1234',
+        		cardnumber: '123',
+        		cc2: '123',
+        		expirationDate: '10',
+        		//Menor 25 - tab4
+        		
+        		//Veículo - tab5
+        		
+        		//Cobertura - tab6
         		
         };
-
         vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
         'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
         'WY').split(' ').map(function (state)
         {
             return {abbrev: state};
         });
+        //mock states
+        vm.formWizard.state = vm.states[0].abbrev;
 
         // Methods
         vm.sendForm = sendForm;

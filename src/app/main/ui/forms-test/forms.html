@@ -22,7 +22,6 @@
             <!-- description null -->
         </div>
         <div layout="row">
-
             <!-- FORM WIZARD -->
             <ms-form-wizard flex>
                 <md-tabs md-dynamic-height md-selected="msWizard.selectedIndex" md-center-tabs="true">
@@ -37,79 +36,121 @@
                                 <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab1"></span>
                             </span>
                         </md-tab-label>
-
+                        
                         <md-tab-body>
                             <form name="wizardStep1" class="md-inline-form" ms-form-wizard-form novalidate>
-                                <div layout="column" layout-gt-xs="row" flex>
-                                    <md-input-container flex="100" flex-gt-xs="50">
-                                        <input type="text" name="firstname" ng-model="vm.formWizard.firstname"
-                                               placeholder="Firstname"
-                                               required>
-                                        <div ng-messages="wizardStep1.firstname.$error"
-                                             ng-show="wizardStep1.firstname.$touched"
-                                             role="alert">
-                                            <div ng-message="required">
-                                                <span>Firstname field is required.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-
-                                    <md-input-container flex="100" flex-gt-xs="50">
-                                        <input type="text" name="lastname" ng-model="vm.formWizard.lastname"
-                                               placeholder="Lastname"
-                                               required>
-                                        <div ng-messages="wizardStep1.lastname.$error"
-                                             ng-show="wizardStep1.lastname.$touched"
-                                             role="alert">
-                                            <div ng-message="required">
-                                                <span>Lastname field is required.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-                                </div>
-
-                                <md-input-container class="md-block">
-                                    <input type="email" name="email" ng-model="vm.formWizard.email" placeholder="Email"
-                                           ng-pattern="/^.+@.+\..+$/" required>
-                                    <div ng-messages="wizardStep1.email.$error" ng-show="wizardStep1.email.$touched"
-                                         role="alert" multiple>
-                                        <div ng-message="required">
-                                            <span>Email field is required</span>
-                                        </div>
-                                        <div ng-message="pattern">
-                                            <span>Email must be a valid e-mail address</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-
-                                <div layout="column" layout-gt-sm="row" flex>
-                                    <md-input-container flex="100" flex-gt-xs="50">
-                                        <input type="password" name="password" ng-model="vm.formWizard.password"
-                                               placeholder="Password"
-                                               required>
-                                        <div ng-messages="wizardStep1.password.$error"
-                                             ng-show="wizardStep1.password.$touched"
-                                             role="alert">
-                                            <div ng-message="required">
-                                                <span>Password field is required.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-
-                                    <md-input-container flex="100" flex-gt-xs="50">
-                                        <input type="password" name="passwordConfirm"
-                                               ng-model="vm.formWizard.passwordConfirm"
-                                               placeholder="Password (Confirm)"
-                                               required>
-                                        <div ng-messages="wizardStep1.passwordConfirm.$error"
-                                             ng-show="wizardStep1.passwordConfirm.$touched"
-                                             role="alert">
-                                            <div ng-message="required">
-                                                <span>Password (Confirm) field is required.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-                                </div>
+                            	<!-- Tipo Seguro -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="tipoSeguro" ng-model="vm.formWizard.tipoSeguro"
+								           placeholder="Tipo Seguro"
+								           required>
+								    <div ng-messages="wizardStep1.tipoSeguro.$error"
+								         ng-show="wizardStep1.tipoSeguro.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Tipo Seguro field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	
+                            	<!-- CI -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="ci" ng-model="vm.formWizard.ci"
+								           placeholder="CI"
+								           required>
+								    <div ng-messages="wizardStep1.ci.$error"
+								         ng-show="wizardStep1.ci.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>CI field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	
+                            	<!-- Seguroadora -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="seguradora" ng-model="vm.formWizard.seguradora"
+								           placeholder="Seguradora"
+								           required>
+								    <div ng-messages="wizardStep1.seguradora.$error"
+								         ng-show="wizardStep1.seguradora.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Seguradora field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	
+                            	<!-- Data Vigencia Inicio-->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="dtVigenciaInicio" ng-model="vm.formWizard.dtVigenciaInicio"
+								           placeholder="Data Vigência Início"
+								           required>
+								    <div ng-messages="wizardStep1.dtVigenciaInicio.$error"
+								         ng-show="wizardStep1.dtVigenciaInicio.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Data Vigência Início field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>                            	
+                            	
+                            	<!-- Data Vigencia Fim -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="dtVigenciaFim" ng-model="vm.formWizard.dtVigenciaFim"
+								           placeholder="Data Vigência Fim"
+								           required>
+								    <div ng-messages="wizardStep1.dtVigenciaFim.$error"
+								         ng-show="wizardStep1.dtVigenciaFim.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Data Vigência Fim field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>                             	
+                            	
+                            	<!-- Apolice -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="apolice" ng-model="vm.formWizard.apolice"
+								           placeholder="Apólice"
+								           required>
+								    <div ng-messages="wizardStep1.apolice.$error"
+								         ng-show="wizardStep1.apolice.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Apólice field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>                          	
+                            	
+                            	<!-- Classe de Bonus -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="classeBonus" ng-model="vm.formWizard.classeBonus"
+								           placeholder="Classe de Bonus"
+								           required>
+								    <div ng-messages="wizardStep1.classeBonus.$error"
+								         ng-show="wizardStep1.classeBonus.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Classe de Bonus field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>                            	
+                            	
+                            	<!-- Houve Sinistro -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="isSinistro" ng-model="vm.formWizard.isSinistro"
+								           placeholder="Houve Sinistro"
+								           required>
+								    <div ng-messages="wizardStep1.isSinistro.$error"
+								         ng-show="wizardStep1.isSinistro.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Houve Sinistro field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>                            	
+                            	
                             </form>
                         </md-tab-body>
                     </md-tab>
@@ -128,51 +169,269 @@
 
                         <md-tab-body>
                             <form name="wizardStep2" ms-form-wizard-form novalidate>
-                                <div layout="column" layout-gt-xs="row">
-                                    <md-input-container flex>
-                                        <label>City</label>
-                                        <input type="text" name="city" ng-model="vm.formWizard.city">
-                                    </md-input-container>
-
-                                    <md-input-container flex>
-                                        <label>State</label>
-                                        <md-select ng-model="vm.formWizard.state">
-                                            <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                                {{state.abbrev}}
-                                            </md-option>
-                                        </md-select>
-                                    </md-input-container>
-
-                                    <md-input-container flex>
-                                        <label>Postal Code</label>
-                                        <input name="postalcode" ng-model="vm.formWizard.postalCode" placeholder="12345"
-                                               required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-                                        <div ng-messages="wizardStep2.postalcode.$error"
-                                             ng-show="wizardStep2.postalcode.$touched"
-                                             role="alert" multiple>
-                                            <div ng-message="required"><span>You must supply a postal code.</span></div>
-                                            <div ng-message="pattern">
-                                                <span>That doesn't look like a valid postal code.</span></div>
-                                            <div ng-message="md-maxlength">
-                                                <span>Postal code can't be longer than 5 characters.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-                                </div>
-
-                                <md-input-container class="md-block">
-                                    <label>Address</label>
-                                    <textarea ng-model="vm.formWizard.address" columns="1" md-maxlength="150"
-                                              rows="5" required></textarea>
-                                    <div ng-messages="wizardStep2.address.$error"
-                                         ng-show="wizardStep2.address.$touched"
-                                         role="alert" multiple>
-                                        <div ng-message="required"><span>Address field is required.</span></div>
-                                        <div ng-message="md-maxlength">
-                                            <span>Address can't be longer than 150 characters.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
+                               <!-- É o  Condutor Principal -->
+                               
+                               <!-- Nome -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="nome" ng-model="vm.formWizard.proposta.proprietario.nome"
+								           placeholder="Nome"
+								           required>
+								    <div ng-messages="wizardStep2.proposta.proprietario.nome.$error"
+								         ng-show="wizardStep2.proposta.proprietario.nome.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>Nome field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- RG - Número -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- RG - Orgão Emissor -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- RG - Data Emissão -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Data Nascimento -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Profissão -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Estado Civil -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Possui Garagem -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Cep -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Bairro -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Cidade -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Telefone -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Email -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Nº Habilitação -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Validade Habilitação -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Data da 1ª Habilitação -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Nome do Banco -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Nº Agência -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Nº Conta Corrente -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep2.${field}.$error"
+								         ng-show="wizardStep2.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               
                             </form>
                         </md-tab-body>
                     </md-tab>
@@ -190,62 +449,227 @@
                         </md-tab-label>
                         <md-tab-body>
                             <form name="wizardStep3" ms-form-wizard-form novalidate>
-                                <md-input-container class="md-block">
-                                    <input type="text" name="cardholder" ng-model="vm.formWizard.cardholder"
-                                           placeholder="Card Holder"
-                                           required>
-                                    <div ng-messages="wizardStep3.cardholder.$error"
-                                         ng-show="wizardStep3.cardholder.$dirty"
-                                         role="alert">
-                                        <div ng-message="required">
-                                            <span>Card holder field is required.</span>
-                                        </div>
-                                    </div>
-                                </md-input-container>
-
-                                <div layout="column" layout-gt-xs="row">
-                                    <md-input-container flex="100" flex-gt-xs="33">
-                                        <input type="text" name="cardnumber" ng-model="vm.formWizard.cardnumber"
-                                               placeholder="Card Number"
-                                               required>
-                                        <div ng-messages="wizardStep3.cardnumber.$error"
-                                             ng-show="wizardStep3.cardnumber.$dirty"
-                                             role="alert">
-                                            <div ng-message="required">
-                                                <span>Card number field is required.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-
-                                    <md-input-container flex="100" flex-gt-xs="33">
-                                        <input type="text" name="CC2" ng-model="vm.formWizard.cc2"
-                                               placeholder="CC2" md-maxlength="3"
-                                               required>
-                                        <div ng-messages="wizardStep3.cc2.$error"
-                                             ng-show="wizardStep3.cc2.$dirty"
-                                             role="alert" multipl>
-                                            <div ng-message="required">
-                                                <span>CC2 field is required.</span>
-                                            </div>
-                                            <div ng-message="md-maxlength">
-                                                <span>CC2 can't be longer than 3 characters.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-
-                                    <md-input-container flex="100" flex-gt-xs="33">
-                                        <input type="text" name="expirationDate" ng-model="vm.formWizard.expirationDate"
-                                               placeholder="Expiration Date"
-                                               required>
-                                        <div ng-messages="wizardStep3.expirationDate.$error"
-                                             ng-show="wizardStep3.expirationDate.$dirty"
-                                             role="alert">
-                                            <div ng-message="required">
-                                                <span>Expiration date field is required.</span>
-                                            </div>
-                                        </div>
-                                    </md-input-container>
-                                </div>
+                               <!-- Nome -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- RG - Número -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- RG - Orgão Emissor -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- RG - Data Emissão -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Data Nascimento -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Profissão -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Estado Civil -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Possui Garagem -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Cep -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Bairro -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Endereço - Cidade -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Telefone -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Email -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Nº Habilitação -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Validade Habilitação -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                               <!-- Data da 1ª Habilitação -->
+                               <md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep3.${field}.$error"
+								         ng-show="wizardStep3.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
                             </form>
                         </md-tab-body>
                     </md-tab>
@@ -263,6 +687,95 @@
                         </md-tab-label>
                         <md-tab-body>
                             <form name="wizardStep4" ms-form-wizard-form novalidate>
+                            	<!-- É Menor de 25 anos? -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep4.${field}.$error"
+								         ng-show="wizardStep4.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Endereço - Trabalho -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep4.${field}.$error"
+								         ng-show="wizardStep4.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Endereço - Trabalho - Possui Garagem -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep4.${field}.$error"
+								         ng-show="wizardStep4.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Endereço - Trabalho - Cep -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep4.${field}.$error"
+								         ng-show="wizardStep4.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Endereço - Trabalho - Bairro -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep4.${field}.$error"
+								         ng-show="wizardStep4.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Endereço - Cidade -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep4.${field}.$error"
+								         ng-show="wizardStep4.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container><md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep4.${field}.$error"
+								         ng-show="wizardStep4.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
                             </form>
                         </md-tab-body>
                     </md-tab>
@@ -283,6 +796,162 @@
                         </md-tab-label>
                         <md-tab-body>
                             <form name="wizardStep5" ms-form-wizard-form novalidate>
+                            	<!-- Fabricante -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Código FIPE  -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Modelo  -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Ano de Fabricação -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Combustível -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Cor -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Câmbio -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Placa -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Chassi -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Renavan -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Situação do Veículo -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Banco do Financiamento -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep5.${field}.$error"
+								         ng-show="wizardStep5.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
                             </form>
                         </md-tab-body>
                     </md-tab>
@@ -304,6 +973,136 @@
                         </md-tab-label>
                         <md-tab-body>
                             <form name="wizardStep6" ms-form-wizard-form novalidate>
+                            	<!-- Danos Materiais R$ -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Danos Pessoais R$ -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Danos Acidente por Passageiro R$ -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Assistência 24hrs -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Assistência até quantos Kilometros -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Carro Reserva -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Carro Reserva - prazo de dias -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Proteção de Vidros -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Proteção de Vidros - Quais -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
+                            	<!-- Kilometros por Mês -->
+                            	<md-input-container flex="100" flex-gt-xs="50">
+								    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
+								           placeholder="${Label}"
+								           required>
+								    <div ng-messages="wizardStep6.${field}.$error"
+								         ng-show="wizardStep6.${field}.$touched"
+								         role="alert">
+								        <div ng-message="required">
+								            <span>{Label} field is required.</span>
+								        </div>
+								    </div>
+								</md-input-container>
                             </form>
                         </md-tab-body>
                         
@@ -330,7 +1129,30 @@
                         </md-tab-body>
                         
                     </md-tab>
-                    
+                    <md-tab ng-disabled="wizardStep1.$invalid 
+                    					|| wizardStep2.$invalid 
+                    					|| wizardStep3.$invalid 
+                    					|| wizardStep4.$invalid
+                    					|| wizardStep5.$invalid
+                    					|| wizardStep6.$invalid
+                    					|| wizardStep7.$invalid">
+                        <md-tab-label>
+                            <span class="ms-form-wizard-step-label">
+                                <span class="ms-form-wizard-step-number md-accent-bg"
+                                      ng-if="wizardStep8.$invalid">8</span>
+                                <span class="ms-form-wizard-step-number md-accent-bg" ng-if="wizardStep8.$valid">
+                                    <i class="icon-check s16"></i>
+                                </span>
+                                <span class="ms-form-wizard-step-text" ng-bind="vm.formWizard.tabs.tab8"></span>
+                            </span>
+                        </md-tab-label>
+                        <md-tab-body>
+                            <form name="wizardStep8" ms-form-wizard-form novalidate>
+                            	Dados Preenchidos
+                            </form>
+                        </md-tab-body>
+                        
+                    </md-tab>
                     
                 </md-tabs>
 

@@ -33,7 +33,8 @@
 
             // User Interface
             'app.ui',
-
+            // component
+            
             // Components
 //            'app.components'
         ]);

@@ -3,7 +3,8 @@
     'use strict';
 
     angular
-        .module('app.ui.formswizard.test', [])
+        .module('app.ui.forms-wizard.forms.test', 
+        		[])
         .config(config);
 
     /** @ngInject */
