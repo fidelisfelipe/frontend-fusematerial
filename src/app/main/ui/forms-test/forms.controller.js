@@ -32,6 +32,26 @@ function Proposta(seguro, pessoa){
         vm.formWizard = {
         		title:'FormTest',//Proposta 
         		titleForm:'',
+        		//listas prévias
+        		tipoSeguroList: ('Novo Renovação').split(' ').map(function (tipo){
+                    return {nome: tipo};
+                }),
+                seguradoraList: ('Bradesco  Itaú  Azul  Porto Seguros').split('  ').map(function (tipo){
+                    return {nome: tipo};
+                }),
+                booleanList: ('Sim Não').split(' ').map(function (tipo){
+                    return {nome: tipo};
+                }),
+                classeBonusList: ('Classe A  Classe B  Classe C  Classe D  Sem Classe de Bônus').split('  ').map(function (tipo){
+                    return {nome: tipo};
+                }),
+                estadoCivilList: ('Solteiro Casado').split(' ').map(function (tipo){
+                    return {nome: tipo};
+                }),
+                estadoList: ('AC AL AP AM BA CE	DF ES GO MA MT MS MG PR PB PA PE PI RJ RN RS RO RR SC SE SP TO').split(' ').map(function (tipo){
+                    return {nome: tipo};
+                }),
+        		
         		tabs: {
         			tab1: 'Seguro', 
         			tab2: 'Proprietario', 
@@ -45,25 +65,25 @@ function Proposta(seguro, pessoa){
         			seguro: {
         				tipoSeguro: 'Novo', 
         				ci: '1234', 
-        				seguradora: 'Bradesco',
-        				dataVigenciaInicio: '10/01/2016',
-                		dataVigenciaFim: '10/01/2016',
+        				seguradora: 'Itaú',
+        				dataVigenciaInicio: new Date('10/01/2015'),
+                		dataVigenciaFim: new Date('10/01/2016'),
                 		apolice: '123456',
                 		classeBonus: 'Classe A',
-            			sinistro: 'Não',
+            			isSinistro: 'Não',
         			},		
 					proprietario: {
 						nome: 'Jonh',
 						rg: '123456',
 						orgaoEmissor: 'SSP-DF',
-						dataEmissao: '10/01/2016',
-						dataNascimento: '10/01/2016',
+						dataEmissao: new Date('10/01/2016'),
+						dataNascimento: new Date('10/01/2016'),
 						profissao: 'Professor',
 						estadoCivil: 'Casado',
 						endereco: {
 							complemento: 'Qnd 38 Conjuntio K Taguatinga Norte',
 							temGaragem: 'Sim',
-							cep: '72145811',
+							cep: '72000-000',
 							bairro: 'Taguatinga Norte',
 							cidade: 'Brasília'
 						},
@@ -71,8 +91,8 @@ function Proposta(seguro, pessoa){
 						email: 'jonh@ibm.com',
 						habilitacao: {
 							numero: '12345',
-							dataValidade: '12/01/2017',
-							dataExpedicao: '01/01/1990'
+							dataValidade: new Date('12/01/2017'),
+							dataExpedicao: new Date('01/01/1990')
 						},
 						banco: {nome: 'Bradesco'},
 						agencia: '123456-4',
@@ -83,8 +103,8 @@ function Proposta(seguro, pessoa){
 						nome: 'Jonh',
 						rg: '123456',
 						orgaoEmissor: 'SSP-DF',
-						dataEmissao: '10/01/2016',
-						dataNascimento: '10/01/2016',
+						dataEmissao: new Date('10/01/2016'),
+						dataNascimento: new Date('10/01/2016'),
 						profissao: 'Professor',
 						estadoCivil: 'Casado',
 						endereco: {
@@ -98,8 +118,8 @@ function Proposta(seguro, pessoa){
 						email: 'jonh@ibm.com',
 						habilitacao: {
 							numero: '12345',
-							dataValidade: '12/01/2017',
-							dataExpedicao: '01/01/1990'
+							dataValidade: new Date('12/01/2017'),
+							dataExpedicao: new Date('01/01/1990')
 						},
 						perfil: {
 							temMenorVinteCinco: 'Sim',
@@ -125,17 +145,19 @@ function Proposta(seguro, pessoa){
 						chassi: '12345678954213',
 						renavan: '12345679',
 						situacao: 'Financiado',
-						bancoFinanciamento: 'Bradesco'},
+						bancoFinanciamento: 'Bradesco'
+					},
 					cobertura: {
-						isDanosMateriais: 'Sim',
-						isDanosPessoais: 'Sim',
-						isDanosAcidentePassageiro: 'Sim',
+						danosMateriais: '2000',
+						danosPessoais: '2000',
+						danosAcidentePassageiro: '3000',
 						assistencia: {
 							isAssistenciaVinteQuatroHrs: 'Sim',
 							distanciaKm: '3000'},
 						carroReserva: {
-							prazoDias: '30', 
-							isCarroReserva: 'Sim'},
+							isCarroReserva: 'Sim',
+							prazoDias: '30'
+							},
 						protecaoVidros: {
 							isProtecao: 'Sim',
 							vidros : (
@@ -159,14 +181,6 @@ function Proposta(seguro, pessoa){
         		//Cobertura - tab6
         		
         };
-        vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-        'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-        'WY').split(' ').map(function (state)
-        {
-            return {abbrev: state};
-        });
-        //mock states
-        vm.formWizard.state = vm.states[0].abbrev;
 
         // Methods
         vm.sendForm = sendForm;

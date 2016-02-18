@@ -1,11 +1,28 @@
-<!-- template input valid  -->
 
+<!-- select valid -->
+<label>{Label}</label>
+<md-select name="{{field}}" ng-model="vm.formWizard.{{field}}" required>
+    <md-option ng-repeat="item in vm.formWizard.{{listItems}}" value="{{item.nome}}">
+        {{item.nome}}
+    </md-option>
+</md-select>
+
+<div ng-messages="wizardStep1.{{field}}.$error"
+     ng-show="wizardStep1.{{field}}.$touched"
+     role="alert">
+    <div ng-message="required">
+        <span>{Label} field is required.</span>
+    </div>
+</div>
+
+
+<!-- template input valid  -->
 <md-input-container flex="100" flex-gt-xs="50">
-    <input type="text" name="${field}" ng-model="vm.formWizard.${field}"
-           placeholder="${Label}"
+    <input type="text" name="{field}" ng-model="vm.formWizard.{field}"
+           placeholder="{Label}"
            required>
-    <div ng-messages="wizardStep1.${field}.$error"
-         ng-show="wizardStep1.${field}.$touched"
+    <div ng-messages="wizardStep1.{field}.$error"
+         ng-show="wizardStep1.{field}.$touched"
          role="alert">
         <div ng-message="required">
             <span>{Label} field is required.</span>
@@ -126,3 +143,27 @@
         </div>
     </div>
 </md-input-container>
+
+<!-- Telefone Mask-->
+<md-input-container flex="100" flex-gt-xs="50">
+    <input type="text" name="{{field}}" ng-model="vm.formWizard.{{field}}"
+           placeholder="{Label}" ui-mask="(99) 9999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"
+           required>
+    <div ng-messages="wizardStep2.{{field}}.$error"
+         ng-show="wizardStep2.{{field}}.$touched"
+         role="alert">
+        <div ng-message="required">
+            <span>{Label} field is required.</span>
+        </div>
+    </div>
+</md-input-container>
+
+<!-- Check box -->
+<div layout="column" layout-gt-xs="row" flex>
+  <md-checkbox ng-model="vm.formWizard.{{field}}" aria-label="{Label}">
+  </md-checkbox>
+  <md-input-container flex flex-gt-xs="30">
+  <label> {{ vm.formWizard.{{field}} ? '{Label True}' : '{Label False}' }}
+  </label>
+  </md-input-container>
+</div>

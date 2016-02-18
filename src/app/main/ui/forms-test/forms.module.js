@@ -4,7 +4,7 @@
 
     angular
         .module('app.ui.forms-wizard.forms.test', 
-        		[])
+        		['ui.mask'])
         .config(config);
 
     /** @ngInject */

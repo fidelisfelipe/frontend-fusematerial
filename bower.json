@@ -19,6 +19,7 @@
     "angular-translate": "2.8.1",
     "angular-translate-loader-partial": "2.8.1",
     "angular-ui-calendar": "1.0.1",
+    "angular-ui-mask": "1.7.2",
     "angular-ui-router": "0.2.15",
     "c3-angular": "0.7.1",
     "datatables-responsive": "1.0.7",
