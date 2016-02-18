@@ -37,10 +37,9 @@ function Proposta(seguro, pessoa){
         			tab2: 'Proprietario', 
         			tab3: 'Condutor',
         			tab4: 'Condutor/Perfil',
-        			tab5: 'Menor 25 anos',
-        			tab6: 'Veículo', 
-        			tab7: 'Coberturas',
-        			tab8: 'Preparado'
+        			tab5: 'Veículo', 
+        			tab6: 'Coberturas',
+        			tab7: 'Preparado'
         		},
         		proposta: {
         			seguro: {
@@ -91,7 +90,7 @@ function Proposta(seguro, pessoa){
 						endereco: {
 							complemento: 'Qnd 38 Conjuntio K Taguatinga Norte',
 							temGaragem: 'Sim',
-							cep: '72145811',
+							cep: '72000000',
 							bairro: 'Taguatinga Norte',
 							cidade: 'Brasília'
 						},
@@ -105,14 +104,53 @@ function Proposta(seguro, pessoa){
 						perfil: {
 							temMenorVinteCinco: 'Sim',
 							enderecoTrabalho: {
-								complemento: 'Qnd 38 Conjuntio K Taguatinga Norte',
+								complemento: 'Qnd 38 Conjunto K Taguatinga Norte',
 								temGaragem: 'Sim',
-								cep: '72145811',
+								cep: '72000000',
 								bairro: 'Taguatinga Norte',
 								cidade: 'Brasília'
 							},
-						}
+						},
+						
 					},
+					veiculo: {
+						fabricante: 'Ford',
+						codigoFipe: '1234',
+						modelo: 'Fusion',
+						anoFabricacao: '2009',
+						combustivel: 'Flex',
+						cor: 'Preto',
+						cambio: 'Manual',
+						placa: 'JJJ0001',
+						chassi: '12345678954213',
+						renavan: '12345679',
+						situacao: 'Financiado',
+						bancoFinanciamento: 'Bradesco'},
+					cobertura: {
+						isDanosMateriais: 'Sim',
+						isDanosPessoais: 'Sim',
+						isDanosAcidentePassageiro: 'Sim',
+						assistencia: {
+							isAssistenciaVinteQuatroHrs: 'Sim',
+							distanciaKm: '3000'},
+						carroReserva: {
+							prazoDias: '30', 
+							isCarroReserva: 'Sim'},
+						protecaoVidros: {
+							isProtecao: 'Sim',
+							vidros : (
+									'Parabrisas', 
+									'Retrovisores', 
+									'Farois')
+								.split(' ').map(
+										function (vidro)
+										{
+							            return {nome: vidro};
+										}),
+						},
+						kmPorMes: '2000'
+					}
+					
 					
         		},
         		
