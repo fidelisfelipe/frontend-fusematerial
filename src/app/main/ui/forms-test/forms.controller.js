@@ -43,14 +43,43 @@ function Proposta(seguro, pessoa){
         			tab8: 'Preparado'
         		},
         		proposta: {
-        			seguro: {tipoSeguro: 'Novo', ci: '1234', seguradora: 'Bradesco'},		
-        			proprietario: {nome: 'Jonh'}},
-        		//seguro - tab1
-        		dtVigenciaInicio: '10/01/2016',
-        		dtVigenciaFim: '10/01/2016',
-        		apolice: '123456',
-        		classeBonus: 'Classe A',
-        		isSinistro: 'Não',
+        			seguro: {
+        				tipoSeguro: 'Novo', 
+        				ci: '1234', 
+        				seguradora: 'Bradesco',
+        				dataVigenciaInicio: '10/01/2016',
+                		dataVigenciaFim: '10/01/2016',
+                		apolice: '123456',
+                		classeBonus: 'Classe A',
+            			sinistro: 'Não',
+        			},		
+					proprietario: {
+						nome: 'Jonh',
+						rg: '123456',
+						orgaoEmissor: 'SSP-DF',
+						dataEmissao: '10/01/2016',
+						dataNascimento: '10/01/2016',
+						profissao: 'Professor',
+						estadoCivil: 'Casado',
+						endereco: {
+							complemento: 'Qnd 38 Conjuntio K Taguatinga Norte',
+							temGaragem: 'Sim',
+							cep: '72145811',
+							bairro: 'Taguatinga Norte',
+							cidade: 'Brasília'
+						},
+						telefone: '(61) 8855-4455',
+						email: 'jonh@ibm.com',
+						habilitacao: {
+							numero: '12345',
+							dataValidade: '12/01/2017',
+							dataExpedicao: '01/01/1990'
+						},
+						banco: {nome: 'Bradesco'},
+						agencia: '123456-4',
+						contaCorrente: '00045678-3'
+					}
+        		},
         		//proprietario - tab2
         		
         		firstname: 'John',
