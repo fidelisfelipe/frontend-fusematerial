@@ -78,25 +78,43 @@ function Proposta(seguro, pessoa){
 						banco: {nome: 'Bradesco'},
 						agencia: '123456-4',
 						contaCorrente: '00045678-3'
-					}
+					},
+					titular: {
+						isProprietario: 'Sim',
+						nome: 'Jonh',
+						rg: '123456',
+						orgaoEmissor: 'SSP-DF',
+						dataEmissao: '10/01/2016',
+						dataNascimento: '10/01/2016',
+						profissao: 'Professor',
+						estadoCivil: 'Casado',
+						endereco: {
+							complemento: 'Qnd 38 Conjuntio K Taguatinga Norte',
+							temGaragem: 'Sim',
+							cep: '72145811',
+							bairro: 'Taguatinga Norte',
+							cidade: 'Brasília'
+						},
+						telefone: '(61) 8855-4455',
+						email: 'jonh@ibm.com',
+						habilitacao: {
+							numero: '12345',
+							dataValidade: '12/01/2017',
+							dataExpedicao: '01/01/1990'
+						},
+						perfil: {
+							temMenorVinteCinco: 'Sim',
+							enderecoTrabalho: {
+								complemento: 'Qnd 38 Conjuntio K Taguatinga Norte',
+								temGaragem: 'Sim',
+								cep: '72145811',
+								bairro: 'Taguatinga Norte',
+								cidade: 'Brasília'
+							},
+						}
+					},
+					
         		},
-        		//proprietario - tab2
-        		
-        		firstname: 'John',
-        		lastname: 'Malter',
-        		email: 'johnm@sec.com',
-        		password: '123456',
-        		passwordConfirm: '123456',
-        		//condutor - tab2
-        		city: 'Brasília',
-        		postalCode: '72145800',
-        		address: 'Rua 25 esquina com a Rua 35',
-        		//condutor-perfil - tab3
-        		cardholder: '1234',
-        		cardnumber: '123',
-        		cc2: '123',
-        		expirationDate: '10',
-        		//Menor 25 - tab4
         		
         		//Veículo - tab5
         		
