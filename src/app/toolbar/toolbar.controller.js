@@ -15,7 +15,7 @@
         $rootScope.global = {
             search: ''
         };
-
+        vm.titleLogo = 'Default';
         vm.bodyEl = angular.element('body');
         vm.userStatusOptions = [
             {

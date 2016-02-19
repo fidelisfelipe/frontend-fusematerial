@@ -1,14 +1,3 @@
-function Seguro(tipoSeguro){
-	this.tipoSeguro = tipoSeguro;
-}
-function Pessoa(nome){
-	this.nome = nome;
-}
-function Proposta(seguro, pessoa){
-	this.seguro = seguro;
-	this.proprietario = pessoa;
-}
-
 (function ()
 {
     'use strict';
@@ -25,14 +14,14 @@ function Proposta(seguro, pessoa){
 
         // Data
         vm.tracker_page = {
-        	currentLabel:'Serviços | Criar Proposta Automóvel'
+        	currentLabel:'Serviços | Nova Proposta'
         };
         vm.basicForm = {};
         
         
         
         vm.formWizard = {
-        		title:'FormTest',//Proposta 
+        		title:'Nova Proposta', 
         		titleForm:'',
         		//listas prévias
         		tipoSeguroList: ('Novo Renovação').split(' ').map(function (tipo){

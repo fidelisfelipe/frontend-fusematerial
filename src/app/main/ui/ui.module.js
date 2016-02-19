@@ -40,16 +40,16 @@
         
       //add new menu top
         msNavigationServiceProvider.saveItem('ui.formswizard', {
-        	title: 'Forms Wizard',
+        	title: 'Serviços',
         	icon : 'icon-window-restore'
         });
         //add new menu body
         msNavigationServiceProvider.saveItem('ui.formswizard.test', {
-        	title: 'New Form Wizard Test',
+        	title: 'Nova Proposta',
         	icon : 'icon-library-plus',
         	state: 'app.ui_forms_wizard_test'
         });
-
+        
 //        msNavigationServiceProvider.saveItem('ui.forms', {
 //            title: 'Forms',
 //            icon : 'icon-window-restore',

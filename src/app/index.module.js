@@ -18,7 +18,7 @@
             'app.toolbar',
 
             // Quick panel
-            'app.quick-panel',
+//            'app.quick-panel',
 
             // Apps
             'app.dashboards',
@@ -33,7 +33,6 @@
 
             // User Interface
             'app.ui',
-            // component
             
             // Components
 //            'app.components'
