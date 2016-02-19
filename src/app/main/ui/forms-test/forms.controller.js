@@ -29,6 +29,8 @@ function Proposta(seguro, pessoa){
         };
         vm.basicForm = {};
         
+        
+        
         vm.formWizard = {
         		title:'FormTest',//Proposta 
         		titleForm:'',
@@ -85,7 +87,8 @@ function Proposta(seguro, pessoa){
 							temGaragem: 'Sim',
 							cep: '72000-000',
 							bairro: 'Taguatinga Norte',
-							cidade: 'Brasília'
+							cidade: 'Brasília',
+							uf: 'DF'
 						},
 						telefone: '(61) 8855-4455',
 						email: 'jonh@ibm.com',
@@ -112,7 +115,9 @@ function Proposta(seguro, pessoa){
 							temGaragem: 'Sim',
 							cep: '72000000',
 							bairro: 'Taguatinga Norte',
-							cidade: 'Brasília'
+							cidade: 'Brasília',
+							uf: {nome: 'DF'}
+								
 						},
 						telefone: '(61) 8855-4455',
 						email: 'jonh@ibm.com',
@@ -128,7 +133,8 @@ function Proposta(seguro, pessoa){
 								temGaragem: 'Sim',
 								cep: '72000000',
 								bairro: 'Taguatinga Norte',
-								cidade: 'Brasília'
+								cidade: 'Brasília',
+								uf: {nome: 'DF'}
 							},
 						},
 						

@@ -312,10 +312,10 @@
 								</md-input-container>
 							</div>
 							<div layout="column" layout-gt-xs="row" flex>
-                               <!-- Endereço - Possui Garagem -->
+                               <!-- Possui Garagem -->
                                <md-input-container flex="100" flex-gt-xs="50">
                                
-                               		<label>Endereço - Possui Garagem</label>
+                               		<label>Possui Garagem</label>
 									<md-select name="proposta.proprietario.endereco.temGaragem" ng-model="vm.formWizard.proposta.proprietario.endereco.temGaragem" required>
 									    <md-option ng-repeat="item in vm.formWizard.booleanList" value="{{item.nome}}">
 									        {{item.nome}}
@@ -326,15 +326,15 @@
 									     ng-show="wizardStep1.proposta.proprietario.endereco.temGaragem.$touched"
 									     role="alert">
 									    <div ng-message="required">
-									        <span>Endereço - Possui Garagem field is required.</span>
+									        <span>Possui Garagem field is required.</span>
 									    </div>
 									</div>
                                
 								</md-input-container>
-                               <!-- Endereço - Cep -->
+                               <!-- Cep -->
                                <md-input-container flex="100" flex-gt-xs="50">
 								    <input type="text" name="proposta.proprietario.endereco.cep" ng-model="vm.formWizard.proposta.proprietario.endereco.cep"
-								           placeholder="Endereço - Cep" ui-mask="99999-999"  ui-mask-placeholder ui-mask-placeholder-char="_"
+								           placeholder="Cep" ui-mask="99999-999"  ui-mask-placeholder ui-mask-placeholder-char="_"
 								           required>
 								    <div ng-messages="wizardStep2.proposta.proprietario.endereco.cep.$error"
 								         ng-show="wizardStep2.proposta.proprietario.endereco.cep.$touched"
@@ -344,31 +344,47 @@
 								        </div>
 								    </div>
 								</md-input-container>
-                               <!-- Endereço - Bairro -->
+                               <!-- Bairro -->
                                <md-input-container flex="100" flex-gt-xs="50">
 								    <input type="text" name="proposta.proprietario.endereco.bairro" ng-model="vm.formWizard.proposta.proprietario.endereco.bairro"
-								           placeholder="Endereço - Bairro"
+								           placeholder="Bairro"
 								           required>
 								    <div ng-messages="wizardStep2.proposta.proprietario.endereco.bairro.$error"
 								         ng-show="wizardStep2.proposta.proprietario.endereco.bairro.$touched"
 								         role="alert">
 								        <div ng-message="required">
-								            <span>Endereço - Bairro field is required.</span>
+								            <span>Bairro field is required.</span>
 								        </div>
 								    </div>
 								</md-input-container>
-                               <!-- Endereço - Cidade -->
+                               <!-- Cidade -->
                                <md-input-container flex="100" flex-gt-xs="50">
 								    <input type="text" name="proposta.proprietario.endereco.cidade" ng-model="vm.formWizard.proposta.proprietario.endereco.cidade"
-								           placeholder="Endereço - Cidade"
+								           placeholder="Cidade"
 								           required>
 								    <div ng-messages="wizardStep2.proposta.proprietario.endereco.cidade.$error"
 								         ng-show="wizardStep2.proposta.proprietario.endereco.cidade.$touched"
 								         role="alert">
 								        <div ng-message="required">
-								            <span>Endereço - Cidade field is required.</span>
+								            <span>Cidade field is required.</span>
 								        </div>
 								    </div>
+								</md-input-container>
+								<md-input-container flex="100" flex-gt-xs="20">
+									<label>UF</label>
+									<md-select name="proposta.proprietario.endereco.uf" ng-model="vm.formWizard.proposta.proprietario.endereco.uf" required>
+									    <md-option ng-repeat="item in vm.formWizard.estadoList" value="{{item.nome}}">
+									        {{item.nome}}
+									    </md-option>
+									</md-select>
+									
+									<div ng-messages="wizardStep2.proposta.proprietario.endereco.uf.$error"
+									     ng-show="wizardStep2.proposta.proprietario.endereco.uf.$touched"
+									     role="alert">
+									    <div ng-message="required">
+									        <span>UF field is required.</span>
+									    </div>
+									</div>
 								</md-input-container>
 							</div>
 							<div layout="column" layout-gt-xs="row" flex>
@@ -629,10 +645,10 @@
 									</md-input-container>
 								</div>
 								<div layout="column" layout-gt-xs="row" flex>
-									<!-- Endereço - Possui Garagem -->
+									<!-- Possui Garagem -->
 	                               <md-input-container flex="100" flex-gt-xs="50">
 	                               
-	                               		<label>Endereço - Possui Garagem</label>
+	                               		<label>Possui Garagem</label>
 										<md-select name="proposta.proprietario.endereco.temGaragem" ng-model="vm.formWizard.proposta.proprietario.endereco.temGaragem" required>
 										    <md-option ng-repeat="item in vm.formWizard.booleanList" value="{{item.nome}}">
 										        {{item.nome}}
@@ -643,15 +659,15 @@
 										     ng-show="wizardStep1.proposta.proprietario.endereco.temGaragem.$touched"
 										     role="alert">
 										    <div ng-message="required">
-										        <span>Endereço - Possui Garagem field is required.</span>
+										        <span>Possui Garagem field is required.</span>
 										    </div>
 										</div>
 	                               
 									</md-input-container>
-	                               <!-- Endereço - Cep -->
+	                               <!-- Cep -->
 	                               <md-input-container flex="100" flex-gt-xs="50">
 									    <input type="text" name="proposta.titular.endereco.cep" ng-model="vm.formWizard.proposta.titular.endereco.cep"
-									           placeholder="Endereço - Cep" ui-mask="99999-999"  ui-mask-placeholder ui-mask-placeholder-char="_"
+									           placeholder="Cep" ui-mask="99999-999"  ui-mask-placeholder ui-mask-placeholder-char="_"
 									           required>
 									    <div ng-messages="wizardStep2.proposta.titular.endereco.cep.$error"
 									         ng-show="wizardStep2.proposta.titular.endereco.cep.$touched"
@@ -663,31 +679,47 @@
 									</md-input-container>
 								
 								
-	                               <!-- Endereço - Bairro -->
+	                               <!-- Bairro -->
 	                               <md-input-container flex="100" flex-gt-xs="50">
 									    <input type="text" name="proposta.titular.endereco.bairro" ng-model="vm.formWizard.proposta.titular.endereco.bairro"
-									           placeholder="Endereço - Bairro"
+									           placeholder="Bairro"
 									           required>
 									    <div ng-messages="wizardStep3.proposta.titular.endereco.bairro.$error"
 									         ng-show="wizardStep3.proposta.titular.endereco.bairro.$touched"
 									         role="alert">
 									        <div ng-message="required">
-									            <span>Endereço - Bairro field is required.</span>
+									            <span>Bairro field is required.</span>
 									        </div>
 									    </div>
 									</md-input-container>
-	                               <!-- Endereço - Cidade -->
+	                               <!-- Cidade -->
 	                               <md-input-container flex="100" flex-gt-xs="50">
 									    <input type="text" name="proposta.titular.endereco.cidade" ng-model="vm.formWizard.proposta.titular.endereco.cidade"
-									           placeholder="Endereço - Cidade"
+									           placeholder="Cidade"
 									           required>
 									    <div ng-messages="wizardStep3.proposta.titular.endereco.cidade.$error"
 									         ng-show="wizardStep3.proposta.titular.endereco.cidade.$touched"
 									         role="alert">
 									        <div ng-message="required">
-									            <span>Endereço - Cidade field is required.</span>
+									            <span>Cidade field is required.</span>
 									        </div>
 									    </div>
+									</md-input-container>
+									<md-input-container flex="100" flex-gt-xs="20">
+										<label>UF</label>
+										<md-select name="proposta.titular.endereco.uf" ng-model="vm.formWizard.proposta.titular.endereco.uf" required>
+										    <md-option ng-repeat="item in vm.formWizard.estadoList" value="{{item.nome}}">
+										        {{item.nome}}
+										    </md-option>
+										</md-select>
+										
+										<div ng-messages="wizardStep3.proposta.titular.endereco.uf.$error"
+										     ng-show="wizardStep3.proposta.titular.endereco.uf.$touched"
+										     role="alert">
+										    <div ng-message="required">
+										        <span>UF field is required.</span>
+										    </div>
+										</div>
 									</md-input-container>
 								</div>
 								<div layout="column" layout-gt-xs="row" flex>
@@ -793,7 +825,7 @@
 									</md-input-container>
 								</div>
 								<div layout="column" layout-gt-xs="row" flex>
-		                            	<!-- Endereço - Trabalho -->
+		                            	<!-- Trabalho -->
 		                            	<md-input-container flex="100" flex-gt-xs="50">
 										    <input type="text" name="proposta.titular.perfil.enderecoTrabalho.complemento" ng-model="vm.formWizard.proposta.titular.perfil.enderecoTrabalho.complemento"
 										           placeholder="Endereco - Trabalho"
@@ -802,63 +834,79 @@
 										         ng-show="wizardStep4.proposta.titular.perfil.enderecoTrabalho.$touched"
 										         role="alert">
 										        <div ng-message="required">
-										            <span>Endereço - Trabalho field is required.</span>
+										            <span>Trabalho field is required.</span>
 										        </div>
 										    </div>
 										</md-input-container>
 								</div>
 								<div layout="column" layout-gt-xs="row" flex>
-	                            	<!-- Endereço - Trabalho - Possui Garagem -->
+	                            	<!-- Trabalho - Possui Garagem -->
 	                            	<md-input-container flex="100" flex-gt-xs="50">
 									    <input type="text" name="proposta.titular.perfil.enderecoTrabalho.temGaragem" ng-model="vm.formWizard.proposta.titular.perfil.enderecoTrabalho.temGaragem"
-									           placeholder="Endereço - Trabalho - Possui Garagem"
+									           placeholder="Trabalho - Possui Garagem"
 									           required>
 									    <div ng-messages="wizardStep4.proposta.titular.perfil.enderecoTrabalho.temGaragem.$error"
 									         ng-show="wizardStep4.proposta.titular.perfil.enderecoTrabalho.temGaragem.$touched"
 									         role="alert">
 									        <div ng-message="required">
-									            <span>Endereço - Trabalho - Possui Garagem field is required.</span>
+									            <span>Trabalho - Possui Garagem field is required.</span>
 									        </div>
 									    </div>
 									</md-input-container>
-	                            	<!-- Endereço - Trabalho - Cep -->
+	                            	<!-- Trabalho - Cep -->
 	                            	<md-input-container flex="100" flex-gt-xs="50">
 									    <input type="text" name="proposta.titular.perfil.enderecoTrabalho.cep" ng-model="vm.formWizard.proposta.titular.perfil.enderecoTrabalho.cep"
-									           placeholder="Endereço - Trabalho - Cep" ui-mask="99999-999"  ui-mask-placeholder ui-mask-placeholder-char="_"
+									           placeholder="Trabalho - Cep" ui-mask="99999-999"  ui-mask-placeholder ui-mask-placeholder-char="_"
 									           required>
 									    <div ng-messages="wizardStep4.proposta.titular.perfil.enderecoTrabalho.cep.$error"
 									         ng-show="wizardStep4.proposta.titular.perfil.enderecoTrabalho.cep.$touched"
 									         role="alert">
 									        <div ng-message="required">
-									            <span>Endereço - Trabalho - Cep field is required.</span>
+									            <span>Trabalho - Cep field is required.</span>
 									        </div>
 									    </div>
 									</md-input-container>
-	                            	<!-- Endereço - Trabalho - Bairro -->
+	                            	<!-- Trabalho - Bairro -->
 	                            	<md-input-container flex="100" flex-gt-xs="50">
 									    <input type="text" name="proposta.titular.perfil.enderecoTrabalho.bairro" ng-model="vm.formWizard.proposta.titular.perfil.enderecoTrabalho.bairro"
-									           placeholder="Endereço - Trabalho - Bairro"
+									           placeholder="Trabalho - Bairro"
 									           required>
 									    <div ng-messages="wizardStep4.proposta.titular.perfil.enderecoTrabalho.bairro.$error"
 									         ng-show="wizardStep4.proposta.titular.perfil.enderecoTrabalho.bairro.$touched"
 									         role="alert">
 									        <div ng-message="required">
-									            <span>Endereço - Trabalho - Bairro field is required.</span>
+									            <span>Trabalho - Bairro field is required.</span>
 									        </div>
 									    </div>
 									</md-input-container>
-	                            	<!-- Endereço - Cidade -->
+	                            	<!-- Cidade -->
 	                            	<md-input-container flex="100" flex-gt-xs="50">
 									    <input type="text" name="proposta.titular.perfil.enderecoTrabalho.cidade" ng-model="vm.formWizard.proposta.titular.perfil.enderecoTrabalho.cidade"
-									           placeholder="Endereço - Cidade"
+									           placeholder="Cidade"
 									           required>
 									    <div ng-messages="wizardStep4.proposta.titular.perfil.enderecoTrabalho.cidade.$error"
 									         ng-show="wizardStep4.proposta.titular.perfil.enderecoTrabalho.cidade.$touched"
 									         role="alert">
 									        <div ng-message="required">
-									            <span>Endereço - Cidade field is required.</span>
+									            <span>Cidade field is required.</span>
 									        </div>
 									    </div>
+									</md-input-container>
+									<md-input-container flex="100" flex-gt-xs="20">
+										<label>UF</label>
+										<md-select name="proposta.titular.perfil.enderecoTrabalho.uf" ng-model="vm.formWizard.proposta.titular.perfil.enderecoTrabalho.uf" required>
+										    <md-option ng-repeat="item in vm.formWizard.estadoList" value="{{item.nome}}">
+										        {{item.nome}}
+										    </md-option>
+										</md-select>
+										
+										<div ng-messages="wizardStep4.proposta.titular.perfil.enderecoTrabalho.uf.$error"
+										     ng-show="wizardStep4.proposta.titular.perfil.enderecoTrabalho.uf.$touched"
+										     role="alert">
+										    <div ng-message="required">
+										        <span>UF field is required.</span>
+										    </div>
+										</div>
 									</md-input-container>
 								</div>
                             </form>
@@ -1062,17 +1110,16 @@
                         </md-tab-label>
                         <md-tab-body>
                             <form name="wizardStep6" ms-form-wizard-form novalidate>
-                            	
                             	<div layout="column" layout-gt-xs="row" flex>
-									<md-input-container flex="100" flex-gt-xs="10">		
+								  	<md-input-container flex="100" flex-gt-xs="10">		
 									  <!-- Assistência 24hrs -->
 										  <md-checkbox ng-model="vm.formWizard.proposta.cobertura.assistencia.isAssistenciaVinteQuatroHrs" aria-label="Assistência 24hrs">
 										  </md-checkbox>
 										  <md-input-container flex flex-gt-xs="30">
 			                                  <label>Assistência 24hrs</label>
 			                               </md-input-container>
-									</md-input-container>
-									<md-input-container flex="100" flex-gt-xs="10">		
+									 </md-input-container>
+									 <md-input-container flex="100" flex-gt-xs="10">		
 										  <md-checkbox ng-model="vm.formWizard.proposta.cobertura.carroReserva.isCarroReserva" aria-label="Carro Reserva">
 										  </md-checkbox>
 										  <md-input-container flex flex-gt-xs="30">
@@ -1088,7 +1135,7 @@
 									</md-input-container>
 								</div>
 								<div layout="column" layout-gt-xs="row" flex>
-                            		<md-input-container flex="100" flex-gt-xs="20">	  
+								   <md-input-container flex="100" flex-gt-xs="20">	  
 										  <!-- Assistência até quantos Kilometros -->
 										    <input type="text" name="proposta.cobertura.danosMateriais" ng-model="vm.formWizard.proposta.cobertura.danosMateriais"
 										           placeholder="Danos Materiais R$"
@@ -1101,7 +1148,7 @@
 										        </div>
 										    </div>
 									</md-input-container>
-									<md-input-container flex="100" flex-gt-xs="20">	  
+								  	<md-input-container flex="100" flex-gt-xs="20">	  
 										  <!-- Danos Pessoais R$ -->
 										    <input type="text" name="proposta.cobertura.danosPessoais" ng-model="vm.formWizard.proposta.cobertura.danosPessoais"
 										           placeholder="Danos Pessoais R$"
@@ -1114,7 +1161,7 @@
 										        </div>
 										    </div>
 									</md-input-container>
-									<md-input-container flex="100" flex-gt-xs="20">	  
+								  	<md-input-container flex="100" flex-gt-xs="20">	  
 										  <!-- Danos Acidente por Passageiro R$ -->
 										    <input type="text" name="proposta.cobertura.danosAcidentePassageiro" ng-model="vm.formWizard.proposta.cobertura.danosAcidentePassageiro"
 										           placeholder="Danos Acidente por Passageiro R$"
@@ -1127,9 +1174,7 @@
 										        </div>
 										    </div>
 									</md-input-container>
-									
-									
-									<md-input-container flex="100" flex-gt-xs="10">	  
+							  		<md-input-container flex="100" flex-gt-xs="10">	  
 										  <!-- Assistência até quantos Kilometros -->
 										    <input type="text" name="proposta.cobertura.assistencia.distanciaKm" ng-model="vm.formWizard.proposta.cobertura.assistencia.distanciaKm"
 										           placeholder="Assistência até quantos Kilometros"
@@ -1142,7 +1187,6 @@
 										        </div>
 										    </div>
 									</md-input-container>
-
 								</div>
 <!--                             	<div layout="column" layout-gt-xs="row" flex> -->
 <!-- 		                            	<md-input-container flex="100" flex-gt-xs="50"> -->
@@ -1258,21 +1302,121 @@
                         </md-tab-label>
                         <md-tab-body>
                             <form name="wizardStep7" ms-form-wizard-form novalidate>
-	                            <h1>Seguro</h1>
-	                            	<label>Tipo Seguro:</label>
-	                            	<span>{{vm.formWizard.proposta.seguro.tipoSeguro}}</span>
+	                            	
+	                            	<h2>Seguro</h2>
+	                            	Tipo de Seguro: {{vm.formWizard.proposta.seguro.tipoSeguro}}
+	                            	</br>
+	                            	CI: {{vm.formWizard.proposta.seguro.ci}}
+	                            	</br>
+	                            	Seguradora: {{vm.formWizard.proposta.seguro.seguradora}}
+	                            	</br>
+	                            	Data de Vigência Inicio: <span ng-bind="vm.formWizard.proposta.seguro.dataVigenciaInicio | date:'MM/dd/yyyy'"></span>
+	                            	</br>
+	                            	Data de Vigência Fim: <span ng-bind="vm.formWizard.proposta.seguro.dataVigenciaFim | date:'MM/dd/yyyy'"></span>
+	                            	</br>
+	                            	Apólice: {{vm.formWizard.proposta.seguro.apolice}}
+	                            	</br>
+	                            	Classe Bonus: {{vm.formWizard.proposta.seguro.classeBonus}}
+	                            	</br>
+	                            	Houve Sinistro: {{vm.formWizard.proposta.seguro.isSinistro}}
+	                            	</br>
+	                            	<hr/>
+	                            	<h2>Proprietário</h2>
+	                            	
+	                            	Nome
+	                            	</br>
+	                            	RG
+	                            	</br>
+	                            	Orgão Emissor
+	                            	</br>
+	                            	Data Emissão
+	                            	</br>
+	                            	Data Nascimento
+	                            	</br>
+	                            	Profissão
+	                            	</br>
+	                            	Estado Civil
+	                            	</br>
+	                            	Endereço
+	                            	</br>
+	                            	Possui Garagem
+	                            	</br>
+	                            	Cep
+	                            	</br>
+	                            	Bairro
+	                            	</br>
+	                            	UF
+	                            	</br>
+	                            	Telefone
+	                            	</br>
+	                            	Email
+	                            	</br>
+	                            	Nº Habilitação
+	                            	</br>
+	                            	Data Validade
+	                            	</br>
+	                            	Data Expedição
+	                            	</br>
+	                            	Banco:
+	                            	</br>
+	                            	Agência
+	                            	</br>
+	                            	Conta Corrente
+	                            	
+	                            	</br>
+	                            	<hr/>
+	                            	<h2>Condutor</h2>
+	                            	
+	                            	Nome
+	                            	</br>
+	                            	RG
+	                            	</br>
+	                            	Orgão Emissor
+	                            	</br>
+	                            	Data Emissão
+	                            	</br>
+	                            	Data Nascimento
+	                            	</br>
+	                            	Profissão
+	                            	</br>
+	                            	Estado Civil
+	                            	</br>
+	                            	Endereço
+	                            	</br>
+	                            	Possui Garagem
+	                            	</br>
+	                            	Cep
+	                            	</br>
+	                            	Bairro
+	                            	</br>
+	                            	UF
+	                            	</br>
+	                            	Telefone
+	                            	</br>
+	                            	Email
+	                            	</br>
+	                            	Nº Habilitação
+	                            	</br>
+	                            	Data Validade
+	                            	</br>
+	                            	Data Expedição
+	                            	
 	                            	
 	                            	<md-input-container flex="100" flex-gt-xs="50">
-									    <input type="text" name="finalizar" ng-model="vm.formWizard.finalizar"
-									           placeholder="Finalizar?"
-									           required>
-									    <div ng-messages="wizardStep7.finalizar.$error"
-									         ng-show="wizardStep7.finalizar.$touched"
-									         role="alert">
-									        <div ng-message="required">
-									            <span>Finalizar field is required.</span>
-									        </div>
+									<label>Finalizar</label>
+									<md-select name="finalizar" ng-model="vm.formWizard.finalizar" required>
+									    <md-option ng-repeat="item in vm.formWizard.booleanList" value="{{item.nome}}">
+									        {{item.nome}}
+									    </md-option>
+									</md-select>
+									
+									<div ng-messages="wizardStep7.finalizar.$error"
+									     ng-show="wizardStep1.finalizar.$touched"
+									     role="alert">
+									    <div ng-message="required">
+									        <span>Finalizar field is required.</span>
 									    </div>
+									</div>
 									</md-input-container>
                             </form>
                         </md-tab-body>
@@ -1296,7 +1440,7 @@
                         Next
                     </md-button>
                     <md-button class="md-raised md-warn" ng-click="vm.sendForm(); msWizard.resetForm();" ng-show="msWizard.isLastStep()"
-                               ng-disabled="msWizard.formsIncomplete()">
+                               ng-disabled="msWizard.formsIncomplete() || vm.formWizard.finalizar === 'Não'">
                         Send
                     </md-button>
                 </div>
