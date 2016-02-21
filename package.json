@@ -3,6 +3,7 @@
   "version": "1.2.2",
   "cacheDirectories": ["node_modules", "bower_components"],
   "dependencies": {
+	"bower": "1.7.7",
 	"estraverse": "~4.1.0",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "~3.0.2",
