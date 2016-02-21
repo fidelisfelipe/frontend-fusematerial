@@ -49,7 +49,7 @@ browserSync.use(browserSyncSpa({
 }));
 
 gulp.task('serve', ['watch'], function ()
-{
+{	server.listen(process.env.PORT || 5000);
     browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
 
