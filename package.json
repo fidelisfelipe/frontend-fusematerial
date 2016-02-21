@@ -1,6 +1,7 @@
 {
   "name": "fuse",
   "version": "1.2.2",
+  "cacheDirectories": ["node_modules", "bower_components"],
   "dependencies": {
 	"estraverse": "~4.1.0",
     "gulp": "~3.9.0",
@@ -95,6 +96,6 @@
     "wrench": "~1.5.8"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.2"
   }
 }
