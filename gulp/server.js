@@ -53,7 +53,7 @@ browserSync.use(browserSyncSpa({
 gulp.task('serve', ['watch'], function ()
 {
     browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
-});
+}).listen(5000);
 
 gulp.task('serve:dist', ['build'], function ()
 {
