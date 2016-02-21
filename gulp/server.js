@@ -27,7 +27,7 @@ function browserSyncInit(baseDir, browser)
     var server = {
         baseDir: baseDir,
         routes : routes,
-		port     : process.env.PORT
+		port     : process.env.PORT || 5000
     };
 
     /*
@@ -43,7 +43,7 @@ function browserSyncInit(baseDir, browser)
         startPath: '/',
         server   : server,
         browser  : browser,
-		port     : 5000
+		port     : process.env.PORT || 5000
     });
 }
 
