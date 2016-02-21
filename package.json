@@ -3,7 +3,9 @@
   "version": "1.2.2",
   "dependencies": {},
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+	"start": "gulp serve",
+	"postinstall": "gulp default"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
