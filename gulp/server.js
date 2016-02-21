@@ -25,8 +25,7 @@ function browserSyncInit(baseDir, browser)
 
     var server = {
         baseDir: baseDir,
-        routes : routes,
-		port	 : 5000
+        routes : routes
     };
 
     /*
@@ -41,8 +40,7 @@ function browserSyncInit(baseDir, browser)
     browserSync.instance = browserSync.init({
         startPath: '/',
         server   : server,
-        browser  : browser,
-		port	 : 5000
+        browser  : browser
     });
 }
 
@@ -53,7 +51,7 @@ browserSync.use(browserSyncSpa({
 gulp.task('serve', ['watch'], function ()
 {
     browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
-}).listen(5000);
+}).listen(process.env.PORT || 5000);
 
 gulp.task('serve:dist', ['build'], function ()
 {
