@@ -55,7 +55,7 @@ gulp.task('serve', ['watch'], function ()
     browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 	
 	return gulp.src('./dist/').pipe(webserver({
-        host: '0.0.0.0',
+        host: process.env.HOST,
         port: process.env.PORT || 5000,
         https: false,
         open: true
