@@ -3,6 +3,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
+var webserver = require('gulp-webserver');
 
 var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
@@ -52,7 +53,14 @@ browserSync.use(browserSyncSpa({
 gulp.task('serve', ['watch'], function ()
 {	
     browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
-}).listen(process.env.PORT || 5000);
+	
+	return gulp.src('./dist/').pipe(webserver({
+        host: '0.0.0.0',
+        port: process.env.PORT || 5000,
+        https: false,
+        open: true
+    }));
+});
 
 gulp.task('serve:dist', ['build'], function ()
 {
