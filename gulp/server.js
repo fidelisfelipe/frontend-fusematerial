@@ -11,6 +11,7 @@ var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
 
+
 function browserSyncInit(baseDir, browser)
 {
     browser = browser === undefined ? 'default' : browser;
@@ -49,9 +50,9 @@ browserSync.use(browserSyncSpa({
 }));
 
 gulp.task('serve', ['watch'], function ()
-{	server.listen(process.env.PORT || 5000);
+{	
     browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
-});
+}).listen(process.env.PORT || 5000);
 
 gulp.task('serve:dist', ['build'], function ()
 {
