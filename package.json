@@ -49,8 +49,8 @@
   },
   "scripts": {
     "test": "gulp test",
-	"start": "gulp serve",
-	"postinstall": "bower cache clean && bower install && gulp build"
+	"start": "bower cache clean && bower install && gulp build && gulp serve",
+	"postinstall": ""
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
