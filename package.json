@@ -1,6 +1,6 @@
 {
   "name": "fuse",
-  "version": "1.2.2"
+  "version": "1.2.2",
   "dependencies": {
 	"bower": "1.7.7",
 	"estraverse": "~4.1.0",
@@ -48,8 +48,8 @@
   },
   "scripts": {
     "test": "gulp test",
-	"start": "gulp serve",
-	"postinstall": "bower cache clean && bower install"
+	  "start": "gulp serve",
+	  "postinstall": "bower cache clean && bower install"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
