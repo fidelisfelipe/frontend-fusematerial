@@ -20,6 +20,12 @@
         <div class="md-title"  ng-bind="vm.formWizard.titleForm"></div>
         <div class="pb-16">
             <!-- description null -->
+            <md-button class="md-raised md-accent" ng-click="vm.preencher()">
+                        Preencher Test
+            </md-button>
+            <md-button class="md-raised md-accent" ng-click="vm.limpar()">
+                        Limpar Test
+            </md-button>
         </div>
         <div layout="row">
             <!-- FORM WIZARD -->
@@ -1303,107 +1309,8 @@
                         <md-tab-body>
                             <form name="wizardStep7" ms-form-wizard-form novalidate>
 	                            	
-	                            	<h2>Seguro</h2>
-	                            	Tipo de Seguro: {{vm.formWizard.proposta.seguro.tipoSeguro}}
-	                            	</br>
-	                            	CI: {{vm.formWizard.proposta.seguro.ci}}
-	                            	</br>
-	                            	Seguradora: {{vm.formWizard.proposta.seguro.seguradora}}
-	                            	</br>
-	                            	Data de Vigência Inicio: <span ng-bind="vm.formWizard.proposta.seguro.dataVigenciaInicio | date:'MM/dd/yyyy'"></span>
-	                            	</br>
-	                            	Data de Vigência Fim: <span ng-bind="vm.formWizard.proposta.seguro.dataVigenciaFim | date:'MM/dd/yyyy'"></span>
-	                            	</br>
-	                            	Apólice: {{vm.formWizard.proposta.seguro.apolice}}
-	                            	</br>
-	                            	Classe Bonus: {{vm.formWizard.proposta.seguro.classeBonus}}
-	                            	</br>
-	                            	Houve Sinistro: {{vm.formWizard.proposta.seguro.isSinistro}}
-	                            	</br>
-	                            	<hr/>
-	                            	<h2>Proprietário</h2>
-	                            	
-	                            	Nome
-	                            	</br>
-	                            	RG
-	                            	</br>
-	                            	Orgão Emissor
-	                            	</br>
-	                            	Data Emissão
-	                            	</br>
-	                            	Data Nascimento
-	                            	</br>
-	                            	Profissão
-	                            	</br>
-	                            	Estado Civil
-	                            	</br>
-	                            	Endereço
-	                            	</br>
-	                            	Possui Garagem
-	                            	</br>
-	                            	Cep
-	                            	</br>
-	                            	Bairro
-	                            	</br>
-	                            	UF
-	                            	</br>
-	                            	Telefone
-	                            	</br>
-	                            	Email
-	                            	</br>
-	                            	Nº Habilitação
-	                            	</br>
-	                            	Data Validade
-	                            	</br>
-	                            	Data Expedição
-	                            	</br>
-	                            	Banco:
-	                            	</br>
-	                            	Agência
-	                            	</br>
-	                            	Conta Corrente
-	                            	
-	                            	</br>
-	                            	<hr/>
-	                            	<h2>Condutor</h2>
-	                            	
-	                            	Nome
-	                            	</br>
-	                            	RG
-	                            	</br>
-	                            	Orgão Emissor
-	                            	</br>
-	                            	Data Emissão
-	                            	</br>
-	                            	Data Nascimento
-	                            	</br>
-	                            	Profissão
-	                            	</br>
-	                            	Estado Civil
-	                            	</br>
-	                            	Endereço
-	                            	</br>
-	                            	Possui Garagem
-	                            	</br>
-	                            	Cep
-	                            	</br>
-	                            	Bairro
-	                            	</br>
-	                            	UF
-	                            	</br>
-	                            	Telefone
-	                            	</br>
-	                            	Email
-	                            	</br>
-	                            	Nº Habilitação
-	                            	</br>
-	                            	Data Validade
-	                            	</br>
-	                            	Data Expedição
-	                            	
-	                            	
 	                            	<md-input-container flex="100" flex-gt-xs="50">
-									<label>Finalizar</label>
+									<label>Finaliza Proposta?</label>
 									<md-select name="finalizar" ng-model="vm.formWizard.finalizar" required>
 									    <md-option ng-repeat="item in vm.formWizard.booleanList" value="{{item.nome}}">
 									        {{item.nome}}
@@ -1418,6 +1325,161 @@
 									    </div>
 									</div>
 									</md-input-container>
+	                            	
+	                            	<h2>Seguro</h2>
+	                            	Tipo de Seguro: {{vm.formWizard.proposta.seguro.tipoSeguro}}
+	                            	&nbsp;
+	                            	CI: {{vm.formWizard.proposta.seguro.ci}}
+	                            	&nbsp;
+	                            	Seguradora: {{vm.formWizard.proposta.seguro.seguradora}}
+	                            	&nbsp;
+	                            	Data de Vigência Inicio: <span ng-bind="vm.formWizard.proposta.seguro.dataVigenciaInicio | date:'MM/dd/yyyy'"></span>
+	                            	&nbsp;
+	                            	Data de Vigência Fim: <span ng-bind="vm.formWizard.proposta.seguro.dataVigenciaFim | date:'MM/dd/yyyy'"></span>
+	                            	&nbsp;
+	                            	Apólice: {{vm.formWizard.proposta.seguro.apolice}}
+	                            	&nbsp;
+	                            	Classe Bonus: {{vm.formWizard.proposta.seguro.classeBonus}}
+	                            	&nbsp;
+	                            	Houve Sinistro: {{vm.formWizard.proposta.seguro.isSinistro}}
+	                            	&nbsp;
+	                            	<hr/>
+	                            	<h2>Proprietário</h2>
+	                            	
+	                            	Nome:
+	                            	&nbsp;
+	                            	RG:
+	                            	</br>
+	                            	Orgão Emissor:
+	                            	&nbsp;
+	                            	Data Emissão:
+	                            	&nbsp;
+	                            	Data Nascimento:
+	                            	&nbsp;
+	                            	Profissão:
+	                            	&nbsp;
+	                            	Estado Civil:
+	                            	&nbsp;
+	                            	Endereço:
+	                            	&nbsp;
+	                            	Possui Garagem:
+	                            	&nbsp;
+	                            	Cep:
+	                            	&nbsp;
+	                            	Bairro:
+	                            	&nbsp;
+	                            	UF:
+	                            	&nbsp;
+	                            	Telefone:
+	                            	&nbsp;
+	                            	Email:
+	                            	&nbsp;
+	                            	Nº Habilitação:
+	                            	&nbsp;
+	                            	Data Validade:
+	                            	&nbsp;
+	                            	Data Expedição:
+	                            	&nbsp;
+	                            	Banco:
+	                            	&nbsp;
+	                            	Agência:
+	                            	&nbsp;
+	                            	Conta Corrente:
+	                            	
+	                            	<hr/>
+	                            	<h2>Condutor</h2>
+	                            	
+	                            	Nome:
+	                            	&nbsp;
+	                            	RG:
+	                            	&nbsp;
+	                            	Orgão Emissor:
+	                            	&nbsp;
+	                            	Data Emissão:
+	                            	&nbsp;
+	                            	Data Nascimento:
+	                            	&nbsp;
+	                            	Profissão:
+	                            	&nbsp;
+	                            	Estado Civil:
+	                            	&nbsp;
+	                            	Endereço:
+	                            	&nbsp;
+	                            	Possui Garagem:
+	                            	&nbsp;
+	                            	Cep:
+	                            	&nbsp;
+	                            	Bairro:
+	                            	&nbsp;
+	                            	UF:
+	                            	&nbsp;
+	                            	Telefone:
+	                            	&nbsp;
+	                            	Email:
+	                            	&nbsp;
+	                            	Nº Habilitação:
+	                            	&nbsp;
+	                            	Data Validade:
+	                            	&nbsp;
+	                            	Data Expedição:
+	                            	
+	                            	<h2>Condutor/Perfil</h2>
+	                            	Possui Menor de 25 anos?:
+	                            	&nbsp;
+	                            	Endereco - Trabalho:
+	                            	&nbsp;
+	                            	Trabalho - Possui Garagem:
+	                            	&nbsp;
+	                            	Trabalho - CEP:
+	                            	&nbsp;
+	                            	Trabalho - Bairro:
+	                            	&nbsp;
+	                            	Trabalho - Cidade:
+	                            	&nbsp;
+	                            	Trabalho - UF:
+	                            	&nbsp;
+	                            	<hr/>
+	                            	
+	                            	<h2>Veiculo</h2>
+	                            	Fabricante:
+	                            	&nbsp;
+	                            	Codigo Fipe:
+	                            	&nbsp;
+	                            	Ano de Fabricacao:
+	                            	&nbsp;
+	                            	Combustivel:
+	                            	&nbsp;
+	                            	Cor:
+	                            	&nbsp;
+	                            	Cambio:
+	                            	&nbsp;
+	                            	Placa:
+	                            	&nbsp;
+	                            	Chassi:
+	                            	&nbsp;
+	                            	Renavan:
+	                            	&nbsp;
+	                            	Situacao do Veiculo:
+	                            		                            	
+	                            	<hr/>
+	                            	
+	                            	<h2>Cobertura</h2>
+	                            	Assistencia 24hrs:
+	                            	&nbsp;
+	                            	Carro Reserva:
+	                            	&nbsp;
+	                            	Protecao de Vidros:
+	                            	&nbsp;
+	                            	Danos Materiais:
+	                            	&nbsp;
+	                            	Danos Pessoais:
+	                            	&nbsp;
+	                            	Danos Assidente por Passageiro:
+	                            	&nbsp;
+	                            	Km de Assistencia:
+	                            	
+	                            	<hr/>
+	                            	
                             </form>
                         </md-tab-body>
                         
